@@ -1,6 +1,6 @@
 import socket
 
-class AuthController:
+class MailController:
     def __init__(self, view):
         self.view = view
 
@@ -15,12 +15,12 @@ class AuthController:
         except Exception as e:
             return f"Lỗi kết nối đến server: {e}"
 
-    def login(self, username, password):
-        message = f"LOGIN {username} {password}"
+    def send_email(self, sender, recipients, cc, bcc, subject, body, attachments):
+        message = f"SEND_EMAIL|{sender}|{recipients}|{cc}|{bcc}|{subject}|{body}|{attachments}"
         response = self.send_request(message)
         return response
 
-    def register(self, username, password):
-        message = f"REGISTER {username} {password}"
+    def fetch_emails(self, email_type):
+        message = f"FETCH_EMAILS|{email_type}"
         response = self.send_request(message)
         return response

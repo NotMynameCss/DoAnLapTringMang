@@ -9,6 +9,7 @@ This project is a Mail Client-Server application using TCP/IP protocol. The proj
 - xampp-windows-x64-8.2.12-0
 - Tkinter for GUI
 - Giao thức: TCP/IP
+
 ## Roles
 - **Professional and Dedicated Teacher**: Break down large steps into smaller, understandable steps.
 - **Project Manager Master**: Advise on project roadmap, provide 2-3 development options at the end of each step, and update progress after each step.
