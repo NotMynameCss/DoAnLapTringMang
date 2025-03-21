@@ -3,8 +3,9 @@ from tkinter import ttk, messagebox, filedialog
 from CONTROLLER.mailController import MailController
 
 class MailSendView:
-    def __init__(self, root):
+    def __init__(self, root, username):
         self.root = root
+        self.username = username
         self.root.title("Soạn Email")
         self.root.geometry("800x600")
         self.root.configure(background="white")
@@ -65,7 +66,7 @@ class MailSendView:
             messagebox.showinfo("Tệp đính kèm", f"Tệp đã được đính kèm: {file_path}")
 
     def send_email(self):
-        sender = "client@example.com"  # Thay thế bằng email người gửi thực tế
+        sender = self.username  # Sử dụng tên người dùng thực tế
         recipients = self.to_entry.get()
         cc = self.cc_entry.get()
         bcc = self.bcc_entry.get()
@@ -84,5 +85,5 @@ class MailSendView:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = MailSendView(root)
+    app = MailSendView(root, "client@example.com")
     root.mainloop()

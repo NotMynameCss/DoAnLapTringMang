@@ -26,6 +26,66 @@ Thư mục `mailSv` chứa các thành phần Controller của ứng dụng Mail
   - `fetch_emails(email_type)`: Truy xuất email dựa trên loại email (inbox, sent).
   - `fetch_all_emails()`: Truy xuất tất cả email từ cơ sở dữ liệu.
   - `fetch_all_users()`: Truy xuất tất cả người dùng từ cơ sở dữ liệu.
+  - `fetch_emails_by_user(username)`: Truy xuất email dựa trên tên người dùng.
+  - `refresh_emails()`: Làm mới danh sách email.
+
+## Cách sử dụng `mailController`
+
+### 1. Khởi tạo `MailController`
+```python
+from CONTROLLER.mailController import MailController
+
+mail_controller = MailController()
+```
+
+### 2. Gửi email
+```python
+response = mail_controller.send_email(
+    sender="sender@example.com",
+    recipients="recipient@example.com",
+    cc="cc@example.com",
+    bcc="bcc@example.com",
+    subject="Subject of the email",
+    body="Body of the email",
+    attachments="path/to/attachment"
+)
+print(response)
+```
+
+### 3. Truy xuất email
+```python
+# Truy xuất email loại inbox
+emails = mail_controller.fetch_emails("inbox")
+print(emails)
+
+# Truy xuất email loại sent
+emails = mail_controller.fetch_emails("sent")
+print(emails)
+```
+
+### 4. Truy xuất tất cả email
+```python
+all_emails = mail_controller.fetch_all_emails()
+print(all_emails)
+```
+
+### 5. Truy xuất tất cả người dùng
+```python
+all_users = mail_controller.fetch_all_users()
+print(all_users)
+```
+
+### 6. Truy xuất email dựa trên tên người dùng
+```python
+user_emails = mail_controller.fetch_emails_by_user("username")
+print(user_emails)
+```
+
+### 7. Làm mới danh sách email
+```python
+refreshed_emails = mail_controller.refresh_emails()
+print(refreshed_emails)
+```
 
 ## Cách hoạt động
 

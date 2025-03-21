@@ -1,6 +1,9 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from CONTROLLER.mailController import MailController
 import tkinter as tk
 from tkinter import ttk, messagebox
-from CONTROLLER.mailController import MailController
 from datetime import datetime
 
 class MailView:
@@ -29,7 +32,7 @@ class MailView:
         self.search_button = tk.Button(self.top_frame, text="Tìm Kiếm", command=self.search_email)
         self.search_button.pack(side=tk.LEFT, padx=10, pady=10)
 
-        self.refresh_button = tk.Button(self.top_frame, text="Làm mới", command=self.show_users)
+        self.refresh_button = tk.Button(self.top_frame, text="Làm mới", command=self.refresh_emails)
         self.refresh_button.pack(side=tk.LEFT, padx=10, pady=10)
 
         # Create the left frame for navigation and settings/chat
@@ -116,6 +119,23 @@ class MailView:
     def show_users(self):
         users = self.mail_controller.fetch_all_users()
         self.display_users(users)
+
+    def refresh_users(self):
+        self.show_users()
+
+    def refresh_emails(self):
+        self.show_users()
+        selected_user = self.user_listbox.get(tk.ACTIVE)
+        if selected_user:
+            emails = self.mail_controller.fetch_emails_by_user(selected_user)
+            self.display_user_emails(emails)
+
+    def display_all_emails(self, emails):
+        for item in self.user_details_tree.get_children():
+            self.user_details_tree.delete(item)
+        for email in emails:
+            date_sent = email['timestamp'].strftime('%d-%m-%Y %H:%M') if isinstance(email['timestamp'], datetime) else datetime.strptime(email['timestamp'], '%Y-%m-%d %H:%M:%S').strftime('%d-%m-%Y %H:%M')
+            self.user_details_tree.insert("", "end", values=(email['sender'], email['recipients'], email['subject'], date_sent, email['body']))
 
     def display_users(self, users):
         self.user_listbox.delete(0, tk.END)

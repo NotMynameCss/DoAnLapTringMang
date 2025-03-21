@@ -127,7 +127,7 @@ class AuthView:
         if response == "Đăng nhập thành công":
             messagebox.showinfo("Đăng nhập", "Đăng nhập thành công")
             self.clear_window()
-            MailView(self.root)  # Switch to MailView
+            MailView(self.root, username)  # Switch to MailView with username
         else:
             messagebox.showerror("Đăng nhập", response)
 

@@ -43,16 +43,10 @@ class MailController:
         if self.connection is None:
             return "Lỗi kết nối đến database"
         try:
-            cursor = self.connection.cursor()
+            cursor = self.connection.cursor(dictionary=True)
             cursor.execute("SELECT * FROM emails")
             emails = cursor.fetchall()
-            grouped_emails = {}
-            for email in emails:
-                group_key = f"{email[1]} - {email[2]}"
-                if group_key not in grouped_emails:
-                    grouped_emails[group_key] = []
-                grouped_emails[group_key].append(f"From: {email[1]}, To: {email[2]}, Subject: {email[5]}")
-            return grouped_emails
+            return emails
         except Error as e:
             return f"Lỗi khi truy xuất email: {e}"
 
@@ -80,3 +74,6 @@ class MailController:
             return emails
         except Error as e:
             return f"Lỗi khi truy xuất email: {e}"
+
+    def refresh_emails(self):
+        return self.fetch_all_emails()

@@ -17,3 +17,6 @@ class MainView:
 
     def set_controller(self, controller):
         self.auth_view.set_controller(controller)
+
+    def refresh_emails(self):
+        self.mail_controller.refresh_emails()

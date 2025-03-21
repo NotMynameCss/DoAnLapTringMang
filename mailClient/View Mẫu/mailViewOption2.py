@@ -1,11 +1,10 @@
 import sys
 import os
-import threading
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from CONTROLLER.mailController import MailController
 import tkinter as tk
 from tkinter import ttk, messagebox
-from VIEW.mailSendView import MailSendView
+
 
 class MailView:
     def __init__(self, root, username):
@@ -21,20 +20,20 @@ class MailView:
         self.main_frame = tk.Frame(self.root, bg="white")
         self.main_frame.pack(fill=tk.BOTH, expand=True)
 
-        # Create the toolbar frame
-        self.toolbar_frame = tk.Frame(self.main_frame, bg="white")
-        self.toolbar_frame.pack(side=tk.TOP, fill=tk.X)
+        # Create the top frame for search bar and new email button
+        self.top_frame = tk.Frame(self.main_frame, bg="white")
+        self.top_frame.pack(side=tk.TOP, fill=tk.X)
 
-        self.compose_button = tk.Button(self.toolbar_frame, text="Soạn Thư", command=self.compose_email)
+        self.compose_button = tk.Button(self.top_frame, text="Soạn Thư", command=self.compose_email)
         self.compose_button.pack(side=tk.LEFT, padx=10, pady=10)
 
-        self.search_entry = tk.Entry(self.toolbar_frame, width=50)
+        self.search_entry = tk.Entry(self.top_frame, width=50)
         self.search_entry.pack(side=tk.LEFT, padx=10, pady=10)
 
-        self.search_button = tk.Button(self.toolbar_frame, text="Tìm Kiếm", command=self.search_email)
+        self.search_button = tk.Button(self.top_frame, text="Tìm Kiếm", command=self.search_email)
         self.search_button.pack(side=tk.LEFT, padx=10, pady=10)
 
-        self.refresh_button = tk.Button(self.toolbar_frame, text="Làm mới", command=self.refresh_emails)
+        self.refresh_button = tk.Button(self.top_frame, text="Làm mới", command=self.show_emails)
         self.refresh_button.pack(side=tk.LEFT, padx=10, pady=10)
 
         # Create the left frame for navigation and settings/chat
@@ -84,22 +83,27 @@ class MailView:
         self.email_details_tree.column("Date", width=100)
         self.email_details_tree.column("Body", width=300)
 
+        # Create the bottom frame for status bar
+        self.status_frame = tk.Frame(self.main_frame, bg="white")
+        self.status_frame.pack(side=tk.BOTTOM, fill=tk.X)
+
+        self.status_label = tk.Label(self.status_frame, text="Ready", bg="white")
+        self.status_label.pack(side=tk.LEFT, padx=10, pady=10)
+
         # Load and display emails on startup
         self.show_emails()
 
     def compose_email(self):
-        # Open the MailSendView window
-        new_window = tk.Toplevel(self.root)
-        MailSendView(new_window, self.username)
+        messagebox.showinfo("Compose Email", "Compose Email clicked")
 
     def search_email(self):
         messagebox.showinfo("Search Email", "Search Email clicked")
 
     def show_inbox(self):
-        threading.Thread(target=self.fetch_and_display_emails, args=("inbox",)).start()
+        messagebox.showinfo("Inbox", "Inbox clicked")
 
     def show_sent(self):
-        threading.Thread(target=self.fetch_and_display_emails, args=("sent",)).start()
+        messagebox.showinfo("Sent", "Sent clicked")
 
     def show_drafts(self):
         messagebox.showinfo("Drafts", "Drafts clicked")
@@ -117,13 +121,7 @@ class MailView:
         messagebox.showinfo("Chat/Meet", "Chat/Meet clicked")
 
     def show_emails(self):
-        threading.Thread(target=self.fetch_and_display_emails, args=("inbox",)).start()
-
-    def refresh_emails(self):
-        threading.Thread(target=self.fetch_and_display_emails, args=("inbox",)).start()
-
-    def fetch_and_display_emails(self, email_type):
-        emails = self.mail_controller.fetch_emails(email_type)
+        emails = self.mail_controller.fetch_emails("inbox")
         self.display_emails(emails)
 
     def display_emails(self, emails):
