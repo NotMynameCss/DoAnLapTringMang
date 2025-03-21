@@ -29,26 +29,27 @@ class MailController:
         if self.connection is None:
             return "Lỗi kết nối đến database"
         try:
-            cursor = self.connection.cursor()
+            cursor = self.connection.cursor(dictionary=True)
             if email_type == "inbox":
                 cursor.execute("SELECT * FROM emails WHERE recipients LIKE %s", ("%client@example.com%",))
             elif email_type == "sent":
                 cursor.execute("SELECT * FROM emails WHERE sender = %s", ("client@example.com",))
             emails = cursor.fetchall()
-            return "\n".join([f"From: {email[1]}, To: {email[2]}, Subject: {email[5]}" for email in emails])
+            return emails
         except Error as e:
             return f"Lỗi khi truy xuất email: {e}"
 
     def fetch_all_emails(self):
         if self.connection is None:
-            return "Lỗi kết nối đến database"
+            return []
         try:
             cursor = self.connection.cursor(dictionary=True)
             cursor.execute("SELECT * FROM emails")
             emails = cursor.fetchall()
             return emails
         except Error as e:
-            return f"Lỗi khi truy xuất email: {e}"
+            print(f"Lỗi khi truy xuất email: {e}")
+            return []
 
     def fetch_all_users(self):
         if self.connection is None:
@@ -74,6 +75,53 @@ class MailController:
             return emails
         except Error as e:
             return f"Lỗi khi truy xuất email: {e}"
+
+    def fetch_emails_by_user(self, username, email_type="inbox"):
+        if self.connection is None:
+            return "Lỗi kết nối đến database"
+        try:
+            cursor = self.connection.cursor(dictionary=True)
+            if email_type == "inbox":
+                cursor.execute("""
+                    SELECT * FROM emails 
+                    WHERE recipients LIKE %s OR cc LIKE %s OR bcc LIKE %s
+                """, (f"%{username}%", f"%{username}%", f"%{username}%"))
+            elif email_type == "sent":
+                cursor.execute("SELECT * FROM emails WHERE sender = %s", (username,))
+            emails = cursor.fetchall()
+            return emails
+        except Error as e:
+            return f"Lỗi khi truy xuất email: {e}"
+
+    def fetch_all_emails_by_user(self, username):
+        if self.connection is None:
+            return []
+        try:
+            cursor = self.connection.cursor(dictionary=True)
+            cursor.execute("""
+                SELECT * FROM emails 
+                WHERE sender = %s OR recipients LIKE %s OR cc LIKE %s OR bcc LIKE %s
+            """, (username, f"%{username}%", f"%{username}%", f"%{username}%"))
+            emails = cursor.fetchall()
+            return emails
+        except Error as e:
+            print(f"Lỗi khi truy xuất email: {e}")
+            return []
+
+    def search_emails(self, query):
+        if self.connection is None:
+            return []
+        try:
+            cursor = self.connection.cursor(dictionary=True)
+            cursor.execute("""
+                SELECT * FROM emails 
+                WHERE subject LIKE %s OR body LIKE %s
+            """, (f"%{query}%", f"%{query}%"))
+            emails = cursor.fetchall()
+            return emails
+        except Error as e:
+            print(f"Lỗi khi tìm kiếm email: {e}")
+            return []
 
     def refresh_emails(self):
         return self.fetch_all_emails()

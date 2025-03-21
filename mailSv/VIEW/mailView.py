@@ -1,10 +1,10 @@
+import datetime
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from CONTROLLER.mailController import MailController
 import tkinter as tk
 from tkinter import ttk, messagebox
-from datetime import datetime
 
 class MailView:
     def __init__(self, root):
@@ -39,29 +39,26 @@ class MailView:
         self.left_frame = tk.Frame(self.main_frame, bg="white")
         self.left_frame.pack(side=tk.LEFT, fill=tk.Y)
 
-        self.nav_frame = tk.Frame(self.left_frame, bg="white")
-        self.nav_frame.grid(row=0, column=0, sticky="nsew")
+        self.inbox_button = tk.Button(self.left_frame, text="Hộp thư đến", command=self.show_inbox)
+        self.inbox_button.pack(fill=tk.X, padx=10, pady=5)
 
-        self.inbox_button = tk.Button(self.nav_frame, text="Hộp thư đến", command=self.show_inbox)
-        self.inbox_button.grid(row=0, column=0, padx=10, pady=5, sticky="ew")
+        self.sent_button = tk.Button(self.left_frame, text="Đã gửi", command=self.show_sent)
+        self.sent_button.pack(fill=tk.X, padx=10, pady=5)
 
-        self.sent_button = tk.Button(self.nav_frame, text="Đã gửi", command=self.show_sent)
-        self.sent_button.grid(row=1, column=0, padx=10, pady=5, sticky="ew")
+        self.drafts_button = tk.Button(self.left_frame, text="Thư nháp", command=self.show_drafts)
+        self.drafts_button.pack(fill=tk.X, padx=10, pady=5)
 
-        self.drafts_button = tk.Button(self.nav_frame, text="Thư nháp", command=self.show_drafts)
-        self.drafts_button.grid(row=2, column=0, padx=10, pady=5, sticky="ew")
+        self.trash_button = tk.Button(self.left_frame, text="Thùng rác", command=self.show_trash)
+        self.trash_button.pack(fill=tk.X, padx=10, pady=5)
 
-        self.trash_button = tk.Button(self.nav_frame, text="Thùng rác", command=self.show_trash)
-        self.trash_button.grid(row=3, column=0, padx=10, pady=5, sticky="ew")
+        self.labels_button = tk.Button(self.left_frame, text="Nhãn", command=self.show_labels)
+        self.labels_button.pack(fill=tk.X, padx=10, pady=5)
 
-        self.labels_button = tk.Button(self.nav_frame, text="Nhãn", command=self.show_labels)
-        self.labels_button.grid(row=4, column=0, padx=10, pady=5, sticky="ew")
+        self.settings_button = tk.Button(self.left_frame, text="Cài đặt", command=self.show_settings)
+        self.settings_button.pack(fill=tk.X, padx=10, pady=5)
 
-        self.settings_button = tk.Button(self.nav_frame, text="Cài đặt", command=self.show_settings)
-        self.settings_button.grid(row=5, column=0, padx=10, pady=5, sticky="ew")
-
-        self.chat_button = tk.Button(self.nav_frame, text="Chat/Meet", command=self.show_chat)
-        self.chat_button.grid(row=6, column=0, padx=10, pady=5, sticky="ew")
+        self.chat_button = tk.Button(self.left_frame, text="Chat/Meet", command=self.show_chat)
+        self.chat_button.pack(fill=tk.X, padx=10, pady=5)
 
         # Create the right frame for user list and details
         self.right_frame = tk.Frame(self.main_frame, bg="white")
@@ -90,51 +87,52 @@ class MailView:
         self.show_users()
 
     def compose_email(self):
-        messagebox.showinfo("Compose Email", "Compose Email clicked")
+        messagebox.showinfo("Soạn Thư", "Chức năng soạn thư chưa được triển khai")
 
     def search_email(self):
-        messagebox.showinfo("Search Email", "Search Email clicked")
+        query = self.search_entry.get()
+        emails = self.mail_controller.search_emails(query)
+        self.display_emails(emails)
 
     def show_inbox(self):
-        messagebox.showinfo("Inbox", "Inbox clicked")
+        emails = self.mail_controller.fetch_emails("inbox")
+        self.display_emails(emails)
 
     def show_sent(self):
-        messagebox.showinfo("Sent", "Sent clicked")
+        emails = self.mail_controller.fetch_emails("sent")
+        self.display_emails(emails)
 
     def show_drafts(self):
-        messagebox.showinfo("Drafts", "Drafts clicked")
+        messagebox.showinfo("Thư nháp", "Chức năng thư nháp chưa được triển khai")
 
     def show_trash(self):
-        messagebox.showinfo("Trash", "Trash clicked")
+        messagebox.showinfo("Thùng rác", "Chức năng thùng rác chưa được triển khai")
 
     def show_labels(self):
-        messagebox.showinfo("Labels", "Labels clicked")
+        messagebox.showinfo("Nhãn", "Chức năng nhãn chưa được triển khai")
 
     def show_settings(self):
-        messagebox.showinfo("Settings", "Settings clicked")
+        messagebox.showinfo("Cài đặt", "Chức năng cài đặt chưa được triển khai")
 
     def show_chat(self):
-        messagebox.showinfo("Chat/Meet", "Chat/Meet clicked")
+        messagebox.showinfo("Chat/Meet", "Chức năng Chat/Meet chưa được triển khai")
 
     def show_users(self):
         users = self.mail_controller.fetch_all_users()
         self.display_users(users)
 
-    def refresh_users(self):
-        self.show_users()
-
     def refresh_emails(self):
-        self.show_users()
-        selected_user = self.user_listbox.get(tk.ACTIVE)
-        if selected_user:
-            emails = self.mail_controller.fetch_emails_by_user(selected_user)
-            self.display_user_emails(emails)
+        emails = self.mail_controller.fetch_all_emails()
+        self.display_emails(emails)
 
-    def display_all_emails(self, emails):
+    def display_emails(self, emails):
         for item in self.user_details_tree.get_children():
             self.user_details_tree.delete(item)
         for email in emails:
-            date_sent = email['timestamp'].strftime('%d-%m-%Y %H:%M') if isinstance(email['timestamp'], datetime) else datetime.strptime(email['timestamp'], '%Y-%m-%d %H:%M:%S').strftime('%d-%m-%Y %H:%M')
+            if isinstance(email['timestamp'], datetime.datetime):
+                date_sent = email['timestamp'].strftime('%d-%m-%Y %H:%M')
+            else:
+                date_sent = datetime.datetime.strptime(email['timestamp'], '%Y-%m-%d %H:%M:%S').strftime('%d-%m-%Y %H:%M')
             self.user_details_tree.insert("", "end", values=(email['sender'], email['recipients'], email['subject'], date_sent, email['body']))
 
     def display_users(self, users):
@@ -147,20 +145,7 @@ class MailView:
             return
         selected_user = self.user_listbox.get(self.user_listbox.curselection())
         emails = self.mail_controller.fetch_emails_by_user(selected_user)
-        self.display_user_emails(emails)
-
-    def display_user_emails(self, emails):
-        for item in self.user_details_tree.get_children():
-            self.user_details_tree.delete(item)
-        if isinstance(emails, str):
-            self.user_details_tree.insert("", "end", values=(emails,))
-        else:
-            for email in emails:
-                if isinstance(email['timestamp'], datetime):
-                    date_sent = email['timestamp'].strftime('%d-%m-%Y %H:%M')
-                else:
-                    date_sent = datetime.strptime(email['timestamp'], '%Y-%m-%d %H:%M:%S').strftime('%d-%m-%Y %H:%M')
-                self.user_details_tree.insert("", "end", values=(email['sender'], email['recipients'], email['subject'], date_sent, email['body']))
+        self.display_emails(emails)
 
     def set_controller(self, controller):
         self.controller = controller

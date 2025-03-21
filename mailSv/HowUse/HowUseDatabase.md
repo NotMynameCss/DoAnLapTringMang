@@ -18,6 +18,8 @@ Thư mục `mailSv` chứa các thành phần liên quan đến cơ sở dữ li
   - `fetch_emails(email_type)`: Truy xuất email dựa trên loại email (inbox, sent).
   - `fetch_all_emails()`: Truy xuất tất cả email từ bảng `emails`.
   - `fetch_all_users()`: Truy xuất tất cả người dùng từ bảng `users`.
+  - `fetch_emails_by_user(username)`: Truy xuất email dựa trên tên người dùng.
+  - `search_emails(query)`: Tìm kiếm email dựa trên từ khóa.
 
 ### 3. `authController.py`
 - **Chức năng**: Thực hiện các thao tác liên quan đến người dùng trên cơ sở dữ liệu.
@@ -37,7 +39,7 @@ Thư mục `mailSv` chứa các thành phần liên quan đến cơ sở dữ li
    - `AuthController` chứa hàm `verify_table_exists()` để kiểm tra và tạo bảng `users` nếu chưa tồn tại.
 
 3. **Thao tác với bảng `emails`**:
-   - `MailController` chứa các phương thức `send_email()`, `fetch_emails()`, `fetch_all_emails()` để thực hiện các thao tác gửi email và truy xuất email từ bảng `emails`.
+   - `MailController` chứa các phương thức `send_email()`, `fetch_emails()`, `fetch_all_emails()`, `fetch_emails_by_user()`, `search_emails()` để thực hiện các thao tác gửi email và truy xuất email từ bảng `emails`.
 
 4. **Thao tác với bảng `users`**:
    - `AuthController` chứa các phương thức `login()`, `register()` để thực hiện các thao tác đăng nhập và đăng ký người dùng.

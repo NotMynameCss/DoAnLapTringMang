@@ -1,12 +1,12 @@
-# Hướng dẫn sử dụng giao diện trong thư mục `mailSv`
+# Hướng dẫn sử dụng giao diện trong thư mục `mailClient`
 
 ## Tổng quan
-Thư mục `mailSv` chứa các thành phần giao diện của ứng dụng Mail Server. Giao diện được xây dựng bằng thư viện Tkinter của Python và tuân theo mô hình MVC (Model-View-Controller).
+Thư mục `mailClient` chứa các thành phần giao diện của ứng dụng Mail Client. Giao diện được xây dựng bằng thư viện Tkinter của Python và tuân theo mô hình MVC (Model-View-Controller).
 
 ## Các thành phần chính
 
 ### 1. `mainView.py`
-- Đây là giao diện chính của ứng dụng Mail Server.
+- Đây là giao diện chính của ứng dụng Mail Client.
 - Khi khởi động, nó sẽ hiển thị màn hình đăng nhập/đăng ký (`AuthView`).
 
 ### 2. `authView.py`
@@ -20,7 +20,7 @@ Thư mục `mailSv` chứa các thành phần giao diện của ứng dụng Mai
   - **Khung chính** (`main_frame`): Chứa toàn bộ giao diện.
   - **Khung trên cùng** (`top_frame`): Chứa thanh tìm kiếm và nút soạn thư mới.
   - **Khung bên trái** (`left_frame`): Chứa các nút điều hướng như Hộp thư đến, Đã gửi, Thư nháp, Thùng rác, Nhãn.
-  - **Khung bên phải** (`right_frame`): Hiển thị danh sách người dùng và chi tiết người dùng.
+  - **Khung bên phải** (`right_frame`): Hiển thị danh sách email và chi tiết email.
 
 ### 4. `mailSendView.py`
 - Giao diện soạn email mới.
@@ -52,19 +52,18 @@ Thư mục `mailSv` chứa các thành phần giao diện của ứng dụng Mai
   - **Nút Chat/Meet** (`chat_button`): Khi nhấn vào, sẽ gọi hàm `show_chat` để hiển thị chức năng Chat/Meet.
 
 ### Khung bên phải (`right_frame`)
-- Hiển thị danh sách người dùng và chi tiết người dùng.
+- Hiển thị danh sách email và chi tiết email.
 - Các thành phần:
-  - **Danh sách người dùng** (`user_listbox`): Hiển thị danh sách tất cả người dùng từ cơ sở dữ liệu.
-  - **Chi tiết người dùng** (`user_details_tree`): Hiển thị chi tiết thông tin người dùng khi được chọn từ danh sách.
+  - **Danh sách email** (`email_details_tree`): Hiển thị danh sách tất cả email từ cơ sở dữ liệu.
 
 ### Cách hoạt động của `mailView.py`
 
 1. **Khởi tạo giao diện**:
    - Khi khởi tạo, `MailView` sẽ thiết lập các khung và các thành phần giao diện.
-   - Gọi hàm `show_users` để hiển thị danh sách người dùng từ cơ sở dữ liệu.
+   - Gọi hàm `show_emails` để hiển thị danh sách email từ cơ sở dữ liệu.
 
 2. **Soạn email mới**:
-   - Khi nhấn nút Soạn Thư, hàm `compose_email` sẽ được gọi và hiển thị thông báo rằng chức năng chưa được triển khai.
+   - Khi nhấn nút Soạn Thư, hàm `compose_email` sẽ được gọi để mở giao diện soạn email mới (`MailSendView`).
 
 3. **Tìm kiếm email**:
    - Khi nhấn nút Tìm Kiếm, hàm `search_email` sẽ được gọi để tìm kiếm email dựa trên từ khóa nhập vào ô tìm kiếm.
@@ -78,14 +77,11 @@ Thư mục `mailSv` chứa các thành phần giao diện của ứng dụng Mai
 6. **Làm mới danh sách email**:
    - Khi nhấn nút Làm mới, hàm `refresh_emails` sẽ được gọi để làm mới danh sách email.
 
-7. **Hiển thị danh sách người dùng**:
-   - Hàm `show_users` sẽ được gọi khi khởi tạo giao diện để hiển thị danh sách người dùng từ cơ sở dữ liệu.
-
-8. **Hiển thị chi tiết người dùng**:
-   - Khi chọn một người dùng từ danh sách, hàm `on_user_select` sẽ được gọi để hiển thị chi tiết email của người dùng đó.
+7. **Hiển thị danh sách email**:
+   - Hàm `show_emails` sẽ được gọi khi khởi tạo giao diện để hiển thị danh sách email từ cơ sở dữ liệu.
 
 ## Lưu ý
 - Các thông báo và lỗi sẽ được hiển thị bằng tiếng Việt để dễ hiểu.
 - Mọi thao tác và sự kiện đều được xử lý thông qua các controller tương ứng.
 
-Hy vọng tài liệu này sẽ giúp bạn hiểu rõ hơn về cách hoạt động của giao diện trong thư mục `mailSv`.
+Hy vọng tài liệu này sẽ giúp bạn hiểu rõ hơn về cách hoạt động của giao diện trong thư mục `mailClient`.

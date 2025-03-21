@@ -1,6 +1,7 @@
 import sys
 import os
 import threading
+from datetime import datetime
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from CONTROLLER.mailController import MailController
 import tkinter as tk
@@ -117,20 +118,25 @@ class MailView:
         messagebox.showinfo("Chat/Meet", "Chat/Meet clicked")
 
     def show_emails(self):
-        threading.Thread(target=self.fetch_and_display_emails, args=("inbox",)).start()
+        threading.Thread(target=self.fetch_and_display_all_emails).start()
 
     def refresh_emails(self):
         threading.Thread(target=self.fetch_and_display_emails, args=("inbox",)).start()
 
     def fetch_and_display_emails(self, email_type):
-        emails = self.mail_controller.fetch_emails(email_type)
+        emails = self.mail_controller.fetch_emails(self.username, email_type)
+        self.display_emails(emails)
+
+    def fetch_and_display_all_emails(self):
+        emails = self.mail_controller.fetch_all_emails(self.username)
         self.display_emails(emails)
 
     def display_emails(self, emails):
         for item in self.email_details_tree.get_children():
             self.email_details_tree.delete(item)
-        for email in emails.split('\n'):
-            self.email_details_tree.insert("", "end", values=(email,))
+        for email in emails:
+            date_sent = email['timestamp'].strftime('%d-%m-%Y %H:%M') if isinstance(email['timestamp'], datetime) else datetime.strptime(email['timestamp'], '%Y-%m-%dT%H:%M:%S').strftime('%d-%m-%Y %H:%M')
+            self.email_details_tree.insert("", "end", values=(email['sender'], email['recipients'], email['subject'], date_sent, email['body']))
 
     def set_controller(self, controller):
         self.controller = controller

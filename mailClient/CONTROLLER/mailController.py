@@ -1,4 +1,5 @@
 import socket
+import json
 
 class MailController:
     def __init__(self, view):
@@ -20,7 +21,22 @@ class MailController:
         response = self.send_request(message)
         return response
 
-    def fetch_emails(self, email_type):
-        message = f"FETCH_EMAILS|{email_type}"
+    def fetch_emails(self, username, email_type):
+        message = f"FETCH_EMAILS|{username}|{email_type}"
         response = self.send_request(message)
-        return response
+        try:
+            emails = json.loads(response) if response else []
+        except json.JSONDecodeError as e:
+            print(f"Lỗi khi phân tích cú pháp email: {e}")
+            emails = []
+        return emails
+
+    def fetch_all_emails(self, username):
+        message = f"FETCH_ALL_EMAILS|{username}"
+        response = self.send_request(message)
+        try:
+            emails = json.loads(response) if response else []
+        except json.JSONDecodeError as e:
+            print(f"Lỗi khi phân tích cú pháp email: {e}")
+            emails = []
+        return emails

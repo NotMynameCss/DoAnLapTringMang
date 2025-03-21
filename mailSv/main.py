@@ -6,9 +6,18 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import socket
 import threading
 import tkinter as tk
+import json
 from VIEW.mainView import MainView
 from CONTROLLER.mainController import MainController
 from CONTROLLER.mailController import MailController
+import datetime
+
+# Custom JSON encoder to handle datetime objects
+class DateTimeEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime.datetime):
+            return obj.isoformat()
+        return super(DateTimeEncoder, self).default(obj)
 
 # Cấu hình máy chủ
 HOST = 'localhost'
@@ -35,10 +44,15 @@ def handle_client(client_socket, main_controller, mail_controller):
                 _, sender, recipients, cc, bcc, subject, body, attachments = message.split('|')
                 response = mail_controller.send_email(sender, recipients, cc, bcc, subject, body, attachments)
             elif message.startswith("FETCH_EMAILS"):
-                _, email_type = message.split('|')
-                response = mail_controller.fetch_emails(email_type)
+                _, username, email_type = message.split('|')
+                response = mail_controller.fetch_emails_by_user(username, email_type)
             elif message.startswith("FETCH_ALL_EMAILS"):
-                response = mail_controller.fetch_all_emails()
+                if '|' in message:
+                    _, username = message.split('|')
+                    emails = mail_controller.fetch_all_emails_by_user(username)
+                else:
+                    emails = mail_controller.fetch_all_emails()
+                response = json.dumps(emails, cls=DateTimeEncoder) if emails else "[]"
             elif message.startswith("FETCH_ALL_USERS"):
                 response = mail_controller.fetch_all_users()
             else:
