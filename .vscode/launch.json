@@ -1,0 +1,11 @@
+{
+    "configurations": [
+      {
+        "type": "debugpy",
+        "request": "launch",
+        "name": "Launch mailSv",
+        "program": "${workspaceFolder}/mailSv/main.py",
+        "console": "integratedTerminal"
+      }
+    ]
+  }

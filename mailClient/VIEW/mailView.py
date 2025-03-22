@@ -16,7 +16,7 @@ class MailView:
         self.root.geometry("1024x768")
         self.root.configure(background="white")
 
-        self.mail_controller = MailController(self)
+        self.mail_controller = MailController(self.username)
 
         # Create the main frame
         self.main_frame = tk.Frame(self.root, bg="white")
@@ -124,11 +124,11 @@ class MailView:
         threading.Thread(target=self.fetch_and_display_emails, args=("inbox",)).start()
 
     def fetch_and_display_emails(self, email_type):
-        emails = self.mail_controller.fetch_emails(self.username, email_type)
+        emails = self.mail_controller.fetch_emails(email_type)
         self.display_emails(emails)
 
     def fetch_and_display_all_emails(self):
-        emails = self.mail_controller.fetch_all_emails(self.username)
+        emails = self.mail_controller.fetch_all_emails()
         self.display_emails(emails)
 
     def display_emails(self, emails):

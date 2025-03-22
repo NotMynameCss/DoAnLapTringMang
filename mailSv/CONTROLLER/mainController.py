@@ -1,5 +1,4 @@
-from mailSv.CONTROLLER.authController import AuthController
-
+from CONTROLLER.authController import AuthController
 
 class MainController:
     def __init__(self, view):

@@ -3,6 +3,16 @@
 ## Tổng quan
 Thư mục `mailSv` chứa các thành phần Controller của ứng dụng Mail Server. Các Controller chịu trách nhiệm xử lý logic nghiệp vụ và tương tác với cơ sở dữ liệu. Dưới đây là mô tả chi tiết về các Controller chính trong thư mục này.
 
+## Công nghệ sử dụng
+- **Python 3.11.9**: Ngôn ngữ lập trình chính.
+- **Windows 10 64-bit**: Hệ điều hành phát triển và chạy ứng dụng.
+- **XAMPP (xampp-windows-x64-8.2.12-0)**: Quản lý cơ sở dữ liệu.
+- **Giao thức TCP/IP**: Kết nối client-server.
+- **Loguru 0.7.3**: Ghi log.
+- **SqlAlchemy 2.0.39**: ORM để tương tác với cơ sở dữ liệu.
+- **pydantic 2.10.6**: Xác thực dữ liệu.
+- **twisted 24.11.0**: Xử lý kết nối mạng không đồng bộ.
+
 ## Các thành phần chính
 
 ### 1. `mainController.py`
@@ -28,6 +38,12 @@ Thư mục `mailSv` chứa các thành phần Controller của ứng dụng Mail
   - `fetch_all_users()`: Truy xuất tất cả người dùng từ cơ sở dữ liệu.
   - `fetch_emails_by_user(username)`: Truy xuất email dựa trên tên người dùng.
   - `refresh_emails()`: Làm mới danh sách email.
+
+## Nguyên tắc thiết kế
+- **Tách biệt mối quan tâm (Separation of Concerns - SoC)**: Tách biệt rõ ràng giữa lớp trình diễn và lớp logic kinh doanh.
+- **Nguyên tắc đơn nhiệm (Single Responsibility Principle - SRP)**: Mỗi lớp chỉ thực hiện một nhiệm vụ duy nhất.
+- **Nguyên tắc đảo ngược phụ thuộc (Dependency Inversion Principle - DIP)**: Sử dụng các giao diện và các lớp trừu tượng để giảm thiểu sự phụ thuộc.
+- **Mẫu thiết kế MVC (Model-View-Controller)**: Áp dụng mẫu thiết kế MVC để tách biệt rõ ràng giữa các lớp.
 
 ## Cách sử dụng `mailController`
 

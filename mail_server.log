@@ -1,0 +1,69 @@
+2025-03-22 17:19:48.745 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 17:19:48.749 | INFO     | __main__:start_server:91 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-22 17:19:58.425 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 17:19:58.439 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-22 17:19:59.696 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 17:19:59.714 | INFO     | CONTROLLER.mailController:fetch_all_users:73 - Truy xuất 6 người dùng
+2025-03-22 17:20:01.714 | INFO     | CONTROLLER.mailController:fetch_emails:49 - Truy xuất 0 email loại inbox
+2025-03-22 17:20:02.664 | INFO     | CONTROLLER.mailController:fetch_emails:49 - Truy xuất 0 email loại inbox
+2025-03-22 17:20:03.529 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:92 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 17:20:04.544 | INFO     | CONTROLLER.mailController:fetch_emails:49 - Truy xuất 0 email loại inbox
+2025-03-22 17:20:05.512 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:92 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 17:20:07.768 | INFO     | CONTROLLER.mailController:fetch_emails:49 - Truy xuất 0 email loại inbox
+2025-03-22 17:20:09.072 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:92 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:19:00.129 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 18:19:00.133 | INFO     | __main__:start_server:91 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-22 18:19:02.729 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 18:19:02.743 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-22 18:19:03.813 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 18:19:03.828 | INFO     | CONTROLLER.mailController:fetch_all_users:73 - Truy xuất 6 người dùng
+2025-03-22 18:19:04.795 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:92 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:19:06.120 | INFO     | CONTROLLER.mailController:fetch_emails:49 - Truy xuất 0 email loại inbox
+2025-03-22 18:37:26.490 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 18:37:26.494 | INFO     | __main__:start_server:91 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-22 18:37:29.170 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 18:37:29.182 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-22 18:37:30.195 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 18:37:30.218 | INFO     | CONTROLLER.mailController:fetch_all_users:69 - Truy xuất 6 người dùng
+2025-03-22 18:37:31.920 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:37:33.221 | INFO     | CONTROLLER.mailController:fetch_emails:45 - Truy xuất 0 email loại inbox
+2025-03-22 18:42:36.321 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 18:42:36.325 | INFO     | __main__:start_server:91 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-22 18:42:39.202 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 18:42:39.210 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-22 18:42:40.276 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 18:42:40.288 | INFO     | CONTROLLER.mailController:fetch_all_users:69 - Truy xuất 6 người dùng
+2025-03-22 18:42:41.446 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:42:42.403 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:42:54.595 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:42:55.115 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:42:55.299 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:42:55.468 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:42:56.243 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 0 email loại inbox của người dùng 2
+2025-03-22 18:42:56.755 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:42:57.803 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:42:57.987 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:42:58.155 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:43:06.875 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:43:08.323 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:88 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-22 18:50:57.034 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 18:50:57.037 | INFO     | __main__:start_server:91 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-22 18:50:59.392 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 18:50:59.401 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-22 18:51:00.455 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-22 18:51:00.476 | INFO     | CONTROLLER.mailController:fetch_all_users:66 - Truy xuất 6 người dùng
+2025-03-22 18:51:01.645 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-22 18:51:07.002 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-22 18:51:07.850 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-22 18:51:08.026 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-22 18:51:08.161 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-22 18:51:08.826 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-22 18:51:09.289 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-22 18:51:10.258 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-22 18:51:10.786 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 0 email loại inbox của người dùng 13
+2025-03-22 18:51:11.217 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 0 email loại inbox của người dùng 2
+2025-03-22 18:51:11.898 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-22 18:51:12.794 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-22 18:51:12.962 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-22 18:51:13.122 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-22 18:51:13.290 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1

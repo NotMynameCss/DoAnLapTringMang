@@ -1,19 +1,7 @@
-# Phân tích và thiết kế hệ thống mail sử dụng TCP/IP
+# Bước 2: Phân tích hệ thống mailServer
 
 ## Tổng quan
-Hệ thống mail sử dụng giao thức TCP/IP để truyền tải dữ liệu giữa máy chủ và máy khách. Hệ thống này tuân theo mô hình MVC (Model-View-Controller) để tách biệt các thành phần giao diện, logic nghiệp vụ và dữ liệu.
-
-## Kiến trúc hệ thống
-
-### 1. Giao thức TCP/IP
-- **TCP/IP** (Transmission Control Protocol/Internet Protocol) là một bộ giao thức truyền thông được sử dụng để kết nối các thiết bị mạng trên Internet.
-- **TCP** đảm bảo dữ liệu được truyền tải một cách đáng tin cậy và theo thứ tự.
-- **IP** chịu trách nhiệm định tuyến các gói dữ liệu đến đúng địa chỉ đích.
-
-### 2. Mô hình MVC
-- **Model**: Quản lý dữ liệu và logic nghiệp vụ của ứng dụng.
-- **View**: Quản lý giao diện người dùng và hiển thị dữ liệu.
-- **Controller**: Xử lý các yêu cầu từ người dùng, tương tác với Model và cập nhật View.
+Phân tích hệ thống là bước tiếp theo sau khi thu thập và phân tích yêu cầu. Mục tiêu của bước này là xác định các thành phần chính của hệ thống và cách chúng tương tác với nhau.
 
 ## Các thành phần chính
 
@@ -85,8 +73,5 @@ Hệ thống mail sử dụng giao thức TCP/IP để truyền tải dữ liệ
         |                        |                        |
 ```
 
-## Lưu ý
-- Các thông báo và lỗi sẽ được hiển thị bằng tiếng Việt để dễ hiểu.
-- Mọi thao tác và sự kiện đều được xử lý thông qua các controller tương ứng.
-
-Hy vọng tài liệu này sẽ giúp bạn hiểu rõ hơn về cách hoạt động của hệ thống mail sử dụng TCP/IP.
+## Kết luận
+Phân tích hệ thống giúp xác định các thành phần chính và quy trình hoạt động của hệ thống mailServer. Điều này giúp đảm bảo rằng hệ thống được thiết kế và triển khai một cách hiệu quả và đáp ứng được các yêu cầu của người dùng.

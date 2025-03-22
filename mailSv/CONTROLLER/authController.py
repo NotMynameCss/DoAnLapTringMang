@@ -1,69 +1,54 @@
-import os
-from MODEL.dbconnector import create_connection
-from mysql.connector import Error
+from sqlalchemy.exc import SQLAlchemyError
+from MODEL.dbconnector import create_connection, User
+from loguru import logger
+from pydantic import ValidationError
+from MODEL.models import UserModel  # Import UserModel from models.py
 
 class AuthController:
     def __init__(self, view):
         self.view = view
         if self.view is not None:
             self.view.set_controller(self)
-        self.connection = create_connection()
-        self.verify_table_exists()
-
-    def verify_table_exists(self):
-        try:
-            cursor = self.connection.cursor()
-            cursor.execute("SHOW TABLES LIKE 'users'")
-            result = cursor.fetchone()
-            if not result:
-                print("Bảng 'users' không tồn tại trong database")
-                cursor.execute("""
-                    CREATE TABLE users (
-                        id INT AUTO_INCREMENT PRIMARY KEY,
-                        username VARCHAR(255) NOT NULL UNIQUE,
-                        password VARCHAR(255) NOT NULL
-                    )
-                """)
-                self.connection.commit()
-                print("Bảng 'users' đã được tạo thành công")
-        except Error as e:
-            print(f"Lỗi khi kiểm tra hoặc tạo bảng 'users': {e}")
+        self.session = create_connection()
 
     def login(self, username, password):
-        if self.connection is None:
+        try:
+            user_data = UserModel(username=username, password=password)
+        except ValidationError as e:
+            logger.error(f"Lỗi xác thực dữ liệu: {e}")
+            return f"Lỗi xác thực dữ liệu: {e}"
+
+        if self.session is None:
             return "Lỗi kết nối đến database"
         try:
-            cursor = self.connection.cursor()
-            cursor.execute("SELECT * FROM users WHERE username = %s AND password = %s", (username, password))
-            user = cursor.fetchone()
+            user = self.session.query(User).filter_by(username=user_data.username, password=user_data.password).first()
             if user:
-                print(f"Đăng nhập thành công cho người dùng: {username}")  
+                logger.info(f"Đăng nhập thành công cho người dùng: {username}")
                 return "Đăng nhập thành công"
-            return "Tên người dùng hoặc mật khẩu không hợp lệ"
-        except Error as e:
+            else:
+                return "Tên người dùng hoặc mật khẩu không hợp lệ"
+        except SQLAlchemyError as e:
+            logger.error(f"Lỗi khi đăng nhập: {e}")
             return f"Lỗi khi đăng nhập: {e}"
 
     def register(self, username, password):
-        if self.connection is None:
+        try:
+            user_data = UserModel(username=username, password=password)
+        except ValidationError as e:
+            logger.error(f"Lỗi xác thực dữ liệu: {e}")
+            return f"Lỗi xác thực dữ liệu: {e}"
+
+        if self.session is None:
             return "Lỗi kết nối đến database"
         try:
-            cursor = self.connection.cursor()
-            cursor.execute("SELECT * FROM users WHERE username = %s", (username,))
-            user = cursor.fetchone()
+            user = self.session.query(User).filter_by(username=user_data.username).first()
             if user:
                 return "Tên người dùng đã tồn tại"
-            cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, password))
-            self.connection.commit()
-            # Verify insertion
-            cursor.execute("SELECT * FROM users WHERE username = %s", (username,))
-            user = cursor.fetchone()
-            if user:
-                print(f"Đăng ký thành công cho người dùng: {username}")  
-                return "Đăng ký thành công"
-            else:
-                return "Lỗi khi xác minh đăng ký"
-        except Error as e:
-            return {
-                "status": "error",
-                "message": f"Lỗi khi đăng ký: {e}"
-            }
+            new_user = User(username=user_data.username, password=user_data.password)
+            self.session.add(new_user)
+            self.session.commit()
+            logger.info(f"Đăng ký thành công cho người dùng: {username}")
+            return "Đăng ký thành công"
+        except SQLAlchemyError as e:
+            logger.error(f"Lỗi khi đăng ký: {e}")
+            return f"Lỗi khi đăng ký: {e}"
