@@ -38,14 +38,6 @@ print(response)
 auth_controller.verify_table_exists()
 ```
 
-## Nguyên tắc thiết kế
-- **Tách biệt mối quan tâm (Separation of Concerns - SoC)**: Tách biệt rõ ràng giữa lớp trình diễn và lớp logic kinh doanh.
-- **Nguyên tắc đơn nhiệm (Single Responsibility Principle - SRP)**: Mỗi lớp chỉ thực hiện một nhiệm vụ duy nhất.
-- **Nguyên tắc đảo ngược phụ thuộc (Dependency Inversion Principle - DIP)**: Sử dụng các giao diện và các lớp trừu tượng để giảm thiểu sự phụ thuộc.
-- **Mẫu thiết kế MVC (Model-View-Controller)**: Áp dụng mẫu thiết kế MVC để tách biệt rõ ràng giữa các lớp.
 
-## Lưu ý
-- Các thông báo và lỗi sẽ được hiển thị bằng tiếng Việt để dễ hiểu.
-- Mọi thao tác và sự kiện đều được xử lý thông qua các controller tương ứng.
 
 Hy vọng tài liệu này sẽ giúp bạn hiểu rõ hơn về cách hoạt động của `authController` trong thư mục `mailSv`.
