@@ -9,13 +9,26 @@ from CONTROLLER.mainController import MainController
 from CONTROLLER.mailController import MailController
 from server import start_server
 import threading
+from twisted.internet import reactor
 
-if __name__ == "__main__":
+def start_tkinter_app():
     root = tk.Tk()
-    main_controller = MainController(MainView(root))
+    main_view = MainView(root)
+    main_controller = MainController(main_view)
     mail_controller = MailController()
 
-    server_thread = threading.Thread(target=start_server, args=(main_controller, mail_controller))
-    server_thread.start()
-
     root.mainloop()
+
+if __name__ == "__main__":
+    # Start the Twisted server in the main thread
+    root = tk.Tk()
+    main_view = MainView(root)
+    main_controller = MainController(main_view)
+    mail_controller = MailController()
+    threading.Thread(target=start_server, args=(main_controller, mail_controller)).start()
+
+    # Start the Tkinter application in the main thread
+    start_tkinter_app()
+
+    # Start the Twisted reactor in the main thread
+    reactor.run()

@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk, Toplevel, Text, messagebox
 from datetime import datetime
+from loguru import logger
 
 class RightFrame(tk.Frame):
     def __init__(self, parent, mail_view):
@@ -11,15 +12,17 @@ class RightFrame(tk.Frame):
         self.user_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=10, pady=10)
         self.user_listbox.bind("<<ListboxSelect>>", self.mail_view.on_user_select)
 
-        self.user_details_tree = ttk.Treeview(self, columns=("From", "To", "Subject", "Date", "Body"), show="headings")
+        self.user_details_tree = ttk.Treeview(self, columns=("ID", "From", "To", "Subject", "Date", "Body"), show="headings")
         self.user_details_tree.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True, padx=10, pady=10)
 
+        self.user_details_tree.heading("ID", text="ID")
         self.user_details_tree.heading("From", text="From")
         self.user_details_tree.heading("To", text="To")
         self.user_details_tree.heading("Subject", text="Subject")
         self.user_details_tree.heading("Date", text="Date")
         self.user_details_tree.heading("Body", text="Body")
 
+        self.user_details_tree.column("ID", width=50)
         self.user_details_tree.column("From", width=100)
         self.user_details_tree.column("To", width=100)
         self.user_details_tree.column("Subject", width=150)
@@ -36,7 +39,7 @@ class RightFrame(tk.Frame):
                 date_sent = email.timestamp.strftime('%d-%m-%Y %H:%M')
             else:
                 date_sent = datetime.strptime(email.timestamp, '%Y-%m-%d %H:%M:%S').strftime('%d-%m-%Y %H:%M')
-            self.user_details_tree.insert("", "end", values=(email.sender, email.recipients, email.subject, date_sent, email.body))
+            self.user_details_tree.insert("", "end", values=(email.id, email.sender, email.recipients, email.subject, date_sent, email.body))
 
     def display_users(self, users):
         self.user_listbox.delete(0, tk.END)
@@ -51,6 +54,7 @@ class RightFrame(tk.Frame):
     def show_email_details(self, event):
         selected_item = self.user_details_tree.selection()[0]
         email_id = self.user_details_tree.item(selected_item, "values")[0]
+        logger.info(f"Selected email ID: {email_id}")
         email_details = self.mail_view.mail_controller.fetch_email_details(email_id)
         if email_details:
             self.open_email_details_window(email_details)

@@ -71,6 +71,7 @@ class FetchMailController:
             return None
         try:
             email_id = int(email_id)  # Ensure email_id is an integer
+            logger.info(f"Fetching details for email ID: {email_id}")
             email = self.session.query(Email).filter_by(id=email_id).first()
             if email:
                 email_details = email.to_dict()

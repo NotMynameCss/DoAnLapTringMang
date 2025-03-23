@@ -3,7 +3,8 @@ from CONTROLLER.authController import AuthController
 class MainController:
     def __init__(self, view):
         self.view = view
-        self.view.set_controller(self)
+        if self.view is not None:
+            self.view.set_controller(self)
 
     def handle_login(self, username, password):
         # Handle login logic

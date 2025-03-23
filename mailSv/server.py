@@ -1,10 +1,10 @@
-import datetime
-import socket
-import threading
 import json
+import datetime
+from twisted.internet import reactor, protocol
+from twisted.protocols.basic import LineReceiver
 from loguru import logger
 from pydantic import ValidationError
-from MODEL.models import EmailModel, RegisterModel, LoginModel  # Import models from models.py
+from MODEL.models import EmailModel, RegisterModel, LoginModel
 from CONTROLLER.mainController import MainController
 from CONTROLLER.mailController import MailController
 
@@ -18,74 +18,74 @@ class DateTimeEncoder(json.JSONEncoder):
             return obj.isoformat()
         return super(DateTimeEncoder, self).default(obj)
 
-def handle_client(client_socket, main_controller, mail_controller):
-    try:
-        while True:
-            message = client_socket.recv(1024).decode('utf-8')
-            if not message:
-                break
-            logger.info(f"Nhận tin nhắn: {message}")
+class MailServerProtocol(LineReceiver):
+    def __init__(self, main_controller, mail_controller):
+        self.main_controller = main_controller
+        self.mail_controller = mail_controller
 
-            if message.startswith("REGISTER"):
-                _, username, password = message.split()
-                try:
-                    data = RegisterModel(username=username, password=password)
-                    response = main_controller.handle_register(data.username, data.password)
-                except ValidationError as e:
-                    logger.error(f"Lỗi xác thực dữ liệu: {e}")
-                    response = f"Lỗi xác thực dữ liệu: {e}"
-            elif message.startswith("LOGIN"):
-                _, username, password = message.split()
-                try:
-                    data = LoginModel(username=username, password=password)
-                    response = main_controller.handle_login(data.username, data.password)
-                except ValidationError as e:
-                    logger.error(f"Lỗi xác thực dữ liệu: {e}")
-                    response = f"Lỗi xác thực dữ liệu: {e}"
-            elif message.startswith("SEND_EMAIL"):
-                _, sender, recipients, cc, bcc, subject, body, attachments = message.split('|')
-                try:
-                    data = EmailModel(sender=sender, recipients=recipients, cc=cc, bcc=bcc, subject=subject, body=body, attachments=attachments)
-                    response = mail_controller.send_email(data.sender, data.recipients, data.cc, data.bcc, data.subject, data.body, data.attachments)
-                except ValidationError as e:
-                    logger.error(f"Lỗi xác thực dữ liệu: {e}")
-                    response = f"Lỗi xác thực dữ liệu: {e}"
-            elif message.startswith("FETCH_EMAILS"):
-                _, username, email_type = message.split('|')
-                emails = mail_controller.fetch_emails_by_user(username, email_type)
-                response = json.dumps([email.to_dict() for email in emails], cls=DateTimeEncoder) if emails else "[]"
-            elif message.startswith("FETCH_ALL_EMAILS"):
-                emails = mail_controller.fetch_all_emails()
-                response = json.dumps([email.to_dict() for email in emails], cls=DateTimeEncoder) if emails else "[]"
-            elif message.startswith("FETCH_ALL_USERS"):
-                response = mail_controller.fetch_all_users()
-            elif message.startswith("REFRESH_EMAILS"):
-                _, username = message.split('|')
-                emails = mail_controller.fetch_emails_by_user(username)
-                response = json.dumps([email.to_dict() for email in emails], cls=DateTimeEncoder) if emails else "[]"
-            else:
-                response = "Lệnh không xác định"
+    def lineReceived(self, line):
+        message = line.decode('utf-8')
+        logger.info(f"Nhận tin nhắn: {message}")
 
-            client_socket.send(response.encode('utf-8'))
-            logger.info(f"Phản hồi gửi đến client: {response}")
-    except Exception as e:
-        logger.error(f"Lỗi: {e}")
-    finally:
-        client_socket.close()
+        if message.startswith("REGISTER"):
+            _, username, password = message.split()
+            try:
+                data = RegisterModel(username=username, password=password)
+                response = self.main_controller.handle_register(data.username, data.password)
+            except ValidationError as e:
+                logger.error(f"Lỗi xác thực dữ liệu: {e}")
+                response = f"Lỗi xác thực dữ liệu: {e}"
+        elif message.startswith("LOGIN"):
+            _, username, password = message.split()
+            try:
+                data = LoginModel(username=username, password=password)
+                response = self.main_controller.handle_login(data.username, data.password)
+            except ValidationError as e:
+                logger.error(f"Lỗi xác thực dữ liệu: {e}")
+                response = f"Lỗi xác thực dữ liệu: {e}"
+        elif message.startswith("SEND_EMAIL"):
+            _, sender, recipients, cc, bcc, subject, body, attachments = message.split('|')
+            try:
+                data = EmailModel(sender=sender, recipients=recipients, cc=cc, bcc=bcc, subject=subject, body=body, attachments=attachments)
+                response = self.mail_controller.send_email(data.sender, data.recipients, data.cc, data.bcc, data.subject, data.body, data.attachments)
+            except ValidationError as e:
+                logger.error(f"Lỗi xác thực dữ liệu: {e}")
+                response = f"Lỗi xác thực dữ liệu: {e}"
+        elif message.startswith("FETCH_EMAILS"):
+            _, username, email_type = message.split('|')
+            emails = self.mail_controller.fetch_emails_by_user(username, email_type)
+            response = json.dumps([email.to_dict() for email in emails], cls=DateTimeEncoder) if emails else "[]"
+        elif message.startswith("FETCH_ALL_EMAILS"):
+            emails = self.mail_controller.fetch_all_emails()
+            response = json.dumps([email.to_dict() for email in emails], cls=DateTimeEncoder) if emails else "[]"
+        elif message.startswith("FETCH_ALL_USERS"):
+            response = self.mail_controller.fetch_all_users()
+        elif message.startswith("REFRESH_EMAILS"):
+            _, username = message.split('|')
+            emails = self.mail_controller.fetch_emails_by_user(username)
+            response = json.dumps([email.to_dict() for email in emails], cls=DateTimeEncoder) if emails else "[]"
+        else:
+            response = "Lệnh không xác định"
+
+        self.sendLine(response.encode('utf-8'))
+        logger.info(f"Phản hồi gửi đến client: {response}")
+
+class MailServerFactory(protocol.Factory):
+    def __init__(self, main_controller, mail_controller):
+        self.main_controller = main_controller
+        self.mail_controller = mail_controller
+
+    def buildProtocol(self, addr):
+        return MailServerProtocol(self.main_controller, self.mail_controller)
 
 def start_server(main_controller, mail_controller):
-    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.bind(('localhost', 65432))
-    server.listen(5)
+    factory = MailServerFactory(main_controller, mail_controller)
+    reactor.listenTCP(65432, factory)
     logger.info("Máy chủ đang lắng nghe trên cổng 65432")
+    # Do not call reactor.run() here, it will be called in the main thread
 
-    try:
-        while True:
-            client_socket, addr = server.accept()
-            logger.info(f"Chấp nhận kết nối từ {addr}")
-            client_handler = threading.Thread(target=handle_client, args=(client_socket, main_controller, mail_controller))
-            client_handler.start()
-    except KeyboardInterrupt:
-        logger.info("Máy chủ đang tắt")
-    finally:
-        server.close()
+if __name__ == "__main__":
+    main_controller = MainController(None)
+    mail_controller = MailController()
+    start_server(main_controller, mail_controller)
+    reactor.run()

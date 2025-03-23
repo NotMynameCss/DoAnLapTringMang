@@ -273,3 +273,70 @@ password
 2025-03-23 22:30:20.490 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
 2025-03-23 22:30:20.491 | INFO     | server:handle_client:70 - Phản hồi gửi đến client: Email đã được gửi thành công
 2025-03-23 22:30:24.978 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 4 email loại inbox của người dùng 1
+2025-03-23 22:32:35.222 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-23 22:32:35.224 | INFO     | server:start_server:80 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 22:32:37.364 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 22:32:38.252 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 22:32:45.651 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
+2025-03-23 22:32:47.384 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 2
+2025-03-23 22:32:47.862 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 5 email loại inbox của người dùng 1
+2025-03-23 22:33:00.650 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
+2025-03-23 22:33:05.103 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 6 email loại inbox của người dùng 1
+2025-03-23 22:33:06.534 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 6 email loại inbox của người dùng 1
+2025-03-23 22:33:08.119 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 22
+2025-03-23 22:33:11.687 | INFO     | CONTROLLER.fetchMailController:fetch_emails:23 - Truy xuất 0 email loại inbox
+2025-03-23 22:33:13.167 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 2
+2025-03-23 22:33:13.600 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 6 email loại inbox của người dùng 1
+2025-03-23 22:33:14.272 | INFO     | CONTROLLER.fetchMailController:fetch_emails:23 - Truy xuất 0 email loại inbox
+2025-03-23 22:33:14.871 | INFO     | CONTROLLER.fetchMailController:fetch_emails:23 - Truy xuất 0 email loại inbox
+2025-03-23 22:33:15.584 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 6 email loại inbox của người dùng 1
+2025-03-23 22:33:16.892 | INFO     | CONTROLLER.fetchMailController:fetch_emails:23 - Truy xuất 0 email loại sent
+2025-03-23 22:33:17.767 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 6 email loại inbox của người dùng 1
+2025-03-23 22:33:21.631 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 2
+2025-03-23 22:33:22.272 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 6 email loại inbox của người dùng 1
+2025-03-23 22:33:22.807 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 2
+2025-03-23 22:33:23.223 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 1222
+2025-03-23 22:33:23.815 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 13
+2025-03-23 22:33:24.231 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 12223
+2025-03-23 22:33:24.711 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 22
+2025-03-23 22:33:25.255 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 13
+2025-03-23 22:33:25.823 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 6 email loại inbox của người dùng 1
+2025-03-23 22:54:40.462 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-23 22:54:40.464 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 22:57:18.224 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-23 22:57:18.289 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 22:57:22.267 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 22:57:24.944 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 22:57:31.484 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 6 email loại inbox của người dùng 1
+2025-03-23 22:57:34.059 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-23 22:57:36.483 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-23 22:57:38.642 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-23 22:57:40.947 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-23 22:57:44.003 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-23 22:57:48.971 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-23 22:57:51.363 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-23 22:57:54.923 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 2
+2025-03-23 22:57:55.516 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 13
+2025-03-23 22:57:56.212 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 6 email loại inbox của người dùng 1
+2025-03-23 22:57:57.467 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-23 22:58:08.860 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 6 email loại inbox của người dùng 1
+2025-03-23 22:58:18.920 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
+2025-03-23 22:58:21.868 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 7 email loại inbox của người dùng 1
+2025-03-23 22:58:23.492 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-23 23:03:54.117 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-23 23:03:54.173 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 23:03:57.617 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 23:04:01.812 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 23:04:08.450 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 7 email loại inbox của người dùng 1
+2025-03-23 23:04:10.654 | INFO     | VIEW.subView.subMailView.rightFrame:show_email_details:57 - Selected email ID: 24
+2025-03-23 23:04:10.655 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:74 - Fetching details for email ID: 24
+2025-03-23 23:04:10.658 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:78 - Truy xuất chi tiết email thành công: {'id': 24, 'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': '------', 'body': '1\n', 'attachments': '', 'timestamp': '2025-03-23T22:33:00'}
+2025-03-23 23:04:13.166 | INFO     | VIEW.subView.subMailView.rightFrame:show_email_details:57 - Selected email ID: 25
+2025-03-23 23:04:13.166 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:74 - Fetching details for email ID: 25
+2025-03-23 23:04:13.170 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:78 - Truy xuất chi tiết email thành công: {'id': 25, 'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': '@@@@', 'body': 'sss\n', 'attachments': '', 'timestamp': '2025-03-23T22:58:18'}
+2025-03-23 23:04:14.622 | INFO     | VIEW.subView.subMailView.rightFrame:show_email_details:57 - Selected email ID: 19
+2025-03-23 23:04:14.623 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:74 - Fetching details for email ID: 19
+2025-03-23 23:04:14.626 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:78 - Truy xuất chi tiết email thành công: {'id': 19, 'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': 'dd', 'body': '33\r\n', 'attachments': '', 'timestamp': '2025-03-22T15:52:22'}
+2025-03-23 23:04:16.886 | INFO     | VIEW.subView.subMailView.rightFrame:show_email_details:57 - Selected email ID: 23
+2025-03-23 23:04:16.887 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:74 - Fetching details for email ID: 23
+2025-03-23 23:04:16.890 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:78 - Truy xuất chi tiết email thành công: {'id': 23, 'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': 'sss', 'body': '1\n', 'attachments': '', 'timestamp': '2025-03-23T22:32:45'}
