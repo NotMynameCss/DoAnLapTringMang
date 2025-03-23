@@ -65,3 +65,23 @@ class FetchMailController:
         except SQLAlchemyError as e:
             logger.error(f"Lỗi khi truy xuất email: {e}")
             return f"Lỗi khi truy xuất email: {e}"
+
+    def fetch_email_details(self, email_id):
+        if self.session is None:
+            return None
+        try:
+            email_id = int(email_id)  # Ensure email_id is an integer
+            email = self.session.query(Email).filter_by(id=email_id).first()
+            if email:
+                email_details = email.to_dict()
+                logger.info(f"Truy xuất chi tiết email thành công: {email_details}")
+                return email_details
+            else:
+                logger.error(f"Không tìm thấy email với ID: {email_id}")
+                return None
+        except ValueError:
+            logger.error(f"ID không hợp lệ: {email_id}")
+            return None
+        except SQLAlchemyError as e:
+            logger.error(f"Lỗi khi truy xuất chi tiết email: {e}")
+            return None

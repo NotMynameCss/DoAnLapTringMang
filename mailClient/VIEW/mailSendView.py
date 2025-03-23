@@ -10,7 +10,7 @@ class MailSendView:
         self.root.geometry("800x600")
         self.root.configure(background="white")
 
-        self.mail_controller = MailController(self)
+        self.mail_controller = MailController(self.username)
 
         # Tạo khung chính
         self.main_frame = tk.Frame(self.root, bg="white")

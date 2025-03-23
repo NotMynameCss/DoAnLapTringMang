@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, Toplevel, Text, messagebox
 from datetime import datetime
 
 class RightFrame(tk.Frame):
@@ -26,6 +26,8 @@ class RightFrame(tk.Frame):
         self.user_details_tree.column("Date", width=100)
         self.user_details_tree.column("Body", width=300)
 
+        self.user_details_tree.bind("<Double-1>", self.show_email_details)
+
     def display_emails(self, emails):
         for item in self.user_details_tree.get_children():
             self.user_details_tree.delete(item)
@@ -45,3 +47,34 @@ class RightFrame(tk.Frame):
         if not self.user_listbox.curselection():
             return None
         return self.user_listbox.get(self.user_listbox.curselection())
+
+    def show_email_details(self, event):
+        selected_item = self.user_details_tree.selection()[0]
+        email_id = self.user_details_tree.item(selected_item, "values")[0]
+        email_details = self.mail_view.mail_controller.fetch_email_details(email_id)
+        if email_details:
+            self.open_email_details_window(email_details)
+        else:
+            messagebox.showerror("Error", f"Không tìm thấy email với ID: {email_id}")
+
+    def open_email_details_window(self, email_details):
+        details_window = Toplevel(self)
+        details_window.title("Chi tiết Email")
+        details_window.geometry("600x400")
+
+        from_label = tk.Label(details_window, text=f"From: {email_details.get('sender', 'N/A')}")
+        from_label.pack(anchor="w", padx=10, pady=5)
+
+        to_label = tk.Label(details_window, text=f"To: {email_details.get('recipients', 'N/A')}")
+        to_label.pack(anchor="w", padx=10, pady=5)
+
+        subject_label = tk.Label(details_window, text=f"Subject: {email_details.get('subject', 'N/A')}")
+        subject_label.pack(anchor="w", padx=10, pady=5)
+
+        date_label = tk.Label(details_window, text=f"Date: {email_details.get('timestamp', 'N/A')}")
+        date_label.pack(anchor="w", padx=10, pady=5)
+
+        body_text = Text(details_window, wrap="word")
+        body_text.insert("1.0", email_details.get('body', 'N/A'))
+        body_text.pack(fill="both", expand=True, padx=10, pady=10)
+        body_text.config(state="disabled")

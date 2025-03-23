@@ -4,7 +4,7 @@
 `mailController` chịu trách nhiệm quản lý các hoạt động liên quan đến email như gửi email, truy xuất email và người dùng.
 
 ## Công nghệ sử dụng
-- **Python 3.11.9**: Ngôn ngữ lập trình chính.
+- **Python 3.13.2**: Ngôn ngữ lập trình chính.
 - **Windows 10 64-bit**: Hệ điều hành phát triển và chạy ứng dụng.
 - **XAMPP (xampp-windows-x64-8.2.12-0)**: Quản lý cơ sở dữ liệu.
 - **Giao thức TCP/IP**: Kết nối client-server.

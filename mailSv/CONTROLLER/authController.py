@@ -2,7 +2,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from MODEL.dbconnector import create_connection, User
 from loguru import logger
 from pydantic import ValidationError
-from MODEL.models import UserModel  # Import UserModel from models.py
+from MODEL.models import UserModel, LoginModel  # Import LoginModel from models.py
 
 class AuthController:
     def __init__(self, view):
@@ -13,7 +13,7 @@ class AuthController:
 
     def login(self, username, password):
         try:
-            user_data = UserModel(username=username, password=password)
+            user_data = LoginModel(username=username, password=password)
         except ValidationError as e:
             logger.error(f"Lỗi xác thực dữ liệu: {e}")
             return f"Lỗi xác thực dữ liệu: {e}"

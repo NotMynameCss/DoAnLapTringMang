@@ -4,7 +4,7 @@
 Thư mục `mailSv` chứa các thành phần Controller của ứng dụng Mail Server. Các Controller chịu trách nhiệm xử lý logic nghiệp vụ và tương tác với cơ sở dữ liệu. Dưới đây là mô tả chi tiết về các Controller chính trong thư mục này.
 
 ## Công nghệ sử dụng
-- **Python 3.11.9**: Ngôn ngữ lập trình chính.
+- **Python 3.13.2**: Ngôn ngữ lập trình chính.
 - **Windows 10 64-bit**: Hệ điều hành phát triển và chạy ứng dụng.
 - **XAMPP (xampp-windows-x64-8.2.12-0)**: Quản lý cơ sở dữ liệu.
 - **Giao thức TCP/IP**: Kết nối client-server.

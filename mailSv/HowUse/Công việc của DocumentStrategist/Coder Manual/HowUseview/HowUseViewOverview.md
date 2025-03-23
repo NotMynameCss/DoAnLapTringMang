@@ -4,7 +4,7 @@
 Dự án `mailSv` là một ứng dụng Mail Server được xây dựng bằng Python, sử dụng giao thức TCP/IP để kết nối giữa client và server. Ứng dụng này tuân theo mô hình MVC (Model-View-Controller) để tách biệt các thành phần giao diện, logic nghiệp vụ và dữ liệu.
 
 ## Công nghệ sử dụng
-- **Python 3.11.9**: Ngôn ngữ lập trình chính.
+- **Python 3.13.2**: Ngôn ngữ lập trình chính.
 - **Windows 10 64-bit**: Hệ điều hành phát triển và chạy ứng dụng.
 - **XAMPP (xampp-windows-x64-8.2.12-0)**: Quản lý cơ sở dữ liệu.
 - **Giao thức TCP/IP**: Kết nối client-server.

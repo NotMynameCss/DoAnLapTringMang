@@ -35,3 +35,6 @@ class MailController:
 
     def search_emails(self, query):
         return self.search_mail_controller.search_emails(query)
+
+    def fetch_email_details(self, email_id):
+        return self.fetch_mail_controller.fetch_email_details(email_id)

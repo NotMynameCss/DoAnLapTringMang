@@ -2,11 +2,12 @@ import sys
 import os
 import threading
 from datetime import datetime
+
+from mailClient.VIEW.mailSendView import MailSendView
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from CONTROLLER.mailController import MailController
 import tkinter as tk
-from tkinter import ttk, messagebox
-from VIEW.mailSendView import MailSendView
+from tkinter import ttk, messagebox, Toplevel, Text
 
 class MailView:
     def __init__(self, root, username):
@@ -37,6 +38,9 @@ class MailView:
 
         self.refresh_button = tk.Button(self.toolbar_frame, text="Làm mới", command=self.refresh_emails)
         self.refresh_button.pack(side=tk.LEFT, padx=10, pady=10)
+
+        self.all_emails_button = tk.Button(self.toolbar_frame, text="Tất cả Email", command=self.show_all_emails)
+        self.all_emails_button.pack(side=tk.LEFT, padx=10, pady=10)
 
         # Create the left frame for navigation and settings/chat
         self.left_frame = tk.Frame(self.main_frame, bg="white")
@@ -85,6 +89,8 @@ class MailView:
         self.email_details_tree.column("Date", width=100)
         self.email_details_tree.column("Body", width=300)
 
+        self.email_details_tree.bind("<Double-1>", self.show_email_details)
+
         # Load and display emails on startup
         self.show_emails()
 
@@ -123,6 +129,9 @@ class MailView:
     def refresh_emails(self):
         threading.Thread(target=self.fetch_and_display_emails, args=("inbox",)).start()
 
+    def show_all_emails(self):
+        threading.Thread(target=self.fetch_and_display_all_emails).start()
+
     def fetch_and_display_emails(self, email_type):
         emails = self.mail_controller.fetch_emails(email_type)
         self.display_emails(emails)
@@ -137,6 +146,33 @@ class MailView:
         for email in emails:
             date_sent = email['timestamp'].strftime('%d-%m-%Y %H:%M') if isinstance(email['timestamp'], datetime) else datetime.strptime(email['timestamp'], '%Y-%m-%dT%H:%M:%S').strftime('%d-%m-%Y %H:%M')
             self.email_details_tree.insert("", "end", values=(email['sender'], email['recipients'], email['subject'], date_sent, email['body']))
+
+    def show_email_details(self, event):
+        selected_item = self.email_details_tree.selection()[0]
+        email_details = self.email_details_tree.item(selected_item, "values")
+        self.open_email_details_window(email_details)
+
+    def open_email_details_window(self, email_details):
+        details_window = Toplevel(self.root)
+        details_window.title("Chi tiết Email")
+        details_window.geometry("600x400")
+
+        from_label = tk.Label(details_window, text=f"From: {email_details[0]}")
+        from_label.pack(anchor="w", padx=10, pady=5)
+
+        to_label = tk.Label(details_window, text=f"To: {email_details[1]}")
+        to_label.pack(anchor="w", padx=10, pady=5)
+
+        subject_label = tk.Label(details_window, text=f"Subject: {email_details[2]}")
+        subject_label.pack(anchor="w", padx=10, pady=5)
+
+        date_label = tk.Label(details_window, text=f"Date: {email_details[3]}")
+        date_label.pack(anchor="w", padx=10, pady=5)
+
+        body_text = Text(details_window, wrap="word")
+        body_text.insert("1.0", email_details[4])
+        body_text.pack(fill="both", expand=True, padx=10, pady=10)
+        body_text.config(state="disabled")
 
     def set_controller(self, controller):
         self.controller = controller

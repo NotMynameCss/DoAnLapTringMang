@@ -67,3 +67,209 @@
 2025-03-22 18:51:12.962 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
 2025-03-22 18:51:13.122 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
 2025-03-22 18:51:13.290 | INFO     | CONTROLLER.mailController:fetch_emails_by_user:84 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 19:13:28.973 | ERROR    | MODEL.dbconnector:create_connection:49 - Lỗi kết nối đến database: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-03-23 19:13:33.054 | ERROR    | MODEL.dbconnector:create_connection:49 - Lỗi kết nối đến database: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-03-23 19:13:37.147 | ERROR    | MODEL.dbconnector:create_connection:49 - Lỗi kết nối đến database: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-03-23 19:13:37.149 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 19:14:22.522 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-23 19:14:22.534 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-23 19:14:22.550 | INFO     | MODEL.dbconnector:create_connection:46 - Kết nối thành công đến database
+2025-03-23 19:14:22.552 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 19:20:48.843 | INFO     | MODEL.dbconnector:_create_connection:57 - Kết nối thành công đến database
+2025-03-23 19:20:48.844 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 19:20:58.461 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 19:20:59.940 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 19:21:01.094 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-23 19:28:46.614 | INFO     | MODEL.dbconnector:_create_connection:57 - Kết nối thành công đến database
+2025-03-23 19:28:46.616 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 19:31:01.103 | INFO     | MODEL.dbconnector:_create_connection:57 - Kết nối thành công đến database
+2025-03-23 19:31:01.105 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 19:31:14.610 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 19:31:15.543 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 19:31:39.615 | INFO     | server:start_server:89 - Chấp nhận kết nối từ ('127.0.0.1', 4207)
+2025-03-23 19:31:39.616 | INFO     | server:handle_client:27 - Nhận tin nhắn: LOGIN 1 1
+2025-03-23 19:31:39.618 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 19:31:39.619 | INFO     | server:handle_client:74 - Phản hồi gửi đến client: Đăng nhập thành công
+2025-03-23 19:31:40.599 | INFO     | server:start_server:89 - Chấp nhận kết nối từ ('127.0.0.1', 4219)
+2025-03-23 19:31:40.600 | INFO     | server:handle_client:27 - Nhận tin nhắn: FETCH_ALL_EMAILS|1
+2025-03-23 19:31:40.604 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 1 email loại inbox của người dùng 1
+2025-03-23 19:31:40.605 | INFO     | server:handle_client:74 - Phản hồi gửi đến client: [{"id": 19, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "dd", "body": "33\r\n", "attachments": "", "timestamp": "2025-03-22T15:52:22"}]
+2025-03-23 19:31:51.716 | INFO     | server:start_server:89 - Chấp nhận kết nối từ ('127.0.0.1', 4344)
+2025-03-23 19:31:51.717 | INFO     | server:handle_client:27 - Nhận tin nhắn: SEND_EMAIL|1|1|||ssss|2222
+|
+2025-03-23 19:31:51.724 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
+2025-03-23 19:31:51.725 | INFO     | server:handle_client:74 - Phản hồi gửi đến client: Email đã được gửi thành công
+2025-03-23 19:32:16.428 | INFO     | server:start_server:89 - Chấp nhận kết nối từ ('127.0.0.1', 4626)
+2025-03-23 19:32:16.429 | INFO     | server:handle_client:27 - Nhận tin nhắn: FETCH_EMAILS|1|inbox
+2025-03-23 19:32:16.430 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 19:32:16.431 | INFO     | server:handle_client:74 - Phản hồi gửi đến client: [{"id": 19, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "dd", "body": "33\r\n", "attachments": "", "timestamp": "2025-03-22T15:52:22"}, {"id": 20, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "ssss", "body": "2222\n", "attachments": "", "timestamp": "2025-03-23T19:31:51"}]
+2025-03-23 19:36:49.965 | INFO     | MODEL.dbconnector:_create_connection:57 - Kết nối thành công đến database
+2025-03-23 19:36:49.966 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 19:36:55.176 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 19:36:56.095 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 19:36:56.999 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 19:37:00.525 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 19:37:49.188 | INFO     | server:start_server:89 - Chấp nhận kết nối từ ('127.0.0.1', 8579)
+2025-03-23 19:37:49.189 | INFO     | server:handle_client:27 - Nhận tin nhắn: LOGIN 1 1
+2025-03-23 19:37:49.191 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 19:37:49.192 | INFO     | server:handle_client:74 - Phản hồi gửi đến client: Đăng nhập thành công
+2025-03-23 19:37:50.041 | INFO     | server:start_server:89 - Chấp nhận kết nối từ ('127.0.0.1', 8590)
+2025-03-23 19:37:50.042 | INFO     | server:handle_client:27 - Nhận tin nhắn: FETCH_ALL_EMAILS|1
+2025-03-23 19:37:50.044 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 19:37:50.045 | INFO     | server:handle_client:74 - Phản hồi gửi đến client: [{"id": 19, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "dd", "body": "33\r\n", "attachments": "", "timestamp": "2025-03-22T15:52:22"}, {"id": 20, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "ssss", "body": "2222\n", "attachments": "", "timestamp": "2025-03-23T19:31:51"}]
+2025-03-23 19:39:40.874 | INFO     | MODEL.dbconnector:_create_connection:57 - Kết nối thành công đến database
+2025-03-23 19:39:40.876 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 19:39:47.583 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 19:39:49.150 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 19:39:50.197 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 19:39:54.260 | INFO     | CONTROLLER.fetchMailController:fetch_emails:23 - Truy xuất 0 email loại inbox
+2025-03-23 19:39:54.924 | INFO     | CONTROLLER.fetchMailController:fetch_emails:23 - Truy xuất 0 email loại sent
+2025-03-23 19:39:55.923 | INFO     | CONTROLLER.fetchMailController:fetch_emails:23 - Truy xuất 0 email loại inbox
+2025-03-23 19:39:56.516 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 2
+2025-03-23 19:39:57.187 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 19:43:50.196 | INFO     | MODEL.dbconnector:_create_connection:57 - Kết nối thành công đến database
+2025-03-23 19:43:50.199 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 19:43:52.640 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 19:43:53.465 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 19:43:54.270 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 19:45:47.028 | INFO     | MODEL.dbconnector:_create_connection:57 - Kết nối thành công đến database
+2025-03-23 19:45:47.030 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 19:45:49.819 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 19:45:50.545 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 19:45:51.474 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 19:47:39.954 | INFO     | MODEL.dbconnector:_create_connection:57 - Kết nối thành công đến database
+2025-03-23 19:47:39.956 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 19:47:42.176 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 19:47:43.398 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 19:47:44.318 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 19:53:53.734 | INFO     | MODEL.dbconnector:_create_connection:55 - Kết nối thành công đến database
+2025-03-23 19:53:53.736 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 19:53:57.405 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 19:53:58.908 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 19:54:00.261 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 19:54:03.779 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 19:54:05.050 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 20:10:27.960 | INFO     | MODEL.dbconnector:_create_connection:55 - Kết nối thành công đến database
+2025-03-23 20:10:27.967 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 20:10:31.339 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 20:10:32.635 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 20:10:37.388 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 20:13:21.548 | INFO     | MODEL.dbconnector:_create_connection:55 - Kết nối thành công đến database
+2025-03-23 20:13:21.551 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 20:13:24.084 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 20:13:25.016 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 20:13:26.120 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 20:16:26.263 | INFO     | MODEL.dbconnector:_create_connection:55 - Kết nối thành công đến database
+2025-03-23 20:16:26.266 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 20:16:29.037 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 20:16:33.825 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 20:16:34.796 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 20:16:35.742 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:79 - Không tìm thấy email với ID: 1
+2025-03-23 20:18:54.005 | INFO     | MODEL.dbconnector:_create_connection:55 - Kết nối thành công đến database
+2025-03-23 20:18:54.009 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 20:18:57.298 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 20:18:58.207 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 20:18:59.156 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 20:19:00.113 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:79 - Không tìm thấy email với ID: 1
+2025-03-23 20:19:04.393 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:79 - Không tìm thấy email với ID: 1
+2025-03-23 20:22:27.182 | INFO     | MODEL.dbconnector:_create_connection:55 - Kết nối thành công đến database
+2025-03-23 20:22:27.187 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 20:22:29.950 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 20:22:31.194 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 20:22:32.005 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 20:22:32.849 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:79 - Không tìm thấy email với ID: 1
+2025-03-23 20:30:44.505 | INFO     | MODEL.dbconnector:_create_connection:55 - Kết nối thành công đến database
+2025-03-23 20:30:44.510 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 20:30:47.604 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 20:30:48.707 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 20:30:49.839 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 20:30:50.683 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:79 - Không tìm thấy email với ID: 1
+2025-03-23 20:36:15.100 | INFO     | MODEL.dbconnector:_create_connection:55 - Kết nối thành công đến database
+2025-03-23 20:36:15.106 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 20:36:18.058 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 20:36:18.941 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 20:36:19.983 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 20:36:20.862 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:79 - Không tìm thấy email với ID: 1
+2025-03-23 20:42:49.804 | INFO     | MODEL.dbconnector:_create_connection:55 - Kết nối thành công đến database
+2025-03-23 20:42:49.810 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 20:42:56.264 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 20:42:57.664 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 20:43:05.340 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 20:43:15.194 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:79 - Không tìm thấy email với ID: 1
+2025-03-23 20:55:17.889 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-23 20:55:17.900 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 20:55:28.237 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 20:55:29.496 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 20:55:31.975 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 20:55:32.874 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-23 20:58:22.703 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-23 20:58:22.709 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 20:59:04.269 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 20:59:05.381 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 20:59:31.223 | INFO     | server:start_server:89 - Chấp nhận kết nối từ ('127.0.0.1', 9534)
+2025-03-23 20:59:31.224 | INFO     | server:handle_client:27 - Nhận tin nhắn: LOGIN 1 1
+2025-03-23 20:59:31.230 | ERROR    | server:handle_client:43 - Lỗi xác thực dữ liệu: 2 validation errors for LoginModel
+username
+  Arguments must be a tuple, list or a dictionary [type=arguments_type, input_value='1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/arguments_type
+password
+  Arguments must be a tuple, list or a dictionary [type=arguments_type, input_value='1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/arguments_type
+2025-03-23 20:59:31.235 | INFO     | server:handle_client:74 - Phản hồi gửi đến client: Lỗi xác thực dữ liệu: 2 validation errors for LoginModel
+username
+  Arguments must be a tuple, list or a dictionary [type=arguments_type, input_value='1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/arguments_type
+password
+  Arguments must be a tuple, list or a dictionary [type=arguments_type, input_value='1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/arguments_type
+2025-03-23 21:05:22.962 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-23 21:05:22.977 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 21:07:18.380 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-23 21:07:18.390 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 21:11:47.507 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-23 21:11:47.510 | INFO     | server:start_server:84 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 21:12:19.633 | INFO     | server:start_server:89 - Chấp nhận kết nối từ ('127.0.0.1', 19233)
+2025-03-23 21:12:19.635 | INFO     | server:handle_client:27 - Nhận tin nhắn: LOGIN 1 1
+2025-03-23 21:12:19.696 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 21:12:19.698 | INFO     | server:handle_client:74 - Phản hồi gửi đến client: Đăng nhập thành công
+2025-03-23 21:12:20.739 | INFO     | server:start_server:89 - Chấp nhận kết nối từ ('127.0.0.1', 19248)
+2025-03-23 21:12:20.790 | INFO     | server:handle_client:27 - Nhận tin nhắn: FETCH_ALL_EMAILS|1
+2025-03-23 21:12:20.859 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 2 email loại inbox của người dùng 1
+2025-03-23 21:12:20.862 | INFO     | server:handle_client:74 - Phản hồi gửi đến client: [{"id": 19, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "dd", "body": "33\r\n", "attachments": "", "timestamp": "2025-03-22T15:52:22"}, {"id": 20, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "ssss", "body": "2222\n", "attachments": "", "timestamp": "2025-03-23T19:31:51"}]
+2025-03-23 21:12:32.855 | INFO     | server:start_server:89 - Chấp nhận kết nối từ ('127.0.0.1', 3003)
+2025-03-23 21:12:32.861 | INFO     | server:handle_client:27 - Nhận tin nhắn: SEND_EMAIL|1|1|||+++++|ssssss
+|
+2025-03-23 21:12:32.944 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
+2025-03-23 21:12:32.946 | INFO     | server:handle_client:74 - Phản hồi gửi đến client: Email đã được gửi thành công
+2025-03-23 21:12:35.581 | INFO     | server:start_server:89 - Chấp nhận kết nối từ ('127.0.0.1', 3036)
+2025-03-23 21:12:35.583 | INFO     | server:handle_client:27 - Nhận tin nhắn: FETCH_EMAILS|1|inbox
+2025-03-23 21:12:35.590 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 3 email loại inbox của người dùng 1
+2025-03-23 21:12:35.596 | INFO     | server:handle_client:74 - Phản hồi gửi đến client: [{"id": 19, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "dd", "body": "33\r\n", "attachments": "", "timestamp": "2025-03-22T15:52:22"}, {"id": 20, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "ssss", "body": "2222\n", "attachments": "", "timestamp": "2025-03-23T19:31:51"}, {"id": 21, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "+++++", "body": "ssssss\n", "attachments": "", "timestamp": "2025-03-23T21:12:32"}]
+2025-03-23 21:12:48.664 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 21:12:50.283 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 21:12:53.000 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 3 email loại inbox của người dùng 1
+2025-03-23 21:13:00.530 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-23 22:29:12.624 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-23 22:29:12.626 | INFO     | server:start_server:80 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-23 22:29:16.267 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 22:29:17.535 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-23 22:29:19.001 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 3 email loại inbox của người dùng 1
+2025-03-23 22:29:20.223 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 3 email loại inbox của người dùng 1
+2025-03-23 22:29:25.351 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 3 email loại inbox của người dùng 1
+2025-03-23 22:30:12.021 | INFO     | server:start_server:85 - Chấp nhận kết nối từ ('127.0.0.1', 6810)
+2025-03-23 22:30:12.022 | INFO     | server:handle_client:27 - Nhận tin nhắn: LOGIN 1 1
+2025-03-23 22:30:12.025 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-23 22:30:12.026 | INFO     | server:handle_client:70 - Phản hồi gửi đến client: Đăng nhập thành công
+2025-03-23 22:30:12.785 | INFO     | server:start_server:85 - Chấp nhận kết nối từ ('127.0.0.1', 6811)
+2025-03-23 22:30:12.787 | INFO     | server:handle_client:27 - Nhận tin nhắn: FETCH_ALL_EMAILS
+2025-03-23 22:30:12.794 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:34 - Truy xuất 3 email
+2025-03-23 22:30:12.796 | INFO     | server:handle_client:70 - Phản hồi gửi đến client: [{"id": 19, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "dd", "body": "33\r\n", "attachments": "", "timestamp": "2025-03-22T15:52:22"}, {"id": 20, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "ssss", "body": "2222\n", "attachments": "", "timestamp": "2025-03-23T19:31:51"}, {"id": 21, "sender": "1", "recipients": "1", "cc": "", "bcc": "", "subject": "+++++", "body": "ssssss\n", "attachments": "", "timestamp": "2025-03-23T21:12:32"}]
+2025-03-23 22:30:20.480 | INFO     | server:start_server:85 - Chấp nhận kết nối từ ('127.0.0.1', 6813)
+2025-03-23 22:30:20.481 | INFO     | server:handle_client:27 - Nhận tin nhắn: SEND_EMAIL|1|1|||~~|~~~
+|
+2025-03-23 22:30:20.490 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
+2025-03-23 22:30:20.491 | INFO     | server:handle_client:70 - Phản hồi gửi đến client: Email đã được gửi thành công
+2025-03-23 22:30:24.978 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 4 email loại inbox của người dùng 1

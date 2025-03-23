@@ -3,6 +3,13 @@
 ## Tổng quan
 Thư mục `mailSv` chứa các thành phần liên quan đến cơ sở dữ liệu của ứng dụng Mail Server. Các thành phần này chịu trách nhiệm kết nối, tạo bảng và thực hiện các thao tác CRUD (Create, Read, Update, Delete) trên cơ sở dữ liệu.
 
+## Công nghệ sử dụng
+- **Python 3.13.2**: Ngôn ngữ lập trình chính.
+- **Windows 10 64-bit**: Hệ điều hành phát triển và chạy ứng dụng.
+- **XAMPP (xampp-windows-x64-8.2.12-0)**: Quản lý cơ sở dữ liệu.
+- **SqlAlchemy 2.0.39**: ORM để tương tác với cơ sở dữ liệu.
+- **MySQL**: Hệ quản trị cơ sở dữ liệu.
+
 ## Các thành phần chính
 
 ### 1. `dbconnector.py`

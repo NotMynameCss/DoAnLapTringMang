@@ -10,6 +10,7 @@ from VIEW.mailView import MailView
 from twisted.internet import reactor
 from VIEW.subView.subAuthView.entryFrame import EntryFrame
 from VIEW.subView.subAuthView.buttonFrame import ButtonFrame
+from MODEL.models import LoginModel  # Import LoginModel
 
 class AuthView:
     def __init__(self, root):

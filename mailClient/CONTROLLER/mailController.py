@@ -18,16 +18,32 @@ class MailController:
         except ConnectionRefusedError as e:
             logger.error(f"Lỗi kết nối đến server: {e}")
             return ""
+        except socket.error as e:
+            logger.error(f"Lỗi socket: {e}")
+            return ""
 
     def send_email(self, sender, recipients, cc, bcc, subject, body, attachments):
         try:
-            email_data = EmailModel(sender=sender, recipients=recipients, cc=cc, bcc=bcc, subject=subject, body=body, attachments=attachments)
+            email_data = EmailModel(
+                sender=sender, 
+                recipients=recipients, 
+                cc=cc, 
+                bcc=bcc, 
+                subject=subject, 
+                body=body, 
+                attachments=attachments
+            )
         except ValidationError as e:
             logger.error(f"Lỗi xác thực dữ liệu: {e}")
             return f"Lỗi xác thực dữ liệu: {e}"
+
         message = f"SEND_EMAIL|{email_data.sender}|{email_data.recipients}|{email_data.cc}|{email_data.bcc}|{email_data.subject}|{email_data.body}|{email_data.attachments}"
         logger.info(f"Gửi yêu cầu gửi email: {message}")
         response = self.send_request(message)
+        
+        if not response:
+            return "Không thể gửi email. Vui lòng thử lại sau."
+        
         return response
 
     def fetch_emails(self, folder):
@@ -43,7 +59,7 @@ class MailController:
         return emails
 
     def fetch_all_emails(self):
-        request = f"FETCH_ALL_EMAILS|{self.user_id}"
+        request = "FETCH_ALL_EMAILS"
         logger.info(f"Gửi yêu cầu truy xuất tất cả email: {request}")
         response = self.send_request(request)
         if not response:

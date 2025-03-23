@@ -10,6 +10,7 @@ from loguru import logger
 from VIEW.subView.subMailView.topFrame import TopFrame
 from VIEW.subView.subMailView.leftFrame import LeftFrame
 from VIEW.subView.subMailView.rightFrame import RightFrame
+from VIEW.mailSendView import MailSendView  # Import MailSendView
 
 class MailView:
     def __init__(self, root, username):
@@ -41,7 +42,9 @@ class MailView:
         self.show_users()
 
     def compose_email(self):
-        messagebox.showinfo("Soạn Thư", "Chức năng soạn thư chưa được triển khai")
+        # Open the MailSendView window
+        new_window = tk.Toplevel(self.root)
+        MailSendView(new_window, self.username)
 
     def search_email(self):
         query = self.top_frame.search_entry.get()
@@ -79,7 +82,7 @@ class MailView:
 
     def refresh_emails(self):
         selected_user = self.get_selected_user()
-        if selected_user:
+        if (selected_user):
             emails = self.mail_controller.fetch_emails_by_user(selected_user, "inbox")
             self.right_frame.display_emails(emails)
         else:
@@ -96,3 +99,6 @@ class MailView:
         if selected_user:
             emails = self.mail_controller.fetch_emails_by_user(selected_user)
             self.right_frame.display_emails(emails)
+
+    def fetch_email_details(self, email_id):
+        return self.mail_controller.fetch_email_details(email_id)

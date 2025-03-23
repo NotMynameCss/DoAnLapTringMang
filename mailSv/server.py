@@ -55,11 +55,7 @@ def handle_client(client_socket, main_controller, mail_controller):
                 emails = mail_controller.fetch_emails_by_user(username, email_type)
                 response = json.dumps([email.to_dict() for email in emails], cls=DateTimeEncoder) if emails else "[]"
             elif message.startswith("FETCH_ALL_EMAILS"):
-                if '|' in message:
-                    _, username = message.split('|')
-                    emails = mail_controller.fetch_emails_by_user(username)
-                else:
-                    emails = mail_controller.fetch_all_emails()
+                emails = mail_controller.fetch_all_emails()
                 response = json.dumps([email.to_dict() for email in emails], cls=DateTimeEncoder) if emails else "[]"
             elif message.startswith("FETCH_ALL_USERS"):
                 response = mail_controller.fetch_all_users()

@@ -1,4 +1,5 @@
-from pydantic import BaseModel, constr
+from pydantic import BaseModel, constr, Field
+from typing import Pattern  # Import Pattern from typing
 
 class EmailModel(BaseModel):
     sender: constr(min_length=1, max_length=255)
