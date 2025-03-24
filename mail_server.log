@@ -275,3 +275,21 @@ password
 2025-03-23 22:30:24.978 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 4 email loại inbox của người dùng 1
 2025-03-24 15:50:20.093 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
 2025-03-24 15:50:20.096 | INFO     | server:start_server:80 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-24 16:44:09.181 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-24 16:44:09.185 | INFO     | server:start_server:80 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-24 16:44:12.405 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-24 16:44:13.786 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+2025-03-24 16:44:16.127 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 0 email loại inbox của người dùng 2
+2025-03-24 16:44:17.696 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 10 email loại inbox của người dùng 1
+2025-03-24 16:44:18.576 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-24 16:44:20.128 | ERROR    | CONTROLLER.fetchMailController:fetch_email_details:80 - Không tìm thấy email với ID: 1
+2025-03-24 16:56:20.656 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-24 16:56:20.663 | INFO     | server:start_server:80 - Máy chủ đang lắng nghe trên cổng 65432
+2025-03-24 16:56:23.737 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-03-24 16:56:24.789 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:46 - Truy xuất 6 người dùng
+2025-03-24 16:56:26.042 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 10 email loại inbox của người dùng 1
+2025-03-24 16:56:26.830 | WARNING  | CONTROLLER.fetchMailController:fetch_email_details:85 - Không tìm thấy email với ID: 1
+2025-03-24 16:56:28.427 | WARNING  | CONTROLLER.fetchMailController:fetch_email_details:85 - Không tìm thấy email với ID: 1
+2025-03-24 16:56:57.981 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 10 email loại inbox của người dùng 1
+2025-03-24 16:57:06.075 | WARNING  | CONTROLLER.fetchMailController:fetch_email_details:85 - Không tìm thấy email với ID: 1
+2025-03-24 17:06:07.387 | WARNING  | CONTROLLER.fetchMailController:fetch_email_details:85 - Không tìm thấy email với ID: 1

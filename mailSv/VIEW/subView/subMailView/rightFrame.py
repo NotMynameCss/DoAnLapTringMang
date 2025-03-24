@@ -1,6 +1,10 @@
 import tkinter as tk
 from tkinter import ttk, Toplevel, Text, messagebox
 from datetime import datetime
+import logging
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
 class RightFrame(tk.Frame):
     def __init__(self, parent, mail_view):
@@ -29,6 +33,7 @@ class RightFrame(tk.Frame):
         self.user_details_tree.bind("<Double-1>", self.show_email_details)
 
     def display_emails(self, emails):
+        """Hiển thị danh sách email trong treeview"""
         for item in self.user_details_tree.get_children():
             self.user_details_tree.delete(item)
         for email in emails:
@@ -36,7 +41,15 @@ class RightFrame(tk.Frame):
                 date_sent = email.timestamp.strftime('%d-%m-%Y %H:%M')
             else:
                 date_sent = datetime.strptime(email.timestamp, '%Y-%m-%d %H:%M:%S').strftime('%d-%m-%Y %H:%M')
-            self.user_details_tree.insert("", "end", values=(email.sender, email.recipients, email.subject, date_sent, email.body))
+            # Thêm ID vào values của tree item
+            self.user_details_tree.insert("", "end", values=(
+                email.id,  # Đảm bảo ID được thêm vào đầu tiên
+                email.sender, 
+                email.recipients, 
+                email.subject, 
+                date_sent, 
+                email.body
+            ))
 
     def display_users(self, users):
         self.user_listbox.delete(0, tk.END)
@@ -49,32 +62,78 @@ class RightFrame(tk.Frame):
         return self.user_listbox.get(self.user_listbox.curselection())
 
     def show_email_details(self, event):
-        selected_item = self.user_details_tree.selection()[0]
-        email_id = self.user_details_tree.item(selected_item, "values")[0]
-        email_details = self.mail_view.mail_controller.fetch_email_details(email_id)
-        if email_details:
-            self.open_email_details_window(email_details)
-        else:
-            messagebox.showerror("Error", f"Không tìm thấy email với ID: {email_id}")
+        """Hiển thị chi tiết email khi double click"""
+        try:
+            if not self.user_details_tree.selection():
+                logger.warning("Không có email nào được chọn")
+                return
+            
+            selected_item = self.user_details_tree.selection()[0]
+            values = self.user_details_tree.item(selected_item)['values']
+            
+            if not values:
+                logger.warning("Không có dữ liệu email được chọn")
+                return
+            
+            email_id = values[0]  # ID là giá trị đầu tiên trong values
+            logger.debug(f"Đang lấy chi tiết email ID: {email_id}")
+            
+            email_details = self.mail_view.fetch_email_details(email_id)
+            
+            if email_details:
+                self.open_email_details_window(email_details)
+            else:
+                messagebox.showerror("Lỗi", f"Không thể tải chi tiết email ID: {email_id}")
+                
+        except Exception as e:
+            logger.error(f"Lỗi khi hiển thị chi tiết email: {str(e)}")
+            messagebox.showerror("Lỗi", "Đã xảy ra lỗi khi hiển thị chi tiết email")
 
     def open_email_details_window(self, email_details):
-        details_window = Toplevel(self)
-        details_window.title("Chi tiết Email")
-        details_window.geometry("600x400")
+        """Mở cửa sổ hiển thị chi tiết email"""
+        try:
+            details_window = Toplevel(self)
+            details_window.title("Chi tiết Email")
+            details_window.geometry("600x400")
 
-        from_label = tk.Label(details_window, text=f"From: {email_details.get('sender', 'N/A')}")
-        from_label.pack(anchor="w", padx=10, pady=5)
+            # Thêm scrollbar
+            main_frame = ttk.Frame(details_window)
+            main_frame.pack(fill=tk.BOTH, expand=True)
 
-        to_label = tk.Label(details_window, text=f"To: {email_details.get('recipients', 'N/A')}")
-        to_label.pack(anchor="w", padx=10, pady=5)
+            canvas = tk.Canvas(main_frame)
+            scrollbar = ttk.Scrollbar(main_frame, orient=tk.VERTICAL, command=canvas.yview)
+            scrollable_frame = ttk.Frame(canvas)
 
-        subject_label = tk.Label(details_window, text=f"Subject: {email_details.get('subject', 'N/A')}")
-        subject_label.pack(anchor="w", padx=10, pady=5)
+            scrollable_frame.bind(
+                "<Configure>",
+                lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+            )
 
-        date_label = tk.Label(details_window, text=f"Date: {email_details.get('timestamp', 'N/A')}")
-        date_label.pack(anchor="w", padx=10, pady=5)
+            canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+            canvas.configure(yscrollcommand=scrollbar.set)
 
-        body_text = Text(details_window, wrap="word")
-        body_text.insert("1.0", email_details.get('body', 'N/A'))
-        body_text.pack(fill="both", expand=True, padx=10, pady=10)
-        body_text.config(state="disabled")
+            # Hiển thị thông tin email
+            ttk.Label(scrollable_frame, text=f"From: {email_details['sender']}").pack(anchor="w", padx=10, pady=5)
+            ttk.Label(scrollable_frame, text=f"To: {email_details['recipients']}").pack(anchor="w", padx=10, pady=5)
+            
+            if email_details.get('cc'):
+                ttk.Label(scrollable_frame, text=f"CC: {email_details['cc']}").pack(anchor="w", padx=10, pady=5)
+            if email_details.get('bcc'):
+                ttk.Label(scrollable_frame, text=f"BCC: {email_details['bcc']}").pack(anchor="w", padx=10, pady=5)
+                
+            ttk.Label(scrollable_frame, text=f"Subject: {email_details['subject']}").pack(anchor="w", padx=10, pady=5)
+            ttk.Label(scrollable_frame, text=f"Date: {email_details['timestamp']}").pack(anchor="w", padx=10, pady=5)
+
+            # Text widget cho nội dung email
+            body_text = Text(scrollable_frame, wrap="word", height=10)
+            body_text.insert("1.0", email_details['body'])
+            body_text.config(state="disabled")
+            body_text.pack(fill="both", expand=True, padx=10, pady=10)
+
+            # Pack scrollbar và canvas
+            scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+            canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        except Exception as e:
+            logger.error(f"Lỗi khi mở cửa sổ chi tiết email: {str(e)}")
+            messagebox.showerror("Lỗi", "Không thể mở cửa sổ chi tiết email")

@@ -7,7 +7,7 @@ import tkinter as tk
 from tkinter import messagebox
 from CONTROLLER.authController import AuthController
 from VIEW.mailView import MailView
-from twisted.internet import reactor
+
 from VIEW.subView.subAuthView.entryFrame import EntryFrame
 from VIEW.subView.subAuthView.buttonFrame import ButtonFrame
 from MODEL.models import LoginModel  # Import LoginModel
@@ -54,11 +54,14 @@ class AuthView:
         password = self.entry_frame.password_entry.get()
         auth_controller = AuthController(self)
         response = auth_controller.register(username, password)
-        reactor.callFromThread(self.handle_register_response, response)
+        self.handle_register_response(response)
 
     def handle_register_response(self, response):
         if response == "Đăng ký thành công":
             messagebox.showinfo("Đăng ký", "Đăng ký thành công")
+            # Clear entries after successful registration
+            self.entry_frame.username_entry.delete(0, tk.END)
+            self.entry_frame.password_entry.delete(0, tk.END)
         else:
             messagebox.showerror("Đăng ký", response)
 

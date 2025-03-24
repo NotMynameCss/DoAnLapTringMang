@@ -82,3 +82,12 @@ class DatabaseConnector:
 def create_connection():
     db_connector = DatabaseConnector()
     return db_connector.get_session()
+
+class DBConnection:
+    """Context manager for database session"""
+    def __enter__(self):
+        self.session = create_connection()
+        return self.session
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.session.close()

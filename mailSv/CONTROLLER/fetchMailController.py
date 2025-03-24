@@ -4,7 +4,8 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from sqlalchemy.exc import SQLAlchemyError
-from MODEL.dbconnector import create_connection, Email, User
+from typing import Optional, Dict, Any
+from MODEL.dbconnector import create_connection, Email, User, DBConnection
 from loguru import logger
 
 class FetchMailController:
@@ -66,22 +67,51 @@ class FetchMailController:
             logger.error(f"Lỗi khi truy xuất email: {e}")
             return f"Lỗi khi truy xuất email: {e}"
 
-    def fetch_email_details(self, email_id):
-        if self.session is None:
-            return None
+    def fetch_email_details(self, email_id: int) -> Optional[Dict[str, Any]]:
+        """
+        Lấy chi tiết email từ database
+        
+        Args:
+            email_id: ID của email cần lấy thông tin
+            
+        Returns:
+            Dict chứa thông tin chi tiết email hoặc None nếu không tìm thấy
+        """
         try:
-            email_id = int(email_id)  # Ensure email_id is an integer
-            email = self.session.query(Email).filter_by(id=email_id).first()
-            if email:
-                email_details = email.to_dict()
-                logger.info(f"Truy xuất chi tiết email thành công: {email_details}")
-                return email_details
-            else:
-                logger.error(f"Không tìm thấy email với ID: {email_id}")
+            if not email_id:
+                logger.error("Email ID không được để trống")
                 return None
-        except ValueError:
-            logger.error(f"ID không hợp lệ: {email_id}")
-            return None
+                
+            # Đảm bảo email_id là số nguyên
+            try:
+                email_id = int(email_id)
+            except (TypeError, ValueError):
+                logger.error(f"Email ID không hợp lệ: {email_id}")
+                return None
+            
+            logger.debug(f"Đang truy xuất email với ID: {email_id}")
+            email = self.session.query(Email).get(email_id)
+            
+            if email:
+                logger.info(f"Tìm thấy email với ID {email_id}")
+                return {
+                    'id': email.id,
+                    'sender': email.sender,
+                    'recipients': email.recipients,
+                    'cc': email.cc,
+                    'bcc': email.bcc, 
+                    'subject': email.subject,
+                    'body': email.body,
+                    'attachments': email.attachments,
+                    'timestamp': email.timestamp.strftime('%Y-%m-%d %H:%M:%S') if email.timestamp else None
+                }
+            else:
+                logger.warning(f"Không tìm thấy email với ID: {email_id}")
+                return None
+                
         except SQLAlchemyError as e:
-            logger.error(f"Lỗi khi truy xuất chi tiết email: {e}")
+            logger.error(f"Lỗi database khi truy xuất email {email_id}: {str(e)}")
+            return None
+        except Exception as e:
+            logger.error(f"Lỗi không xác định khi truy xuất email {email_id}: {str(e)}")
             return None
