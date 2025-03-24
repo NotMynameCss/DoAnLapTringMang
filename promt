@@ -1,0 +1,96 @@
+[HƯỚNG DẪN THIẾT KẾ SUPER PROMPT]
+
+
+
+Sử dụng chế độ Deep Research của bạn để phân tích và thiết kế một super prompt tối ưu cho {Claude 3.5 Sonnet} (ví dụ: Grok, GPT-4, Claude) để thực hiện nhiệm vụ {thiết kế lại Promt của tôi cho phù hợp với promt của Claude 3.5 Sonnet}.
+
+
+
+YÊU CẦU PHÂN TÍCH:
+
+1. Sử dụng Academic search để tìm các nghiên cứu gần đây về cách tối ưu prompt cho {Claude 3.5 Sonnet}
+
+2. Dùng Web search để tìm kiếm các ví dụ thành công và thất bại khi sử dụng {Claude 3.5 Sonnet}
+
+3. Dùng Social search để xác định các chiến lược prompting phổ biến được cộng đồng người dùng {Claude 3.5 Sonnet} đề xuất
+
+4. Xác định điểm mạnh và giới hạn chính của {Claude 3.5 Sonnet} so với các mô hình khác
+
+
+
+CẤU TRÚC SUPER PROMPT:
+
+1. KHUNG NHIỆM VỤ:
+
+   - Mô tả rõ ràng về mục tiêu cuối cùng
+
+   - Các tiêu chí đánh giá kết quả
+
+   - Bối cảnh và ràng buộc quan trọng
+
+
+
+2. HƯỚNG DẪN QUY TRÌNH:
+
+   - Các bước tư duy cụ thể cho {Claude 3.5 Sonnet}
+
+   - Phương pháp xác minh thông tin và kiểm tra chất lượng
+
+   - Chiến lược để tránh những hạn chế đã biết của {Claude 3.5 Sonnet}
+
+
+
+3. ĐỊNH DẠNG ĐẦU RA:
+
+   - Cấu trúc kết quả mong muốn
+
+   - Cách thức trích dẫn nguồn (nếu cần)
+
+   - Yêu cầu rõ ràng về độ dài và chi tiết
+
+
+
+4. TIÊU CHÍ THÀNH CÔNG:
+
+   - Các điểm kiểm tra cụ thể để đảm bảo chất lượng
+
+   - Cách đo lường hiệu quả của kết quả
+
+
+
+YÊU CẦU PHÂN TÍCH MÔ HÌNH:
+
+Sử dụng chế độ Reasoning để phân tích các điểm mạnh đặc biệt của {Claude 3.5 Sonnet} và cách tận dụng chúng một cách tối ưu, đặc biệt chú ý đến:
+
+- Khả năng suy luận
+
+- Kiến thức chuyên ngành
+
+- Giới hạn ngữ cảnh
+
+- Độ chính xác
+
+
+
+CÁCH TẠO RA CÂNG BẰNG TỐI ƯU:
+
+- Định nghĩa rõ vai trò cho {Claude 3.5 Sonnet} đảm nhận
+
+- Cung cấp đủ thông tin nhưng không quá chi tiết
+
+- Tạo không gian cho sự sáng tạo trong giới hạn cụ thể
+
+
+
+TẠO SUPER PROMPT CUỐI CÙNG:
+
+Dựa trên tất cả phân tích, tạo một super prompt hoàn chỉnh cho {Claude 3.5 Sonnet} để thực hiện nhiệm vụ {thiết kế lại Promt của tôi cho phù hợp với promt của Claude 3.5 Sonnet}, đảm bảo prompt:
+
+- Dễ hiểu và rõ ràng
+
+- Tận dụng tối đa khả năng của {Claude 3.5 Sonnet}
+
+- Tránh những hạn chế đã biết
+
+- Có cấu trúc tối ưu
+

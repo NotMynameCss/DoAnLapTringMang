@@ -273,3 +273,5 @@ password
 2025-03-23 22:30:20.490 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
 2025-03-23 22:30:20.491 | INFO     | server:handle_client:70 - Phản hồi gửi đến client: Email đã được gửi thành công
 2025-03-23 22:30:24.978 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 4 email loại inbox của người dùng 1
+2025-03-24 15:50:20.093 | INFO     | MODEL.dbconnector:_create_connection:74 - Kết nối thành công đến database
+2025-03-24 15:50:20.096 | INFO     | server:start_server:80 - Máy chủ đang lắng nghe trên cổng 65432
