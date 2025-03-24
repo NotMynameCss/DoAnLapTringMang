@@ -1,35 +1,26 @@
+import socket
 import json
 from loguru import logger
 from pydantic import ValidationError
-from twisted.internet import reactor, protocol
-from twisted.protocols.basic import LineReceiver
 from MODEL.models import EmailModel  # Import EmailModel from models.py
-
-class MailClientProtocol(LineReceiver):
-    def __init__(self, controller):
-        self.controller = controller
-
-    def connectionMade(self):
-        self.sendLine(self.controller.message.encode('utf-8'))
-
-    def lineReceived(self, line):
-        response = line.decode('utf-8')
-        self.controller.handle_response(response)
-        self.transport.loseConnection()
 
 class MailController:
     def __init__(self, user_id):
         self.user_id = user_id
 
-    def send_request(self, message):
-        self.message = message
-        factory = protocol.ClientFactory()
-        factory.protocol = lambda: MailClientProtocol(self)
-        reactor.connectTCP('localhost', 65432, factory)
-
-    def handle_response(self, response):
-        logger.info(f"Phản hồi từ server: {response}")
-        self.view.handle_server_response(response)
+    def send_request(self, request):
+        try:
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.connect(('localhost', 65432))
+                s.sendall(request.encode())
+                response = s.recv(4096)
+                return response.decode()
+        except ConnectionRefusedError as e:
+            logger.error(f"Lỗi kết nối đến server: {e}")
+            return ""
+        except socket.error as e:
+            logger.error(f"Lỗi socket: {e}")
+            return ""
 
     def send_email(self, sender, recipients, cc, bcc, subject, body, attachments):
         try:
@@ -48,14 +39,40 @@ class MailController:
 
         message = f"SEND_EMAIL|{email_data.sender}|{email_data.recipients}|{email_data.cc}|{email_data.bcc}|{email_data.subject}|{email_data.body}|{email_data.attachments}"
         logger.info(f"Gửi yêu cầu gửi email: {message}")
-        self.send_request(message)
+        response = self.send_request(message)
+        
+        if not response:
+            return "Không thể gửi email. Vui lòng thử lại sau."
+        
+        return response
 
     def fetch_emails(self, folder):
         request = f"FETCH_EMAILS|{self.user_id}|{folder}"
         logger.info(f"Gửi yêu cầu truy xuất email: {request}")
-        self.send_request(request)
+        response = self.send_request(request)
+        if not response:
+            logger.error("Không nhận được phản hồi từ server")
+            return []
+        logger.info(f"Phản hồi từ server: {response}")
+        emails = self.parse_response(response)
+        logger.info(f"Truy xuất email thành công: {emails}")
+        return emails
 
     def fetch_all_emails(self):
         request = "FETCH_ALL_EMAILS"
         logger.info(f"Gửi yêu cầu truy xuất tất cả email: {request}")
-        self.send_request(request)
+        response = self.send_request(request)
+        if not response:
+            logger.error("Không nhận được phản hồi từ server")
+            return []
+        try:
+            emails = json.loads(response) if response else []
+            logger.info(f"Truy xuất tất cả email thành công: {emails}")
+        except json.JSONDecodeError as e:
+            logger.error(f"Lỗi khi phân tích cú pháp email: {e}")
+            emails = []
+        return emails
+
+    def parse_response(self, response):
+        # Assuming the response is a JSON string of emails
+        return json.loads(response)

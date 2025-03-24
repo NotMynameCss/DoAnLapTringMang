@@ -5,6 +5,8 @@ from loguru import logger
 class EmailController:
     def __init__(self):
         self.session = create_connection()
+        if self.session is None:
+            logger.error("Failed to create database connection")
 
     def fetch_emails(self, user_id):
         if self.session is None:
@@ -16,6 +18,9 @@ class EmailController:
             return email_list
         except SQLAlchemyError as e:
             logger.error(f"Lỗi khi truy xuất email: {e}")
+            return []
+        except Exception as e:
+            logger.error(f"Unexpected error: {e}")
             return []
 
     def fetch_email_details(self, email_id):
@@ -32,4 +37,7 @@ class EmailController:
                 return {}
         except SQLAlchemyError as e:
             logger.error(f"Lỗi khi truy xuất chi tiết email: {e}")
+            return {}
+        except Exception as e:
+            logger.error(f"Unexpected error: {e}")
             return {}

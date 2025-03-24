@@ -5,11 +5,15 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from sqlalchemy.exc import SQLAlchemyError
 from MODEL.dbconnector import create_connection, Email, User
-from loguru import logger
+from utils.logger import get_logger
+
+logger = get_logger()
 
 class FetchMailController:
     def __init__(self):
         self.session = create_connection()
+        if self.session is None:
+            logger.error("Failed to create database connection")
 
     def fetch_emails(self, email_type):
         emails = []  # Initialize emails variable
@@ -25,6 +29,9 @@ class FetchMailController:
         except SQLAlchemyError as e:
             logger.error(f"Lỗi khi truy xuất email: {e}")
             return f"Lỗi khi truy xuất email: {e}"
+        except Exception as e:
+            logger.error(f"Unexpected error: {e}")
+            return f"Unexpected error: {e}"
 
     def fetch_all_emails(self):
         if self.session is None:
@@ -35,6 +42,9 @@ class FetchMailController:
             return emails
         except SQLAlchemyError as e:
             logger.error(f"Lỗi khi truy xuất email: {e}")
+            return []
+        except Exception as e:
+            logger.error(f"Unexpected error: {e}")
             return []
 
     def fetch_all_users(self):
@@ -47,6 +57,9 @@ class FetchMailController:
         except SQLAlchemyError as e:
             logger.error(f"Lỗi khi truy xuất người dùng: {e}")
             return f"Lỗi khi truy xuất người dùng: {e}"
+        except Exception as e:
+            logger.error(f"Unexpected error: {e}")
+            return f"Unexpected error: {e}"
 
     def fetch_emails_by_user(self, username, email_type="inbox"):
         if self.session is None:
@@ -65,6 +78,9 @@ class FetchMailController:
         except SQLAlchemyError as e:
             logger.error(f"Lỗi khi truy xuất email: {e}")
             return f"Lỗi khi truy xuất email: {e}"
+        except Exception as e:
+            logger.error(f"Unexpected error: {e}")
+            return f"Unexpected error: {e}"
 
     def fetch_email_details(self, email_id):
         if self.session is None:
@@ -85,4 +101,7 @@ class FetchMailController:
             return None
         except SQLAlchemyError as e:
             logger.error(f"Lỗi khi truy xuất chi tiết email: {e}")
+            return None
+        except Exception as e:
+            logger.error(f"Unexpected error: {e}")
             return None

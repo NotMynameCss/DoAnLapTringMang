@@ -1,35 +1,24 @@
 import socket
 from loguru import logger
 from pydantic import ValidationError
-from twisted.internet import reactor, protocol
-from twisted.protocols.basic import LineReceiver
 from MODEL.models import UserModel, RegisterModel, LoginModel  # Import models from models.py
-
-class AuthClientProtocol(LineReceiver):
-    def __init__(self, controller):
-        self.controller = controller
-
-    def connectionMade(self):
-        self.sendLine(self.controller.message.encode('utf-8'))
-
-    def lineReceived(self, line):
-        response = line.decode('utf-8')
-        self.controller.handle_response(response)
-        self.transport.loseConnection()
 
 class AuthController:
     def __init__(self, view):
         self.view = view
 
     def send_request(self, message):
-        self.message = message
-        factory = protocol.ClientFactory()
-        factory.protocol = lambda: AuthClientProtocol(self)
-        reactor.connectTCP('localhost', 65432, factory)
-
-    def handle_response(self, response):
-        logger.info(f"Phản hồi từ server: {response}")
-        self.view.handle_server_response(response)
+        try:
+            client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            client_socket.connect(('localhost', 65432))
+            client_socket.send(message.encode('utf-8'))
+            response = client_socket.recv(1024).decode('utf-8')
+            client_socket.close()
+            logger.info(f"Phản hồi từ server: {response}")
+            return response
+        except Exception as e:
+            logger.error(f"Lỗi kết nối đến server: {e}")
+            return f"Lỗi kết nối đến server: {e}"
 
     def login(self, username, password):
         try:
@@ -39,7 +28,8 @@ class AuthController:
             return f"Lỗi xác thực dữ liệu: {e}"
         message = f"LOGIN {user_data.username} {user_data.password}"
         logger.info(f"Gửi yêu cầu đăng nhập: {message}")
-        self.send_request(message)
+        response = self.send_request(message)
+        return response
 
     def register(self, username, password):
         try:
@@ -49,4 +39,5 @@ class AuthController:
             return f"Lỗi xác thực dữ liệu: {e}"
         message = f"REGISTER {user_data.username} {user_data.password}"
         logger.info(f"Gửi yêu cầu đăng ký: {message}")
-        self.send_request(message)
+        response = self.send_request(message)
+        return response

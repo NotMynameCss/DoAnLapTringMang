@@ -9,7 +9,7 @@ from CONTROLLER.authController import AuthController
 from twisted.internet import reactor
 from VIEW.subView.subAuthView.entryFrame import EntryFrame
 from VIEW.subView.subAuthView.buttonFrame import ButtonFrame
-from MODEL.models import LoginModel  # Import LoginModel
+from VIEW.subView.subAuthView.authHandlers import handle_login_response, handle_register_response
 
 class AuthView:
     def __init__(self, root, main_view):
@@ -40,26 +40,16 @@ class AuthView:
         auth_controller = AuthController(self)
         response = auth_controller.login(username, password)
         if response == "Đăng nhập thành công":
-            self.handle_login_response(username)
+            handle_login_response(self.main_view, username)
         else:
             messagebox.showerror("Đăng nhập", response)
-
-    def handle_login_response(self, username):
-        messagebox.showinfo("Đăng nhập", "Đăng nhập thành công")
-        self.main_view.show_mail_view(username)
 
     def register(self):
         username = self.entry_frame.username_entry.get()
         password = self.entry_frame.password_entry.get()
         auth_controller = AuthController(self)
         response = auth_controller.register(username, password)
-        reactor.callFromThread(self.handle_register_response, response)
-
-    def handle_register_response(self, response):
-        if response == "Đăng ký thành công":
-            messagebox.showinfo("Đăng ký", "Đăng ký thành công")
-        else:
-            messagebox.showerror("Đăng ký", response)
+        reactor.callFromThread(handle_register_response, response)
 
     def set_controller(self, controller):
         self.controller = controller

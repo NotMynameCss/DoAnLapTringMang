@@ -1,18 +1,14 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import tkinter as tk
 from tkinter import messagebox
 from CONTROLLER.authController import AuthController
-from twisted.internet import reactor
+from VIEW.mailView import MailView
 from VIEW.subView.subAuthView.entryFrame import EntryFrame
 from VIEW.subView.subAuthView.buttonFrame import ButtonFrame
-from MODEL.models import LoginModel  # Import LoginModel
+from VIEW.subView.subAuthView.authHandlers import handle_login_response, handle_register_response
 
 class AuthView:
-    def __init__(self, root, main_view):
+    def __init__(self, root):
         self.root = root
-        self.main_view = main_view
         self.root.geometry("300x200+523+226")
         self.root.minsize(120, 1)
         self.root.maxsize(1924, 1061)
@@ -36,29 +32,18 @@ class AuthView:
         username = self.entry_frame.username_entry.get()
         password = self.entry_frame.password_entry.get()
         auth_controller = AuthController(self)
-        auth_controller.login(username, password)
-
-    def handle_server_response(self, response):
+        response = auth_controller.login(username, password)
         if response == "Đăng nhập thành công":
-            self.handle_login_response(self.entry_frame.username_entry.get())
+            handle_login_response(self.root, username)
         else:
             messagebox.showerror("Đăng nhập", response)
-
-    def handle_login_response(self, username):
-        messagebox.showinfo("Đăng nhập", "Đăng nhập thành công")
-        self.main_view.show_mail_view(username)
 
     def register(self):
         username = self.entry_frame.username_entry.get()
         password = self.entry_frame.password_entry.get()
         auth_controller = AuthController(self)
-        auth_controller.register(username, password)
-
-    def handle_register_response(self, response):
-        if response == "Đăng ký thành công":
-            messagebox.showinfo("Đăng ký", "Đăng ký thành công")
-        else:
-            messagebox.showerror("Đăng ký", response)
+        response = auth_controller.register(username, password)
+        handle_register_response(response)
 
     def set_controller(self, controller):
         self.controller = controller

@@ -5,13 +5,17 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from sqlalchemy.exc import SQLAlchemyError
 from MODEL.dbconnector import create_connection, Email
-from loguru import logger
 from pydantic import ValidationError
 from MODEL.models import EmailModel  # Import EmailModel from models.py
+from utils.logger import get_logger
+
+logger = get_logger()
 
 class SendMailController:
     def __init__(self):
         self.session = create_connection()
+        if self.session is None:
+            logger.error("Failed to create database connection")
 
     def send_email(self, sender, recipients, cc, bcc, subject, body, attachments):
         try:
@@ -30,4 +34,9 @@ class SendMailController:
             return "Email đã được gửi thành công"
         except SQLAlchemyError as e:
             logger.error(f"Lỗi khi gửi email: {e}")
+            self.session.rollback()
             return f"Lỗi khi gửi email: {e}"
+        except Exception as e:
+            logger.error(f"Unexpected error: {e}")
+            self.session.rollback()
+            return f"Unexpected error: {e}"

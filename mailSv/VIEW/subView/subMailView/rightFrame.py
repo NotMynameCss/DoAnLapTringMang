@@ -66,19 +66,19 @@ class RightFrame(tk.Frame):
         details_window.title("Chi tiết Email")
         details_window.geometry("600x400")
 
-        from_label = tk.Label(details_window, text=f"From: {email_details.get('sender', 'N/A')}")
+        from_label = tk.Label(details_window, text=f"From: {email_details['sender']}")
         from_label.pack(anchor="w", padx=10, pady=5)
 
-        to_label = tk.Label(details_window, text=f"To: {email_details.get('recipients', 'N/A')}")
+        to_label = tk.Label(details_window, text=f"To: {email_details['recipients']}")
         to_label.pack(anchor="w", padx=10, pady=5)
 
-        subject_label = tk.Label(details_window, text=f"Subject: {email_details.get('subject', 'N/A')}")
+        subject_label = tk.Label(details_window, text=f"Subject: {email_details['subject']}")
         subject_label.pack(anchor="w", padx=10, pady=5)
 
-        date_label = tk.Label(details_window, text=f"Date: {email_details.get('timestamp', 'N/A')}")
+        date_label = tk.Label(details_window, text=f"Date: {email_details['timestamp']}")
         date_label.pack(anchor="w", padx=10, pady=5)
 
         body_text = Text(details_window, wrap="word")
-        body_text.insert("1.0", email_details.get('body', 'N/A'))
+        body_text.insert("1.0", email_details['body'])
         body_text.pack(fill="both", expand=True, padx=10, pady=10)
         body_text.config(state="disabled")

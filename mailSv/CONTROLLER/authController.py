@@ -1,8 +1,10 @@
 from sqlalchemy.exc import SQLAlchemyError
 from MODEL.dbconnector import create_connection, User
-from loguru import logger
 from pydantic import ValidationError
 from MODEL.models import UserModel, LoginModel  # Import LoginModel from models.py
+from utils.logger import get_logger
+
+logger = get_logger()
 
 class AuthController:
     def __init__(self, view):

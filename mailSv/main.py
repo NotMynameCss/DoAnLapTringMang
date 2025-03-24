@@ -10,16 +10,9 @@ from CONTROLLER.mailController import MailController
 from server import start_server
 import threading
 from twisted.internet import reactor
-from twisted.logger import Logger, globalLogBeginner, textFileLogObserver
+from utils.logger import get_twisted_logger
 
-# Ensure the logMailSv directory exists
-log_dir = os.path.join(os.path.dirname(__file__), 'logMailSv')
-if not os.path.exists(log_dir):
-    os.makedirs(log_dir)
-
-# Configure twisted.logger
-globalLogBeginner.beginLoggingTo([textFileLogObserver(open(os.path.join(log_dir, "twisted_server.log"), "a"))])
-twisted_logger = Logger()
+twisted_logger = get_twisted_logger()
 
 def start_tkinter_app():
     root = tk.Tk()
