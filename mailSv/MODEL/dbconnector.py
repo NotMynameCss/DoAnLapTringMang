@@ -2,6 +2,8 @@ from sqlalchemy import create_engine, Column, Integer, String, Text, TIMESTAMP, 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 from loguru import logger
+import logging
+import os
 
 Base = declarative_base()
 
@@ -67,10 +69,21 @@ class DatabaseConnector:
 
     def _create_connection(self):
         try:
+            # Ensure the logMailSv directory exists
+            log_dir = os.path.join(os.path.dirname(__file__), '..', 'logMailSv')
+            if not os.path.exists(log_dir):
+                os.makedirs(log_dir)
+
+            # Configure SQLAlchemy logging
+            logging.basicConfig()
+            logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+            logging.getLogger('sqlalchemy.engine').addHandler(logging.FileHandler(os.path.join(log_dir, 'databaselog.log')))
+
             engine = create_engine('mysql+mysqlconnector://root:@localhost/mail_server_db', echo=True)  # Enable echo to log SQL statements
             Base.metadata.create_all(engine)
             Session = sessionmaker(bind=engine)
             self._session = Session()
+            logger.add(os.path.join(log_dir, "databaselog.log"), rotation="1 MB", retention="10 days", level="INFO")
             logger.info("Kết nối thành công đến database")
         except Exception as e:
             logger.error(f"Lỗi kết nối đến database: {e}")

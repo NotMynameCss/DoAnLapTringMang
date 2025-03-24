@@ -1,0 +1,125 @@
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+DESCRIBE `mail_server_db`.`emails`
+[raw sql] {}
+DESCRIBE `mail_server_db`.`users`
+[raw sql] {}
+DESCRIBE `mail_server_db`.`labels`
+[raw sql] {}
+DESCRIBE `mail_server_db`.`email_labels`
+[raw sql] {}
+COMMIT
+2025-03-23 23:47:30.268 | INFO     | MODEL.dbconnector:_create_connection:87 - Kết nối thành công đến database
+2025-03-23 23:47:30.407 | INFO     | server:start_server:100 - Máy chủ đang lắng nghe trên cổng 65432
+BEGIN (implicit)
+SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00235s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23 23:47:33.181 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+FROM users
+[generated in 0.00070s] {}
+2025-03-23 23:47:34.064 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+DESCRIBE `mail_server_db`.`emails`
+[raw sql] {}
+DESCRIBE `mail_server_db`.`users`
+[raw sql] {}
+DESCRIBE `mail_server_db`.`labels`
+[raw sql] {}
+DESCRIBE `mail_server_db`.`email_labels`
+[raw sql] {}
+COMMIT
+2025-03-23 23:53:09.507 | INFO     | MODEL.dbconnector:_create_connection:87 - Kết nối thành công đến database
+2025-03-23 23:53:09.649 | INFO     | server:start_server:100 - Máy chủ đang lắng nghe trên cổng 65432
+BEGIN (implicit)
+SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00104s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23 23:53:14.511 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+FROM users
+[generated in 0.00082s] {}
+2025-03-23 23:53:15.443 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+FROM emails 
+WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+[generated in 0.00094s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23 23:53:16.754 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 7 email loại inbox của người dùng 1
+2025-03-23 23:53:17.958 | INFO     | VIEW.subView.subMailView.rightFrame:show_email_details:57 - Selected email ID: 22
+2025-03-23 23:53:17.959 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:74 - Fetching details for email ID: 22
+SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+FROM emails 
+WHERE emails.id = %(id_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00100s] {'id_1': 22, 'param_1': 1}
+2025-03-23 23:53:17.962 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:78 - Truy xuất chi tiết email thành công: {'id': 22, 'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': '~~', 'body': '~~~\n', 'attachments': '', 'timestamp': '2025-03-23T22:30:20'}
+INSERT INTO emails (sender, recipients, cc, bcc, subject, `body`, attachments) VALUES (%(sender)s, %(recipients)s, %(cc)s, %(bcc)s, %(subject)s, %(body)s, %(attachments)s)
+[generated in 0.00066s] {'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': '333', 'body': 'ssss\n', 'attachments': ''}
+COMMIT
+2025-03-23 23:53:27.229 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
+BEGIN (implicit)
+SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+FROM emails 
+WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+[cached since 12.62s ago] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23 23:53:29.377 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 8 email loại inbox của người dùng 1
+SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+ LIMIT %(param_1)s
+[cached since 22.47s ago] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23 23:53:36.977 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+FROM users
+[cached since 22.56s ago] {}
+2025-03-23 23:53:38.003 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+DESCRIBE `mail_server_db`.`emails`
+[raw sql] {}
+DESCRIBE `mail_server_db`.`users`
+[raw sql] {}
+DESCRIBE `mail_server_db`.`labels`
+[raw sql] {}
+DESCRIBE `mail_server_db`.`email_labels`
+[raw sql] {}
+COMMIT
+2025-03-24 00:09:02.429 | INFO     | MODEL.dbconnector:_create_connection:87 - Kết nối thành công đến database
+2025-03-24 00:09:02.568 | INFO     | server:start_server:100 - Máy chủ đang lắng nghe trên cổng 65432
+BEGIN (implicit)
+SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+ LIMIT %(param_1)s
+[generated in 0.00107s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-24 00:09:06.530 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+FROM users
+[generated in 0.00071s] {}
+2025-03-24 00:09:07.627 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:45 - Truy xuất 6 người dùng
+SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+FROM emails 
+WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+[generated in 0.00091s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-24 00:09:08.916 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:63 - Truy xuất 8 email loại inbox của người dùng 1

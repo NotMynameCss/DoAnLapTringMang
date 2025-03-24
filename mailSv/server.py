@@ -2,14 +2,25 @@ import json
 import datetime
 from twisted.internet import reactor, protocol
 from twisted.protocols.basic import LineReceiver
+from twisted.logger import Logger, globalLogBeginner, textFileLogObserver
 from loguru import logger
 from pydantic import ValidationError
 from MODEL.models import EmailModel, RegisterModel, LoginModel
 from CONTROLLER.mainController import MainController
 from CONTROLLER.mailController import MailController
 
-# Configure loguru
-logger.add("mail_server.log", rotation="1 MB", retention="10 days", level="INFO")
+# Ensure the logMailSv directory exists
+import os
+log_dir = os.path.join(os.path.dirname(__file__), 'logMailSv')
+if not os.path.exists(log_dir):
+    os.makedirs(log_dir)
+
+# Configure loguru for general server logs
+logger.add(os.path.join(log_dir, "log_server.log"), rotation="1 MB", retention="10 days", level="INFO")
+
+# Configure twisted.logger for Twisted-related logs
+globalLogBeginner.beginLoggingTo([textFileLogObserver(open(os.path.join(log_dir, "twisted_server.log"), "a"))])
+twisted_logger = Logger()
 
 # Custom JSON encoder to handle datetime objects
 class DateTimeEncoder(json.JSONEncoder):
@@ -26,6 +37,7 @@ class MailServerProtocol(LineReceiver):
     def lineReceived(self, line):
         message = line.decode('utf-8')
         logger.info(f"Nhận tin nhắn: {message}")
+        twisted_logger.info(f"Nhận tin nhắn: {message}")
 
         if message.startswith("REGISTER"):
             _, username, password = message.split()
@@ -34,6 +46,7 @@ class MailServerProtocol(LineReceiver):
                 response = self.main_controller.handle_register(data.username, data.password)
             except ValidationError as e:
                 logger.error(f"Lỗi xác thực dữ liệu: {e}")
+                twisted_logger.error(f"Lỗi xác thực dữ liệu: {e}")
                 response = f"Lỗi xác thực dữ liệu: {e}"
         elif message.startswith("LOGIN"):
             _, username, password = message.split()
@@ -42,6 +55,7 @@ class MailServerProtocol(LineReceiver):
                 response = self.main_controller.handle_login(data.username, data.password)
             except ValidationError as e:
                 logger.error(f"Lỗi xác thực dữ liệu: {e}")
+                twisted_logger.error(f"Lỗi xác thực dữ liệu: {e}")
                 response = f"Lỗi xác thực dữ liệu: {e}"
         elif message.startswith("SEND_EMAIL"):
             _, sender, recipients, cc, bcc, subject, body, attachments = message.split('|')
@@ -50,6 +64,7 @@ class MailServerProtocol(LineReceiver):
                 response = self.mail_controller.send_email(data.sender, data.recipients, data.cc, data.bcc, data.subject, data.body, data.attachments)
             except ValidationError as e:
                 logger.error(f"Lỗi xác thực dữ liệu: {e}")
+                twisted_logger.error(f"Lỗi xác thực dữ liệu: {e}")
                 response = f"Lỗi xác thực dữ liệu: {e}"
         elif message.startswith("FETCH_EMAILS"):
             _, username, email_type = message.split('|')
@@ -69,6 +84,7 @@ class MailServerProtocol(LineReceiver):
 
         self.sendLine(response.encode('utf-8'))
         logger.info(f"Phản hồi gửi đến client: {response}")
+        twisted_logger.info(f"Phản hồi gửi đến client: {response}")
 
 class MailServerFactory(protocol.Factory):
     def __init__(self, main_controller, mail_controller):
@@ -82,6 +98,7 @@ def start_server(main_controller, mail_controller):
     factory = MailServerFactory(main_controller, mail_controller)
     reactor.listenTCP(65432, factory)
     logger.info("Máy chủ đang lắng nghe trên cổng 65432")
+    twisted_logger.info("Máy chủ đang lắng nghe trên cổng 65432")
     # Do not call reactor.run() here, it will be called in the main thread
 
 if __name__ == "__main__":

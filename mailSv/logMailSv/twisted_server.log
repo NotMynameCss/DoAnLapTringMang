@@ -1,0 +1,644 @@
+2025-03-23T23:43:25+0700 [twisted.logger._global#warn] Warning: primary log target selected twice at <d:\project python\DoAnLapTringMang\mailSv\main.py:21> - previously selected at <d:\project python\DoAnLapTringMang\mailSv\server.py:22>.  Remove one of the calls to beginLoggingTo.
+2025-03-23T23:43:25+0700 [twisted.logger._global#warn] Warning: primary log target selected twice at <d:\project python\DoAnLapTringMang\mailSv\main.py:21> - previously selected at <d:\project python\DoAnLapTringMang\mailSv\server.py:22>.  Remove one of the calls to beginLoggingTo.
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,124 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,124 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT DATABASE()
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT DATABASE()
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,126 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,126 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,127 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,127 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@sql_mode
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@sql_mode
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,127 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,127 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,128 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,128 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@lower_case_table_names
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@lower_case_table_names
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,128 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,128 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,129 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,129 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,129 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`emails`
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,129 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`emails`
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`emails`
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`emails`
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,129 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,129 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,140 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`users`
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,140 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`users`
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`users`
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`users`
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,141 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,141 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,145 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`labels`
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,145 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`labels`
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`labels`
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`labels`
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,145 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,145 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,149 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`email_labels`
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,149 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`email_labels`
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`email_labels`
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`email_labels`
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,149 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,149 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,154 INFO sqlalchemy.engine.Engine COMMIT
+2025-03-23T23:43:25+0700 [stdout#info] 2025-03-23 23:43:25,154 INFO sqlalchemy.engine.Engine COMMIT
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:COMMIT
+2025-03-23T23:43:25+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:COMMIT
+2025-03-23T23:43:25+0700 [-] MailServerFactory starting on 65432
+2025-03-23T23:43:25+0700 [-] MailServerFactory starting on 65432
+2025-03-23T23:43:25+0700 [server.MailServerFactory#info] Starting factory <server.MailServerFactory object at 0x000001F3C3900050>
+2025-03-23T23:43:25+0700 [server.MailServerFactory#info] Starting factory <server.MailServerFactory object at 0x000001F3C3900050>
+2025-03-23T23:43:25+0700 [twisted.logger._observer#critical] Temporarily disabling observer <twisted.logger._file.FileLogObserver object at 0x000001F3C344AD50> due to exception: [Failure instance: Traceback: <class 'UnicodeEncodeError'>: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py:81:__call__
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py:50:__call__
+	]
+	Traceback (most recent call last):
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py", line 81, in __call__
+	    observer(event)
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py", line 50, in __call__
+	    self._outFile.write(text)
+	builtins.UnicodeEncodeError: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	
+2025-03-23T23:43:25+0700 [twisted.logger._observer#critical] Temporarily disabling observer <twisted.logger._file.FileLogObserver object at 0x000001F3C344AFD0> due to exception: [Failure instance: Traceback: <class 'UnicodeEncodeError'>: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py:81:__call__
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py:50:__call__
+	]
+	Traceback (most recent call last):
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py", line 81, in __call__
+	    observer(event)
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py", line 50, in __call__
+	    self._outFile.write(text)
+	builtins.UnicodeEncodeError: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	
+2025-03-23T23:43:29+0700 [stdout#info] 2025-03-23 23:43:29,431 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:43:29+0700 [stdout#info] 2025-03-23 23:43:29,431 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:43:29+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:43:29+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:43:29+0700 [stdout#info] 2025-03-23 23:43:29,433 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:43:29+0700 [stdout#info] 2025-03-23 23:43:29,433 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:43:29+0700 [stdout#info] FROM users 
+2025-03-23T23:43:29+0700 [stdout#info] FROM users 
+2025-03-23T23:43:29+0700 [stdout#info] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:43:29+0700 [stdout#info] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:43:29+0700 [stdout#info]  LIMIT %(param_1)s
+2025-03-23T23:43:29+0700 [stdout#info]  LIMIT %(param_1)s
+2025-03-23T23:43:29+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:43:29+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:43:29+0700 [stderr#error] FROM users 
+2025-03-23T23:43:29+0700 [stderr#error] FROM users 
+2025-03-23T23:43:29+0700 [stderr#error] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:43:29+0700 [stderr#error] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:43:29+0700 [stderr#error]  LIMIT %(param_1)s
+2025-03-23T23:43:29+0700 [stderr#error]  LIMIT %(param_1)s
+2025-03-23T23:43:29+0700 [stdout#info] 2025-03-23 23:43:29,435 INFO sqlalchemy.engine.Engine [generated in 0.00229s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:43:29+0700 [stdout#info] 2025-03-23 23:43:29,435 INFO sqlalchemy.engine.Engine [generated in 0.00229s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:43:29+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00229s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:43:29+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00229s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:43:30+0700 [stdout#info] 2025-03-23 23:43:30,452 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:43:30+0700 [stdout#info] 2025-03-23 23:43:30,452 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:43:30+0700 [stdout#info] FROM users
+2025-03-23T23:43:30+0700 [stdout#info] FROM users
+2025-03-23T23:43:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:43:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:43:30+0700 [stderr#error] FROM users
+2025-03-23T23:43:30+0700 [stderr#error] FROM users
+2025-03-23T23:43:30+0700 [stdout#info] 2025-03-23 23:43:30,453 INFO sqlalchemy.engine.Engine [generated in 0.00074s] {}
+2025-03-23T23:43:30+0700 [stdout#info] 2025-03-23 23:43:30,453 INFO sqlalchemy.engine.Engine [generated in 0.00074s] {}
+2025-03-23T23:43:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00074s] {}
+2025-03-23T23:43:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00074s] {}
+2025-03-23T23:43:31+0700 [stdout#info] 2025-03-23 23:43:31,540 INFO sqlalchemy.engine.Engine SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:43:31+0700 [stdout#info] 2025-03-23 23:43:31,540 INFO sqlalchemy.engine.Engine SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:43:31+0700 [stdout#info] FROM emails 
+2025-03-23T23:43:31+0700 [stdout#info] FROM emails 
+2025-03-23T23:43:31+0700 [stdout#info] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-23T23:43:31+0700 [stdout#info] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-23T23:43:31+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:43:31+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:43:31+0700 [stderr#error] FROM emails 
+2025-03-23T23:43:31+0700 [stderr#error] FROM emails 
+2025-03-23T23:43:31+0700 [stderr#error] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-23T23:43:31+0700 [stderr#error] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-23T23:43:31+0700 [stdout#info] 2025-03-23 23:43:31,541 INFO sqlalchemy.engine.Engine [generated in 0.00106s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23T23:43:31+0700 [stdout#info] 2025-03-23 23:43:31,541 INFO sqlalchemy.engine.Engine [generated in 0.00106s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23T23:43:31+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00106s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23T23:43:31+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00106s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23T23:47:30+0700 [twisted.logger._global#warn] Warning: primary log target selected twice at <d:\project python\DoAnLapTringMang\mailSv\main.py:21> - previously selected at <d:\project python\DoAnLapTringMang\mailSv\server.py:22>.  Remove one of the calls to beginLoggingTo.
+2025-03-23T23:47:30+0700 [twisted.logger._global#warn] Warning: primary log target selected twice at <d:\project python\DoAnLapTringMang\mailSv\main.py:21> - previously selected at <d:\project python\DoAnLapTringMang\mailSv\server.py:22>.  Remove one of the calls to beginLoggingTo.
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,236 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,236 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT DATABASE()
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT DATABASE()
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,237 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,237 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,238 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,238 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@sql_mode
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@sql_mode
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,238 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,238 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,238 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,238 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@lower_case_table_names
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@lower_case_table_names
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,239 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,239 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,239 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,239 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,240 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`emails`
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,240 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`emails`
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`emails`
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`emails`
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,240 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,240 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,253 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`users`
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,253 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`users`
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`users`
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`users`
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,253 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,253 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,257 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`labels`
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,257 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`labels`
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`labels`
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`labels`
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,258 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,258 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,262 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`email_labels`
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,262 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`email_labels`
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`email_labels`
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`email_labels`
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,262 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,262 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,266 INFO sqlalchemy.engine.Engine COMMIT
+2025-03-23T23:47:30+0700 [stdout#info] 2025-03-23 23:47:30,266 INFO sqlalchemy.engine.Engine COMMIT
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:COMMIT
+2025-03-23T23:47:30+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:COMMIT
+2025-03-23T23:47:30+0700 [-] MailServerFactory starting on 65432
+2025-03-23T23:47:30+0700 [-] MailServerFactory starting on 65432
+2025-03-23T23:47:30+0700 [server.MailServerFactory#info] Starting factory <server.MailServerFactory object at 0x0000024B12D30050>
+2025-03-23T23:47:30+0700 [server.MailServerFactory#info] Starting factory <server.MailServerFactory object at 0x0000024B12D30050>
+2025-03-23T23:47:30+0700 [twisted.logger._observer#critical] Temporarily disabling observer <twisted.logger._file.FileLogObserver object at 0x0000024B1286AD50> due to exception: [Failure instance: Traceback: <class 'UnicodeEncodeError'>: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py:81:__call__
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py:50:__call__
+	]
+	Traceback (most recent call last):
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py", line 81, in __call__
+	    observer(event)
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py", line 50, in __call__
+	    self._outFile.write(text)
+	builtins.UnicodeEncodeError: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	
+2025-03-23T23:47:30+0700 [twisted.logger._observer#critical] Temporarily disabling observer <twisted.logger._file.FileLogObserver object at 0x0000024B1286AFD0> due to exception: [Failure instance: Traceback: <class 'UnicodeEncodeError'>: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py:81:__call__
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py:50:__call__
+	]
+	Traceback (most recent call last):
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py", line 81, in __call__
+	    observer(event)
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py", line 50, in __call__
+	    self._outFile.write(text)
+	builtins.UnicodeEncodeError: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	
+2025-03-23T23:47:33+0700 [stdout#info] 2025-03-23 23:47:33,175 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:47:33+0700 [stdout#info] 2025-03-23 23:47:33,175 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:47:33+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:47:33+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:47:33+0700 [stdout#info] 2025-03-23 23:47:33,178 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:47:33+0700 [stdout#info] 2025-03-23 23:47:33,178 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:47:33+0700 [stdout#info] FROM users 
+2025-03-23T23:47:33+0700 [stdout#info] FROM users 
+2025-03-23T23:47:33+0700 [stdout#info] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:47:33+0700 [stdout#info] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:47:33+0700 [stdout#info]  LIMIT %(param_1)s
+2025-03-23T23:47:33+0700 [stdout#info]  LIMIT %(param_1)s
+2025-03-23T23:47:33+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:47:33+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:47:33+0700 [stderr#error] FROM users 
+2025-03-23T23:47:33+0700 [stderr#error] FROM users 
+2025-03-23T23:47:33+0700 [stderr#error] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:47:33+0700 [stderr#error] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:47:33+0700 [stderr#error]  LIMIT %(param_1)s
+2025-03-23T23:47:33+0700 [stderr#error]  LIMIT %(param_1)s
+2025-03-23T23:47:33+0700 [stdout#info] 2025-03-23 23:47:33,180 INFO sqlalchemy.engine.Engine [generated in 0.00235s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:47:33+0700 [stdout#info] 2025-03-23 23:47:33,180 INFO sqlalchemy.engine.Engine [generated in 0.00235s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:47:33+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00235s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:47:33+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00235s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:47:34+0700 [stdout#info] 2025-03-23 23:47:34,063 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:47:34+0700 [stdout#info] 2025-03-23 23:47:34,063 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:47:34+0700 [stdout#info] FROM users
+2025-03-23T23:47:34+0700 [stdout#info] FROM users
+2025-03-23T23:47:34+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:47:34+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:47:34+0700 [stderr#error] FROM users
+2025-03-23T23:47:34+0700 [stderr#error] FROM users
+2025-03-23T23:47:34+0700 [stdout#info] 2025-03-23 23:47:34,063 INFO sqlalchemy.engine.Engine [generated in 0.00070s] {}
+2025-03-23T23:47:34+0700 [stdout#info] 2025-03-23 23:47:34,063 INFO sqlalchemy.engine.Engine [generated in 0.00070s] {}
+2025-03-23T23:47:34+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00070s] {}
+2025-03-23T23:47:34+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00070s] {}
+2025-03-23T23:53:09+0700 [twisted.logger._global#warn] Warning: primary log target selected twice at <d:\project python\DoAnLapTringMang\mailSv\main.py:21> - previously selected at <d:\project python\DoAnLapTringMang\mailSv\server.py:22>.  Remove one of the calls to beginLoggingTo.
+2025-03-23T23:53:09+0700 [twisted.logger._global#warn] Warning: primary log target selected twice at <d:\project python\DoAnLapTringMang\mailSv\main.py:21> - previously selected at <d:\project python\DoAnLapTringMang\mailSv\server.py:22>.  Remove one of the calls to beginLoggingTo.
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,473 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,473 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT DATABASE()
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT DATABASE()
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,474 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,474 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,475 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,475 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@sql_mode
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@sql_mode
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,475 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,475 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,476 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,476 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@lower_case_table_names
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@lower_case_table_names
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,476 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,476 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,477 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,477 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,478 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`emails`
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,478 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`emails`
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`emails`
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`emails`
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,478 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,478 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,490 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`users`
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,490 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`users`
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`users`
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`users`
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,491 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,491 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,495 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`labels`
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,495 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`labels`
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`labels`
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`labels`
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,496 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,496 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,501 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`email_labels`
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,501 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`email_labels`
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`email_labels`
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`email_labels`
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,501 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,501 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,505 INFO sqlalchemy.engine.Engine COMMIT
+2025-03-23T23:53:09+0700 [stdout#info] 2025-03-23 23:53:09,505 INFO sqlalchemy.engine.Engine COMMIT
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:COMMIT
+2025-03-23T23:53:09+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:COMMIT
+2025-03-23T23:53:09+0700 [-] MailServerFactory starting on 65432
+2025-03-23T23:53:09+0700 [-] MailServerFactory starting on 65432
+2025-03-23T23:53:09+0700 [server.MailServerFactory#info] Starting factory <server.MailServerFactory object at 0x000002A3549501A0>
+2025-03-23T23:53:09+0700 [server.MailServerFactory#info] Starting factory <server.MailServerFactory object at 0x000002A3549501A0>
+2025-03-23T23:53:09+0700 [twisted.logger._observer#critical] Temporarily disabling observer <twisted.logger._file.FileLogObserver object at 0x000002A354492AD0> due to exception: [Failure instance: Traceback: <class 'UnicodeEncodeError'>: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py:81:__call__
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py:50:__call__
+	]
+	Traceback (most recent call last):
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py", line 81, in __call__
+	    observer(event)
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py", line 50, in __call__
+	    self._outFile.write(text)
+	builtins.UnicodeEncodeError: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	
+2025-03-23T23:53:09+0700 [twisted.logger._observer#critical] Temporarily disabling observer <twisted.logger._file.FileLogObserver object at 0x000002A354492D50> due to exception: [Failure instance: Traceback: <class 'UnicodeEncodeError'>: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py:81:__call__
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py:50:__call__
+	]
+	Traceback (most recent call last):
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py", line 81, in __call__
+	    observer(event)
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py", line 50, in __call__
+	    self._outFile.write(text)
+	builtins.UnicodeEncodeError: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	
+2025-03-23T23:53:14+0700 [stdout#info] 2025-03-23 23:53:14,507 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:53:14+0700 [stdout#info] 2025-03-23 23:53:14,507 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:53:14+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:53:14+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:53:14+0700 [stdout#info] 2025-03-23 23:53:14,510 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:14+0700 [stdout#info] 2025-03-23 23:53:14,510 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:14+0700 [stdout#info] FROM users 
+2025-03-23T23:53:14+0700 [stdout#info] FROM users 
+2025-03-23T23:53:14+0700 [stdout#info] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:53:14+0700 [stdout#info] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:53:14+0700 [stdout#info]  LIMIT %(param_1)s
+2025-03-23T23:53:14+0700 [stdout#info]  LIMIT %(param_1)s
+2025-03-23T23:53:14+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:14+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:14+0700 [stderr#error] FROM users 
+2025-03-23T23:53:14+0700 [stderr#error] FROM users 
+2025-03-23T23:53:14+0700 [stderr#error] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:53:14+0700 [stderr#error] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:53:14+0700 [stderr#error]  LIMIT %(param_1)s
+2025-03-23T23:53:14+0700 [stderr#error]  LIMIT %(param_1)s
+2025-03-23T23:53:14+0700 [stdout#info] 2025-03-23 23:53:14,510 INFO sqlalchemy.engine.Engine [generated in 0.00104s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:53:14+0700 [stdout#info] 2025-03-23 23:53:14,510 INFO sqlalchemy.engine.Engine [generated in 0.00104s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:53:14+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00104s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:53:14+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00104s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:53:15+0700 [stdout#info] 2025-03-23 23:53:15,442 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:15+0700 [stdout#info] 2025-03-23 23:53:15,442 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:15+0700 [stdout#info] FROM users
+2025-03-23T23:53:15+0700 [stdout#info] FROM users
+2025-03-23T23:53:15+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:15+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:15+0700 [stderr#error] FROM users
+2025-03-23T23:53:15+0700 [stderr#error] FROM users
+2025-03-23T23:53:15+0700 [stdout#info] 2025-03-23 23:53:15,442 INFO sqlalchemy.engine.Engine [generated in 0.00082s] {}
+2025-03-23T23:53:15+0700 [stdout#info] 2025-03-23 23:53:15,442 INFO sqlalchemy.engine.Engine [generated in 0.00082s] {}
+2025-03-23T23:53:15+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00082s] {}
+2025-03-23T23:53:15+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00082s] {}
+2025-03-23T23:53:16+0700 [stdout#info] 2025-03-23 23:53:16,752 INFO sqlalchemy.engine.Engine SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:53:16+0700 [stdout#info] 2025-03-23 23:53:16,752 INFO sqlalchemy.engine.Engine SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:53:16+0700 [stdout#info] FROM emails 
+2025-03-23T23:53:16+0700 [stdout#info] FROM emails 
+2025-03-23T23:53:16+0700 [stdout#info] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-23T23:53:16+0700 [stdout#info] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-23T23:53:16+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:53:16+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:53:16+0700 [stderr#error] FROM emails 
+2025-03-23T23:53:16+0700 [stderr#error] FROM emails 
+2025-03-23T23:53:16+0700 [stderr#error] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-23T23:53:16+0700 [stderr#error] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-23T23:53:16+0700 [stdout#info] 2025-03-23 23:53:16,753 INFO sqlalchemy.engine.Engine [generated in 0.00094s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23T23:53:16+0700 [stdout#info] 2025-03-23 23:53:16,753 INFO sqlalchemy.engine.Engine [generated in 0.00094s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23T23:53:16+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00094s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23T23:53:16+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00094s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23T23:53:17+0700 [stdout#info] 2025-03-23 23:53:17,960 INFO sqlalchemy.engine.Engine SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:53:17+0700 [stdout#info] 2025-03-23 23:53:17,960 INFO sqlalchemy.engine.Engine SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:53:17+0700 [stdout#info] FROM emails 
+2025-03-23T23:53:17+0700 [stdout#info] FROM emails 
+2025-03-23T23:53:17+0700 [stdout#info] WHERE emails.id = %(id_1)s 
+2025-03-23T23:53:17+0700 [stdout#info] WHERE emails.id = %(id_1)s 
+2025-03-23T23:53:17+0700 [stdout#info]  LIMIT %(param_1)s
+2025-03-23T23:53:17+0700 [stdout#info]  LIMIT %(param_1)s
+2025-03-23T23:53:17+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:53:17+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:53:17+0700 [stderr#error] FROM emails 
+2025-03-23T23:53:17+0700 [stderr#error] FROM emails 
+2025-03-23T23:53:17+0700 [stderr#error] WHERE emails.id = %(id_1)s 
+2025-03-23T23:53:17+0700 [stderr#error] WHERE emails.id = %(id_1)s 
+2025-03-23T23:53:17+0700 [stderr#error]  LIMIT %(param_1)s
+2025-03-23T23:53:17+0700 [stderr#error]  LIMIT %(param_1)s
+2025-03-23T23:53:17+0700 [stdout#info] 2025-03-23 23:53:17,961 INFO sqlalchemy.engine.Engine [generated in 0.00100s] {'id_1': 22, 'param_1': 1}
+2025-03-23T23:53:17+0700 [stdout#info] 2025-03-23 23:53:17,961 INFO sqlalchemy.engine.Engine [generated in 0.00100s] {'id_1': 22, 'param_1': 1}
+2025-03-23T23:53:17+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00100s] {'id_1': 22, 'param_1': 1}
+2025-03-23T23:53:17+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00100s] {'id_1': 22, 'param_1': 1}
+2025-03-23T23:53:27+0700 [stdout#info] 2025-03-23 23:53:27,224 INFO sqlalchemy.engine.Engine INSERT INTO emails (sender, recipients, cc, bcc, subject, `body`, attachments) VALUES (%(sender)s, %(recipients)s, %(cc)s, %(bcc)s, %(subject)s, %(body)s, %(attachments)s)
+2025-03-23T23:53:27+0700 [stdout#info] 2025-03-23 23:53:27,224 INFO sqlalchemy.engine.Engine INSERT INTO emails (sender, recipients, cc, bcc, subject, `body`, attachments) VALUES (%(sender)s, %(recipients)s, %(cc)s, %(bcc)s, %(subject)s, %(body)s, %(attachments)s)
+2025-03-23T23:53:27+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:INSERT INTO emails (sender, recipients, cc, bcc, subject, `body`, attachments) VALUES (%(sender)s, %(recipients)s, %(cc)s, %(bcc)s, %(subject)s, %(body)s, %(attachments)s)
+2025-03-23T23:53:27+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:INSERT INTO emails (sender, recipients, cc, bcc, subject, `body`, attachments) VALUES (%(sender)s, %(recipients)s, %(cc)s, %(bcc)s, %(subject)s, %(body)s, %(attachments)s)
+2025-03-23T23:53:27+0700 [stdout#info] 2025-03-23 23:53:27,225 INFO sqlalchemy.engine.Engine [generated in 0.00066s] {'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': '333', 'body': 'ssss\n', 'attachments': ''}
+2025-03-23T23:53:27+0700 [stdout#info] 2025-03-23 23:53:27,225 INFO sqlalchemy.engine.Engine [generated in 0.00066s] {'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': '333', 'body': 'ssss\n', 'attachments': ''}
+2025-03-23T23:53:27+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00066s] {'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': '333', 'body': 'ssss\n', 'attachments': ''}
+2025-03-23T23:53:27+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00066s] {'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': '333', 'body': 'ssss\n', 'attachments': ''}
+2025-03-23T23:53:27+0700 [stdout#info] 2025-03-23 23:53:27,227 INFO sqlalchemy.engine.Engine COMMIT
+2025-03-23T23:53:27+0700 [stdout#info] 2025-03-23 23:53:27,227 INFO sqlalchemy.engine.Engine COMMIT
+2025-03-23T23:53:27+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:COMMIT
+2025-03-23T23:53:27+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:COMMIT
+2025-03-23T23:53:29+0700 [stdout#info] 2025-03-23 23:53:29,375 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:53:29+0700 [stdout#info] 2025-03-23 23:53:29,375 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-23T23:53:29+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:53:29+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-23T23:53:29+0700 [stdout#info] 2025-03-23 23:53:29,375 INFO sqlalchemy.engine.Engine SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:53:29+0700 [stdout#info] 2025-03-23 23:53:29,375 INFO sqlalchemy.engine.Engine SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:53:29+0700 [stdout#info] FROM emails 
+2025-03-23T23:53:29+0700 [stdout#info] FROM emails 
+2025-03-23T23:53:29+0700 [stdout#info] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-23T23:53:29+0700 [stdout#info] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-23T23:53:29+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:53:29+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-23T23:53:29+0700 [stderr#error] FROM emails 
+2025-03-23T23:53:29+0700 [stderr#error] FROM emails 
+2025-03-23T23:53:29+0700 [stderr#error] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-23T23:53:29+0700 [stderr#error] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-23T23:53:29+0700 [stdout#info] 2025-03-23 23:53:29,376 INFO sqlalchemy.engine.Engine [cached since 12.62s ago] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23T23:53:29+0700 [stdout#info] 2025-03-23 23:53:29,376 INFO sqlalchemy.engine.Engine [cached since 12.62s ago] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23T23:53:29+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[cached since 12.62s ago] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23T23:53:29+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[cached since 12.62s ago] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-23T23:53:36+0700 [stdout#info] 2025-03-23 23:53:36,976 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:36+0700 [stdout#info] 2025-03-23 23:53:36,976 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:36+0700 [stdout#info] FROM users 
+2025-03-23T23:53:36+0700 [stdout#info] FROM users 
+2025-03-23T23:53:36+0700 [stdout#info] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:53:36+0700 [stdout#info] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:53:36+0700 [stdout#info]  LIMIT %(param_1)s
+2025-03-23T23:53:36+0700 [stdout#info]  LIMIT %(param_1)s
+2025-03-23T23:53:36+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:36+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:36+0700 [stderr#error] FROM users 
+2025-03-23T23:53:36+0700 [stderr#error] FROM users 
+2025-03-23T23:53:36+0700 [stderr#error] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:53:36+0700 [stderr#error] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-23T23:53:36+0700 [stderr#error]  LIMIT %(param_1)s
+2025-03-23T23:53:36+0700 [stderr#error]  LIMIT %(param_1)s
+2025-03-23T23:53:36+0700 [stdout#info] 2025-03-23 23:53:36,977 INFO sqlalchemy.engine.Engine [cached since 22.47s ago] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:53:36+0700 [stdout#info] 2025-03-23 23:53:36,977 INFO sqlalchemy.engine.Engine [cached since 22.47s ago] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:53:36+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[cached since 22.47s ago] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:53:36+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[cached since 22.47s ago] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-23T23:53:38+0700 [stdout#info] 2025-03-23 23:53:38,001 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:38+0700 [stdout#info] 2025-03-23 23:53:38,001 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:38+0700 [stdout#info] FROM users
+2025-03-23T23:53:38+0700 [stdout#info] FROM users
+2025-03-23T23:53:38+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:38+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-23T23:53:38+0700 [stderr#error] FROM users
+2025-03-23T23:53:38+0700 [stderr#error] FROM users
+2025-03-23T23:53:38+0700 [stdout#info] 2025-03-23 23:53:38,002 INFO sqlalchemy.engine.Engine [cached since 22.56s ago] {}
+2025-03-23T23:53:38+0700 [stdout#info] 2025-03-23 23:53:38,002 INFO sqlalchemy.engine.Engine [cached since 22.56s ago] {}
+2025-03-23T23:53:38+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[cached since 22.56s ago] {}
+2025-03-23T23:53:38+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[cached since 22.56s ago] {}
+2025-03-24T00:09:02+0700 [twisted.logger._global#warn] Warning: primary log target selected twice at <d:\project python\DoAnLapTringMang\mailSv\main.py:21> - previously selected at <d:\project python\DoAnLapTringMang\mailSv\server.py:22>.  Remove one of the calls to beginLoggingTo.
+2025-03-24T00:09:02+0700 [twisted.logger._global#warn] Warning: primary log target selected twice at <d:\project python\DoAnLapTringMang\mailSv\main.py:21> - previously selected at <d:\project python\DoAnLapTringMang\mailSv\server.py:22>.  Remove one of the calls to beginLoggingTo.
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,398 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,398 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT DATABASE()
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT DATABASE()
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,399 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,399 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,400 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,400 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@sql_mode
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@sql_mode
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,400 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,400 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,401 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,401 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@lower_case_table_names
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT @@lower_case_table_names
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,401 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,401 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,402 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,402 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,402 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`emails`
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,402 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`emails`
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`emails`
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`emails`
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,402 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,402 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,413 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`users`
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,413 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`users`
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`users`
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`users`
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,414 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,414 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,418 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`labels`
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,418 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`labels`
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`labels`
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`labels`
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,418 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,418 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,423 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`email_labels`
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,423 INFO sqlalchemy.engine.Engine DESCRIBE `mail_server_db`.`email_labels`
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`email_labels`
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:DESCRIBE `mail_server_db`.`email_labels`
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,423 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,423 INFO sqlalchemy.engine.Engine [raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[raw sql] {}
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,427 INFO sqlalchemy.engine.Engine COMMIT
+2025-03-24T00:09:02+0700 [stdout#info] 2025-03-24 00:09:02,427 INFO sqlalchemy.engine.Engine COMMIT
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:COMMIT
+2025-03-24T00:09:02+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:COMMIT
+2025-03-24T00:09:02+0700 [-] MailServerFactory starting on 65432
+2025-03-24T00:09:02+0700 [-] MailServerFactory starting on 65432
+2025-03-24T00:09:02+0700 [server.MailServerFactory#info] Starting factory <server.MailServerFactory object at 0x0000028B234B01A0>
+2025-03-24T00:09:02+0700 [server.MailServerFactory#info] Starting factory <server.MailServerFactory object at 0x0000028B234B01A0>
+2025-03-24T00:09:02+0700 [twisted.logger._observer#critical] Temporarily disabling observer <twisted.logger._file.FileLogObserver object at 0x0000028B22FFED50> due to exception: [Failure instance: Traceback: <class 'UnicodeEncodeError'>: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py:81:__call__
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py:50:__call__
+	]
+	Traceback (most recent call last):
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py", line 81, in __call__
+	    observer(event)
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py", line 50, in __call__
+	    self._outFile.write(text)
+	builtins.UnicodeEncodeError: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	
+2025-03-24T00:09:02+0700 [twisted.logger._observer#critical] Temporarily disabling observer <twisted.logger._file.FileLogObserver object at 0x0000028B22FFEFD0> due to exception: [Failure instance: Traceback: <class 'UnicodeEncodeError'>: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py:81:__call__
+	C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py:50:__call__
+	]
+	Traceback (most recent call last):
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_observer.py", line 81, in __call__
+	    observer(event)
+	  File "C:\Users\ACER\AppData\Local\Programs\Python\Python313\Lib\site-packages\twisted\logger\_file.py", line 50, in __call__
+	    self._outFile.write(text)
+	builtins.UnicodeEncodeError: 'cp932' codec can't encode character '\xe1' in position 40: illegal multibyte sequence
+	
+2025-03-24T00:09:06+0700 [stdout#info] 2025-03-24 00:09:06,525 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-24T00:09:06+0700 [stdout#info] 2025-03-24 00:09:06,525 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-03-24T00:09:06+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-24T00:09:06+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2025-03-24T00:09:06+0700 [stdout#info] 2025-03-24 00:09:06,528 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-24T00:09:06+0700 [stdout#info] 2025-03-24 00:09:06,528 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-24T00:09:06+0700 [stdout#info] FROM users 
+2025-03-24T00:09:06+0700 [stdout#info] FROM users 
+2025-03-24T00:09:06+0700 [stdout#info] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-24T00:09:06+0700 [stdout#info] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-24T00:09:06+0700 [stdout#info]  LIMIT %(param_1)s
+2025-03-24T00:09:06+0700 [stdout#info]  LIMIT %(param_1)s
+2025-03-24T00:09:06+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-24T00:09:06+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-24T00:09:06+0700 [stderr#error] FROM users 
+2025-03-24T00:09:06+0700 [stderr#error] FROM users 
+2025-03-24T00:09:06+0700 [stderr#error] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-24T00:09:06+0700 [stderr#error] WHERE users.username = %(username_1)s AND users.password = %(password_1)s 
+2025-03-24T00:09:06+0700 [stderr#error]  LIMIT %(param_1)s
+2025-03-24T00:09:06+0700 [stderr#error]  LIMIT %(param_1)s
+2025-03-24T00:09:06+0700 [stdout#info] 2025-03-24 00:09:06,529 INFO sqlalchemy.engine.Engine [generated in 0.00107s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-24T00:09:06+0700 [stdout#info] 2025-03-24 00:09:06,529 INFO sqlalchemy.engine.Engine [generated in 0.00107s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-24T00:09:06+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00107s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-24T00:09:06+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00107s] {'username_1': '1', 'password_1': '1', 'param_1': 1}
+2025-03-24T00:09:07+0700 [stdout#info] 2025-03-24 00:09:07,625 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-24T00:09:07+0700 [stdout#info] 2025-03-24 00:09:07,625 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-24T00:09:07+0700 [stdout#info] FROM users
+2025-03-24T00:09:07+0700 [stdout#info] FROM users
+2025-03-24T00:09:07+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-24T00:09:07+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+2025-03-24T00:09:07+0700 [stderr#error] FROM users
+2025-03-24T00:09:07+0700 [stderr#error] FROM users
+2025-03-24T00:09:07+0700 [stdout#info] 2025-03-24 00:09:07,626 INFO sqlalchemy.engine.Engine [generated in 0.00071s] {}
+2025-03-24T00:09:07+0700 [stdout#info] 2025-03-24 00:09:07,626 INFO sqlalchemy.engine.Engine [generated in 0.00071s] {}
+2025-03-24T00:09:07+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00071s] {}
+2025-03-24T00:09:07+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00071s] {}
+2025-03-24T00:09:08+0700 [stdout#info] 2025-03-24 00:09:08,914 INFO sqlalchemy.engine.Engine SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-24T00:09:08+0700 [stdout#info] 2025-03-24 00:09:08,914 INFO sqlalchemy.engine.Engine SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-24T00:09:08+0700 [stdout#info] FROM emails 
+2025-03-24T00:09:08+0700 [stdout#info] FROM emails 
+2025-03-24T00:09:08+0700 [stdout#info] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-24T00:09:08+0700 [stdout#info] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-24T00:09:08+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-24T00:09:08+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp 
+2025-03-24T00:09:08+0700 [stderr#error] FROM emails 
+2025-03-24T00:09:08+0700 [stderr#error] FROM emails 
+2025-03-24T00:09:08+0700 [stderr#error] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-24T00:09:08+0700 [stderr#error] WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-24T00:09:08+0700 [stdout#info] 2025-03-24 00:09:08,915 INFO sqlalchemy.engine.Engine [generated in 0.00091s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-24T00:09:08+0700 [stdout#info] 2025-03-24 00:09:08,915 INFO sqlalchemy.engine.Engine [generated in 0.00091s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-24T00:09:08+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00091s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-24T00:09:08+0700 [stderr#error] INFO:sqlalchemy.engine.Engine:[generated in 0.00091s] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}

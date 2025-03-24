@@ -13,14 +13,14 @@ class SearchMailController:
 
     def search_emails(self, query):
         if self.session is None:
-            return []
+            return "Lỗi kết nối đến database"
         try:
             emails = self.session.query(Email).filter(
                 (Email.subject.like(f"%{query}%")) |
                 (Email.body.like(f"%{query}%"))
             ).all()
-            logger.info(f"Tìm kiếm {len(emails)} email với từ khóa {query}")
+            logger.info(f"Tìm thấy {len(emails)} email với từ khóa '{query}'")
             return emails
         except SQLAlchemyError as e:
             logger.error(f"Lỗi khi tìm kiếm email: {e}")
-            return []
+            return f"Lỗi khi tìm kiếm email: {e}"

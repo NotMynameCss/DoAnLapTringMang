@@ -3,11 +3,6 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from sqlalchemy.exc import SQLAlchemyError
-from MODEL.dbconnector import create_connection, Email, User
-from loguru import logger
-from pydantic import ValidationError
-from MODEL.models import EmailModel  # Import EmailModel from models.py
 from CONTROLLER.fetchMailController import FetchMailController
 from CONTROLLER.sendMailController import SendMailController
 from CONTROLLER.searchMailController import SearchMailController

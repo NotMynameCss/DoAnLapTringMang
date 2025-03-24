@@ -18,6 +18,7 @@ class MailView:
         self.root.configure(background="white")
 
         self.mail_controller = MailController(self.username)
+        self.mail_controller.view = self  # Set the view for the controller
 
         # Create the main frame
         self.main_frame = tk.Frame(self.root, bg="white")
@@ -103,10 +104,10 @@ class MailView:
         messagebox.showinfo("Search Email", "Search Email clicked")
 
     def show_inbox(self):
-        threading.Thread(target=self.fetch_and_display_emails, args=("inbox",)).start()
+        self.mail_controller.fetch_emails("inbox")
 
     def show_sent(self):
-        threading.Thread(target=self.fetch_and_display_emails, args=("sent",)).start()
+        self.mail_controller.fetch_emails("sent")
 
     def show_drafts(self):
         messagebox.showinfo("Drafts", "Drafts clicked")
@@ -124,20 +125,16 @@ class MailView:
         messagebox.showinfo("Chat/Meet", "Chat/Meet clicked")
 
     def show_emails(self):
-        threading.Thread(target=self.fetch_and_display_all_emails).start()
+        self.mail_controller.fetch_all_emails()
 
     def refresh_emails(self):
-        threading.Thread(target=self.fetch_and_display_emails, args=("inbox",)).start()
+        self.mail_controller.fetch_emails("inbox")
 
     def show_all_emails(self):
-        threading.Thread(target=self.fetch_and_display_all_emails).start()
+        self.mail_controller.fetch_all_emails()
 
-    def fetch_and_display_emails(self, email_type):
-        emails = self.mail_controller.fetch_emails(email_type)
-        self.display_emails(emails)
-
-    def fetch_and_display_all_emails(self):
-        emails = self.mail_controller.fetch_all_emails()
+    def handle_server_response(self, response):
+        emails = json.loads(response)
         self.display_emails(emails)
 
     def display_emails(self, emails):

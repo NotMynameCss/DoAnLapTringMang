@@ -6,15 +6,15 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import tkinter as tk
 from tkinter import messagebox
 from CONTROLLER.authController import AuthController
-from VIEW.mailView import MailView
 from twisted.internet import reactor
 from VIEW.subView.subAuthView.entryFrame import EntryFrame
 from VIEW.subView.subAuthView.buttonFrame import ButtonFrame
 from MODEL.models import LoginModel  # Import LoginModel
 
 class AuthView:
-    def __init__(self, root):
+    def __init__(self, root, main_view):
         self.root = root
+        self.main_view = main_view
         self.root.geometry("300x200+523+226")
         self.root.minsize(120, 1)
         self.root.maxsize(1924, 1061)
@@ -46,8 +46,7 @@ class AuthView:
 
     def handle_login_response(self, username):
         messagebox.showinfo("Đăng nhập", "Đăng nhập thành công")
-        self.clear_window()
-        MailView(self.root, username)
+        self.main_view.show_mail_view(username)
 
     def register(self):
         username = self.entry_frame.username_entry.get()
