@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, Column, Integer, String, Text, TIMESTAMP, Index, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import sessionmaker, relationship, scoped_session
 from loguru import logger
 
 Base = declarative_base()
@@ -57,7 +57,7 @@ Index('ix_user_username', User.username)
 
 class DatabaseConnector:
     _instance = None
-    _session = None
+    _session_factory = None
 
     def __new__(cls):
         if cls._instance is None:
@@ -66,20 +66,38 @@ class DatabaseConnector:
         return cls._instance
 
     def _create_connection(self):
+        """
+        Tạo kết nối đến cơ sở dữ liệu và khởi tạo session factory.
+        """
         try:
-            engine = create_engine('mysql+mysqlconnector://root:@localhost/mail_server_db', echo=True)  # Enable echo to log SQL statements
+            engine = create_engine(
+                'mysql+mysqlconnector://root:@localhost/mail_server_db',
+                echo=True,  # Tắt log SQL để giảm tải log
+                pool_size=10,  # Kích hoạt Connection Pooling
+                max_overflow=20,
+                connect_args={"charset": "utf8mb4"},
+                pool_pre_ping=True  # Kiểm tra kết nối trước khi sử dụng
+            )
             Base.metadata.create_all(engine)
-            Session = sessionmaker(bind=engine)
-            self._session = Session()
+            self._session_factory = scoped_session(sessionmaker(bind=engine, autocommit=False, autoflush=False))
             logger.info("Kết nối thành công đến database")
         except Exception as e:
             logger.error(f"Lỗi kết nối đến database: {e}")
-            self._session = None
+            self._session_factory = None
 
     def get_session(self):
-        return self._session
+        """
+        Lấy session từ session factory.
+        """
+        if self._session_factory is None:
+            logger.error("Session factory chưa được khởi tạo")
+            return None
+        return self._session_factory()
 
 def create_connection():
+    """
+    Tạo kết nối đến cơ sở dữ liệu thông qua DatabaseConnector.
+    """
     db_connector = DatabaseConnector()
     return db_connector.get_session()
 
@@ -87,7 +105,13 @@ class DBConnection:
     """Context manager for database session"""
     def __enter__(self):
         self.session = create_connection()
+        if self.session is None:
+            raise ConnectionError("Không thể tạo kết nối đến cơ sở dữ liệu")
         return self.session
 
     def __exit__(self, exc_type, exc_val, exc_tb):
+        if exc_type:
+            self.session.rollback()
+        else:
+            self.session.commit()
         self.session.close()
