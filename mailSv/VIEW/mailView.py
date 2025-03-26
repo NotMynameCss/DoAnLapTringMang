@@ -2,6 +2,7 @@ import datetime
 import sys
 import os
 import threading
+from typing import Optional
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from CONTROLLER.mailController import MailController
 import tkinter as tk
@@ -11,6 +12,7 @@ from VIEW.subView.subMailView.topFrame import TopFrame
 from VIEW.subView.subMailView.leftFrame import LeftFrame
 from VIEW.subView.subMailView.rightFrame import RightFrame
 from VIEW.mailSendView import MailSendView  # Import MailSendView
+
 
 class MailView:
     def __init__(self, root, username):
@@ -102,3 +104,52 @@ class MailView:
 
     def fetch_email_details(self, email_id):
         return self.mail_controller.fetch_email_details(email_id)
+
+    def delete_email(self):
+        """Xóa email được chọn"""
+        try:
+            selected_item = self.right_frame.user_details_tree.selection()
+            if not selected_item:
+                messagebox.showwarning("Xóa Mail", "Vui lòng chọn email để xóa")
+                return
+
+            # Lấy email ID từ tree view
+            email_id = self._get_email_id_from_tree(selected_item[0])
+            if not email_id:
+                messagebox.showerror("Lỗi", "Không thể xác định email cần xóa")
+                return
+
+            # Xác nhận xóa
+            if not self._confirm_delete():
+                return
+
+            # Gọi API xóa email
+            response = self.mail_controller.delete_email(email_id, self.username)
+            
+            if not isinstance(response, dict):
+                raise ValueError("Invalid response format")
+
+            if response.get("success"):
+                messagebox.showinfo("Thành công", response.get("message", "Đã xóa email"))
+                self.refresh_emails()
+            else:
+                messagebox.showerror("Lỗi", response.get("message", "Không thể xóa email"))
+
+        except Exception as e:
+            logger.error(f"Lỗi khi xóa email: {e}")
+            messagebox.showerror("Lỗi", "Đã xảy ra lỗi khi xóa email")
+            
+    def _get_email_id_from_tree(self, item) -> Optional[int]:
+        """Lấy email ID từ tree item"""
+        try:
+            values = self.right_frame.user_details_tree.item(item)["values"]
+            return int(values[0]) if values else None
+        except (IndexError, ValueError):
+            return None
+
+    def _confirm_delete(self) -> bool:
+        """Hiển thị dialog xác nhận xóa"""
+        return messagebox.askyesno(
+            "Xác nhận", 
+            "Bạn có chắc chắn muốn xóa email này không?"
+        )

@@ -26,6 +26,7 @@ class LeftFrame(tk.Frame):
         self.chat_button = tk.Button(self, text="Chat/Meet", command=self.mail_view.show_chat)
         self.chat_button.pack(fill=tk.X, padx=10, pady=5)
 
-        # Nút Xóa Mail
+        # Thêm nút Xóa Mail
         self.delete_mail_button = tk.Button(self, text="Xóa Mail", command=self.mail_view.delete_email)
         self.delete_mail_button.pack(fill=tk.X, padx=10, pady=5)
+

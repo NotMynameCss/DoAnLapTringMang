@@ -1,4 +1,5 @@
-from sqlalchemy.exc import SQLAlchemyError
+import datetime
+from sqlalchemy.exc import SQLAlchemyError, OperationalError, IntegrityError
 from MODEL.dbconnector import create_connection, Email
 from loguru import logger
 from pydantic import BaseModel, ValidationError
@@ -103,33 +104,50 @@ class EmailController:
 
         Args:
             email_id (int): ID của email cần xóa.
-            user_id (str): ID của người dùng sở hữu email.
+            user_id (str): ID của người dùng.
 
         Returns:
             dict: Kết quả xóa email.
         """
-        if self.session is None:
-            logger.error("Không thể kết nối đến cơ sở dữ liệu")
-            return {"success": False, "message": "Lỗi kết nối đến cơ sở dữ liệu"}
+        if not self.session:
+            return {"success": False, "message": "Không có kết nối database"}
 
         try:
-            # Kiểm tra email tồn tại và thuộc về user
+            # Kiểm tra email tồn tại
             email = self.session.query(Email).filter(
                 Email.id == email_id,
                 Email.sender == user_id
             ).first()
 
             if not email:
-                logger.warning(f"Không tìm thấy email ID {email_id} của user {user_id}")
-                return {"success": False, "message": "Email không tồn tại hoặc bạn không có quyền xóa"}
+                return {"success": False, "message": "Email không tồn tại hoặc không có quyền xóa"}
 
             # Xóa email
             self.session.delete(email)
             self.session.commit()
-            logger.info(f"Đã xóa email ID {email_id} của user {user_id}")
+            logger.info(f"Xóa email thành công: ID={email_id}")
             return {"success": True, "message": "Xóa email thành công"}
 
         except SQLAlchemyError as e:
             self.session.rollback()
-            logger.error(f"Lỗi khi xóa email: {e}")
-            return {"success": False, "message": f"Lỗi cơ sở dữ liệu: {str(e)}"}
+            logger.error(f"Lỗi database khi xóa email: {e}")
+            return {"success": False, "message": "Lỗi database khi xóa email"}
+
+        except Exception as e:
+            logger.error(f"Lỗi không xác định khi xóa email: {e}")
+            return {"success": False, "message": "Lỗi không xác định khi xóa email"}
+
+    def _reconnect_db(self):
+        """Thử kết nối lại database"""
+        try:
+            self.session = create_connection()
+        except Exception as e:
+            logger.error(f"Không thể kết nối lại database: {e}")
+
+    def _error_response(self, message: str) -> dict:
+        """Tạo response lỗi chuẩn"""
+        return {
+            "success": False,
+            "message": message,
+            "data": None
+        }

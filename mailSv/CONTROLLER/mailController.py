@@ -1,6 +1,8 @@
 # khắc phục đường dẫn không chính xác
 import sys
 import os
+
+from CONTROLLER.emailController import EmailController
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from sqlalchemy.exc import SQLAlchemyError
@@ -12,12 +14,36 @@ from CONTROLLER.fetchMailController import FetchMailController
 from CONTROLLER.sendMailController import SendMailController
 from CONTROLLER.searchMailController import SearchMailController
 import json
+from functools import wraps
+import time
+
+# Thêm decorator để giới hạn retry và log
+def retry_with_limit(max_retries=3, delay=1):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            retry_count = 0
+            error_msg = None
+            while retry_count < max_retries:
+                try:
+                    return func(*args, **kwargs)
+                except Exception as e:
+                    retry_count += 1
+                    error_msg = str(e)
+                    if retry_count < max_retries:
+                        logger.warning(f"Lần thử {retry_count}/{max_retries} thất bại: {e}")
+                        time.sleep(delay)
+            logger.error(f"Đã thử {max_retries} lần không thành công: {error_msg}")
+            return {"success": False, "message": f"Thất bại sau {max_retries} lần thử"}
+        return wrapper
+    return decorator
 
 class MailController:
     def __init__(self):
         self.fetch_mail_controller = FetchMailController()
         self.send_mail_controller = SendMailController()
         self.search_mail_controller = SearchMailController()
+        self._error_count = {}  # Đếm số lần lỗi
 
     def send_email(self, sender, recipients, cc, bcc, subject, body, attachments):
         return self.send_mail_controller.send_email(sender, recipients, cc, bcc, subject, body, attachments)
@@ -43,36 +69,45 @@ class MailController:
     def delete_email(self, email_id: int, user_id: str) -> dict:
         """
         Xóa email của user được chỉ định.
-        """
-        # Loại bỏ toàn bộ nội dung phương thức delete_email
-
-    def send_request(self, request: str) -> str:
-        """
-        Gửi yêu cầu đến server qua giao thức TCP/IP.
 
         Args:
-            request (str): Yêu cầu cần gửi.
+            email_id (int): ID của email cần xóa.
+            user_id (str): ID của người dùng.
 
         Returns:
-            str: Phản hồi từ server.
+            dict: Kết quả xóa email.
         """
-        import socket
         try:
-            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-                s.settimeout(10)  # Thêm timeout để tránh treo kết nối
+            email_controller = EmailController()
+            result = email_controller.delete_email(email_id, user_id)
+            return result
+        except Exception as e:
+            logger.error(f"Lỗi khi gọi EmailController để xóa email: {e}")
+            return {"success": False, "message": "Lỗi không xác định khi xóa email"}
+
+    def send_request(self, request: str) -> str:
+        """Gửi request với connection pooling"""
+        import socket
+        from contextlib import closing
+
+        try:
+            with closing(socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as s:
+                s.settimeout(5)  # Giảm timeout xuống 5 giây
                 s.connect(('localhost', 65432))
                 s.sendall(request.encode())
+                
+                # Thêm keepalive
+                s.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
                 response = s.recv(4096)
+                
                 if not response:
-                    logger.error("Phản hồi từ server rỗng")
-                    return json.dumps({"success": False, "message": "Phản hồi từ server rỗng"})
+                    return json.dumps({"success": False, "message": "Không nhận được phản hồi"})
+                    
                 return response.decode()
-        except ConnectionRefusedError as e:
-            logger.error(f"Lỗi kết nối đến server: {e}")
-            return json.dumps({"success": False, "message": "Lỗi kết nối đến server"})
-        except socket.timeout as e:
-            logger.error(f"Timeout khi kết nối đến server: {e}")
-            return json.dumps({"success": False, "message": "Timeout khi kết nối đến server"})
-        except socket.error as e:
-            logger.error(f"Lỗi socket: {e}")
-            return json.dumps({"success": False, "message": "Lỗi socket"})
+                
+        except Exception as e:
+            error_type = type(e).__name__
+            if self._error_count.get(error_type, 0) < 3:
+                self._error_count[error_type] = self._error_count.get(error_type, 0) + 1
+                logger.error(f"{error_type}: {str(e)}")
+            return json.dumps({"success": False, "message": str(e)})
