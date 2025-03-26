@@ -96,3 +96,40 @@ class EmailController:
             logger.error(f"Lỗi khi tạo email: {e}")
             self.session.rollback()
             return {"error": str(e)}
+
+    def delete_email(self, email_id: int, user_id: str) -> dict:
+        """
+        Xóa email của user được chỉ định.
+
+        Args:
+            email_id (int): ID của email cần xóa.
+            user_id (str): ID của người dùng sở hữu email.
+
+        Returns:
+            dict: Kết quả xóa email.
+        """
+        if self.session is None:
+            logger.error("Không thể kết nối đến cơ sở dữ liệu")
+            return {"success": False, "message": "Lỗi kết nối đến cơ sở dữ liệu"}
+
+        try:
+            # Kiểm tra email tồn tại và thuộc về user
+            email = self.session.query(Email).filter(
+                Email.id == email_id,
+                Email.sender == user_id
+            ).first()
+
+            if not email:
+                logger.warning(f"Không tìm thấy email ID {email_id} của user {user_id}")
+                return {"success": False, "message": "Email không tồn tại hoặc bạn không có quyền xóa"}
+
+            # Xóa email
+            self.session.delete(email)
+            self.session.commit()
+            logger.info(f"Đã xóa email ID {email_id} của user {user_id}")
+            return {"success": True, "message": "Xóa email thành công"}
+
+        except SQLAlchemyError as e:
+            self.session.rollback()
+            logger.error(f"Lỗi khi xóa email: {e}")
+            return {"success": False, "message": f"Lỗi cơ sở dữ liệu: {str(e)}"}
