@@ -13,7 +13,7 @@ class MainView:
         self.root.geometry("400x400")
 
         self.auth_view = AuthView(self.root)
-        self.auth_view.show_auth()
+        self.auth_view.show_auth()  # Gọi phương thức show_auth() để hiển thị giao diện đăng nhập/đăng ký
 
     def set_controller(self, controller):
         self.auth_view.set_controller(controller)
