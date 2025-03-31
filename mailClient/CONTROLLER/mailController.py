@@ -4,6 +4,9 @@ from loguru import logger
 from pydantic import ValidationError
 from MODEL.models import EmailModel  # Import EmailModel từ models.py
 
+
+PORT_SV = 65432  # Port mà server đang lắng nghe
+
 class MailController:
     """
     Controller quản lý các hoạt động liên quan đến email như gửi email, truy xuất email.
@@ -28,9 +31,16 @@ class MailController:
         try:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 s.settimeout(10)  # Thêm timeout để tránh treo kết nối
-                s.connect(('localhost', 65432))
+                s.connect(('localhost', PORT_SV))
                 s.sendall(request.encode())
-                response = s.recv(4096)
+
+                response = s.recv(4096) # Nhận phản hồi từ server
+                
+                # Gửi ACK để xác nhận giúp tránh trường hợp làm giảm tốc độc xử lý TCP/IP. 
+                # VD: server tăng retransmission nếu không nhận được ACK
+                s.sendall("ACK".encode())
+
+
                 return response.decode()
         except ConnectionRefusedError as e:
             logger.error(f"Lỗi kết nối đến server: {e}")
@@ -47,13 +57,13 @@ class MailController:
         Gửi email với thông tin được cung cấp.
 
         Args:
-            email_data (EmailModel): Dữ liệu email cần gửi.
+            email_data (dict): Dữ liệu email cần gửi.
 
         Returns:
             str: Phản hồi từ server.
         """
         try:
-            email_data = EmailModel(**email_data)
+            email_data = EmailModel(**email_data)  # Validate dữ liệu bằng Pydantic
         except ValidationError as e:
             logger.error(f"Lỗi xác thực dữ liệu: {e}")
             return f"Lỗi xác thực dữ liệu: {e}"
@@ -77,18 +87,24 @@ class MailController:
         Returns:
             list: Danh sách email.
         """
-        request = f"FETCH_EMAILS|{self.user_id}|{folder}"
-        logger.info(f"Gửi yêu cầu truy xuất email: {request}")
-        response = self.send_request(request)
-        if not response:
-            logger.error("Không nhận được phản hồi từ server")
-            return []
         try:
+            request = f"FETCH_EMAILS|{self.user_id}|{folder}"
+            logger.info(f"Gửi yêu cầu truy xuất email: {request}")
+            response = self.send_request(request)
+            
+            if not response:
+                logger.error("Không nhận được phản hồi từ server.")
+                return []
+
             emails = self.parse_response(response)
-            logger.info(f"Truy xuất email thành công: {emails}")
+            logger.info(f"Truy xuất email thành công: {len(emails)} email.")
             return emails
+
         except json.JSONDecodeError as e:
-            logger.error(f"Lỗi khi phân tích cú pháp email: {e}")
+            logger.error(f"Lỗi phân tích cú pháp JSON từ phản hồi: {e}")
+            return []
+        except Exception as e:
+            logger.error(f"Lỗi không xác định khi truy xuất email: {e}")
             return []
 
     def fetch_all_emails(self):
@@ -123,3 +139,57 @@ class MailController:
             list: Danh sách email.
         """
         return json.loads(response)
+
+    def delete_email(self, email_id: int) -> dict:
+        """
+        Gửi yêu cầu xóa email đến server và làm mới danh sách email.
+
+        Args:
+            email_id (int): ID của email cần xóa.
+
+        Returns:
+            dict: Kết quả từ server.
+        """
+        try:
+            # Validate email_id
+            if not isinstance(email_id, int) or email_id <= 0:
+                logger.error(f"Email ID không hợp lệ: {email_id}")
+                return {"success": False, "message": "Email ID không hợp lệ"}
+
+            # Format request
+            request = f"DELETE_EMAIL|{email_id}|{self.user_id}"
+            logger.info(f"Gửi yêu cầu xóa email: {request}")
+
+            # Gửi request đến server
+            response = self.send_request(request)
+            if not response:
+                raise ValueError("Không nhận được phản hồi từ server")
+
+            # Parse response
+            result = json.loads(response)
+            if result.get("success"):
+                logger.info(f"Xóa email thành công: ID={email_id}")
+                # Làm mới danh sách email sau khi xóa thành công
+                self.refresh_emails()
+            else:
+                logger.warning(f"Lỗi khi xóa email: {result.get('message')}")
+
+            return result
+
+        except json.JSONDecodeError as e:
+            logger.error(f"Lỗi parse JSON từ response: {e}")
+            return {"success": False, "message": "Phản hồi từ server không hợp lệ"}
+        except Exception as e:
+            logger.error(f"Lỗi không xác định khi xóa email: {e}")
+            return {"success": False, "message": str(e)}
+
+    def refresh_emails(self):
+        """
+        Làm mới danh sách email từ server.
+        """
+        try:
+            logger.info("Đang làm mới danh sách email từ server...")
+            emails = self.fetch_emails("inbox")
+            logger.info(f"Làm mới thành công: {len(emails)} email được tải.")
+        except Exception as e:
+            logger.error(f"Lỗi khi làm mới danh sách email: {e}")

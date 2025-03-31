@@ -67,13 +67,16 @@ class MailSendView:
 
     def send_email(self):
         sender = self.username  # Sử dụng tên người dùng thực tế
-        recipients = self.to_entry.get()
-        cc = self.cc_entry.get()
-        bcc = self.bcc_entry.get()
-        subject = self.subject_entry.get()
-        body = self.body_text.get("1.0", tk.END)
-        attachments = ""  # Thực hiện xử lý tệp đính kèm
-        response = self.mail_controller.send_email(sender, recipients, cc, bcc, subject, body, attachments)
+        email_data = {
+            "sender": sender,
+            "recipients": self.to_entry.get(),
+            "cc": self.cc_entry.get(),
+            "bcc": self.bcc_entry.get(),
+            "subject": self.subject_entry.get(),
+            "body": self.body_text.get("1.0", tk.END),
+            "attachments": ""  # Thực hiện xử lý tệp đính kèm
+        }
+        response = self.mail_controller.send_email(email_data)
         if response == "Email đã được gửi thành công":
             messagebox.showinfo("Gửi Email", response)
         else:

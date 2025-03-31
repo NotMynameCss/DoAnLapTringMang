@@ -9,8 +9,13 @@ from MODEL.models import EmailModel, RegisterModel, LoginModel  # Import models 
 from CONTROLLER.mainController import MainController
 from CONTROLLER.mailController import MailController
 
+
+PORT_SV = 65432  # Port mà server đang lắng nghe
+
 # Configure loguru
 logger.add("mail_server.log", rotation="1 MB", retention="10 days", level="INFO")
+
+
 
 # Custom JSON encoder to handle datetime objects
 class DateTimeEncoder(json.JSONEncoder):
@@ -36,10 +41,16 @@ def send_error_response(client_socket, error_message):
     client_socket.send(response.encode('utf-8'))
 
 def send_response_with_ack(client_socket, response):
-    client_socket.send(response.encode('utf-8'))
-    ack = client_socket.recv(1024).decode('utf-8')
-    if ack != "ACK":
-        logger.warning("Client did not acknowledge the response")
+    try:
+        # Gửi phản hồi dưới dạng JSON
+        client_socket.send(response.encode('utf-8'))
+        ack = client_socket.recv(1024).decode('utf-8')
+        if ack != "ACK":
+            logger.warning("Client không gửi ACK")
+    except socket.timeout:
+        logger.error("Timeout while waiting for client ACK")
+    except Exception as e:
+        logger.error(f"Error in send_response_with_ack: {e}")
 
 def process_message(message, main_controller, mail_controller):
     if message.startswith("REGISTER"):
@@ -79,6 +90,13 @@ def process_message(message, main_controller, mail_controller):
         _, username = message.split('|')
         emails = mail_controller.fetch_emails_by_user(username)
         response = json.dumps([email.to_dict() for email in emails], cls=DateTimeEncoder) if emails else "[]"
+    elif message.startswith("DELETE_EMAIL"):
+        _, email_id, user_id = message.split('|')
+        try:
+            response = handle_delete_email(mail_controller, email_id, user_id)
+        except Exception as e:
+            logger.error(f"Lỗi khi xử lý DELETE_EMAIL: {e}")
+            response = json.dumps({"success": False, "message": "Lỗi không xác định khi xử lý DELETE_EMAIL"})
     else:
         response = "Lệnh không xác định"
     return response
@@ -90,9 +108,16 @@ def handle_delete_email(mail_controller, email_id, user_id):
     try:
         logger.info(f"Processing DELETE_EMAIL request: id={email_id}, user={user_id}")
 
+        # Kiểm tra và chuyển đổi email_id sang số nguyên
+        try:
+            email_id = int(email_id)
+        except ValueError:
+            logger.error(f"Email ID không hợp lệ: {email_id}")
+            return json.dumps({"success": False, "message": "Email ID không hợp lệ"})
+
         # Thêm timeout cho database operation
         with ThreadPoolExecutor(max_workers=1) as executor:
-            future = executor.submit(mail_controller.delete_email, int(email_id), user_id)
+            future = executor.submit(mail_controller.delete_email, email_id, user_id)
             try:
                 result = future.result(timeout=10)
             except TimeoutError:
@@ -113,7 +138,7 @@ def handle_delete_email(mail_controller, email_id, user_id):
         logger.error(f"Lỗi khi xử lý DELETE_EMAIL: {e}")
         return json.dumps({
             "success": False,
-            "message": "Lỗi không xác định khi xử lý DELETE_EMAIL {e}"
+            "message": f"Lỗi không xác định khi xử lý DELETE_EMAIL: {e}"
         })
 
 def handle_client(client_socket, main_controller, mail_controller):
@@ -151,7 +176,7 @@ def handle_client(client_socket, main_controller, mail_controller):
 
 def start_server(main_controller, mail_controller):
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.bind(('localhost', 65432))
+    server.bind(('localhost', PORT_SV))
     server.listen(5)
     logger.info("Máy chủ đang lắng nghe trên cổng 65432")
 

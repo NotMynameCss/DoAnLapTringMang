@@ -5,6 +5,8 @@ from datetime import datetime
 from tkinter import ttk, messagebox, Toplevel, Text
 import tkinter as tk
 
+from loguru import logger
+
 from CONTROLLER.mailController import MailController
 from VIEW.mailSendView import MailSendView
 from VIEW.subView.subMailView.toolbarFrame import ToolbarFrame
@@ -39,7 +41,8 @@ class MailView:
             self.show_trash,
             self.show_labels,
             self.show_settings,
-            self.show_chat
+            self.show_chat,
+            self.delete_email  # Thêm callback cho nút Xóa Mail
         )
 
         # Khung bên phải
@@ -81,7 +84,13 @@ class MailView:
         threading.Thread(target=self.fetch_and_display_all_emails).start()
 
     def refresh_emails(self):
-        threading.Thread(target=self.fetch_and_display_emails, args=("inbox",)).start()
+        """Làm mới danh sách email từ máy chủ."""
+        try:
+            threading.Thread(target=self.fetch_and_display_emails, args=("inbox",)).start()
+            logger.info("Đã gửi yêu cầu làm mới danh sách email.")
+        except Exception as e:
+            logger.error(f"Lỗi khi làm mới danh sách email: {e}")
+            messagebox.showerror("Lỗi", "Không thể làm mới danh sách email. Vui lòng thử lại sau.")
 
     def show_all_emails(self):
         threading.Thread(target=self.fetch_and_display_all_emails).start()
@@ -95,11 +104,27 @@ class MailView:
         self.display_emails(emails)
 
     def display_emails(self, emails):
+        """Hiển thị danh sách email"""
         for item in self.right_frame.email_details_tree.get_children():
             self.right_frame.email_details_tree.delete(item)
+            
         for email in emails:
-            date_sent = email['timestamp'].strftime('%d-%m-%Y %H:%M') if isinstance(email['timestamp'], datetime) else datetime.strptime(email['timestamp'], '%Y-%m-%dT%H:%M:%S').strftime('%d-%m-%Y %H:%M')
-            self.right_frame.email_details_tree.insert("", "end", values=(email['sender'], email['recipients'], email['subject'], date_sent, email['body']))
+            # Định dạng ngày tháng
+            date_sent = (
+                email['timestamp'].strftime('%d-%m-%Y %H:%M')
+                if isinstance(email['timestamp'], datetime)
+                else datetime.strptime(email['timestamp'], '%Y-%m-%dT%H:%M:%S').strftime('%d-%m-%Y %H:%M')
+            )
+            
+            # Thêm email với ID là cột đầu tiên
+            self.right_frame.email_details_tree.insert("", "end", values=(
+                email.get('id', ''),        # ID 
+                email.get('sender', ''),    # From
+                email.get('recipients', ''), # To
+                email.get('subject', ''),   # Subject
+                date_sent,                  # Date
+                email.get('body', '')       # Body
+            ))
 
     def show_email_details(self, event):
         selected_item = self.right_frame.email_details_tree.selection()[0]
@@ -111,22 +136,79 @@ class MailView:
         details_window.title("Chi tiết Email")
         details_window.geometry("600x400")
 
-        from_label = tk.Label(details_window, text=f"From: {email_details[0]}")
+        from_label = tk.Label(details_window, text=f"From: {email_details[1]}")
         from_label.pack(anchor="w", padx=10, pady=5)
 
-        to_label = tk.Label(details_window, text=f"To: {email_details[1]}")
+        to_label = tk.Label(details_window, text=f"To: {email_details[2]}")
         to_label.pack(anchor="w", padx=10, pady=5)
 
-        subject_label = tk.Label(details_window, text=f"Subject: {email_details[2]}")
+        subject_label = tk.Label(details_window, text=f"Subject: {email_details[3]}")
         subject_label.pack(anchor="w", padx=10, pady=5)
 
-        date_label = tk.Label(details_window, text=f"Date: {email_details[3]}")
+        date_label = tk.Label(details_window, text=f"Date: {email_details[4]}")
         date_label.pack(anchor="w", padx=10, pady=5)
 
         body_text = Text(details_window, wrap="word")
-        body_text.insert("1.0", email_details[4])
+        body_text.insert("1.0", email_details[5])
         body_text.pack(fill="both", expand=True, padx=10, pady=10)
         body_text.config(state="disabled")
+
+    def delete_email(self):
+        """Xóa email được chọn và làm mới giao diện."""
+        try:
+            selected_item = self.right_frame.email_details_tree.selection()
+            if not selected_item:
+                messagebox.showwarning("Xóa Mail", "Vui lòng chọn email để xóa")
+                return
+
+            # Lấy email ID từ tree view
+            email_id = self._get_email_id_from_tree(selected_item[0])
+            if not email_id:
+                messagebox.showerror("Lỗi", "Không thể xác định email cần xóa")
+                return
+
+            # Xác nhận xóa
+            if not self._confirm_delete():
+                return
+
+            # Gửi yêu cầu xóa email
+            response = self.mail_controller.delete_email(email_id)
+            if response.get("success"):
+                messagebox.showinfo("Thành công", response.get("message", "Đã xóa email"))
+                # Làm mới giao diện sau khi xóa
+                self.refresh_emails()
+            else:
+                messagebox.showerror("Lỗi", response.get("message", "Không thể xóa email"))
+
+        except Exception as e:
+            logger.error(f"Lỗi khi xóa email: {e}")
+            messagebox.showerror("Lỗi", "Đã xảy ra lỗi khi xóa email")
+
+    def _get_email_id_from_tree(self, item) -> int:
+        """Lấy email ID từ tree item một cách an toàn"""
+        try:
+            values = self.right_frame.email_details_tree.item(item)["values"]
+            if not values:
+                logger.error("Không có dữ liệu trong tree item")
+                return None
+                
+            email_id = values[0]  # ID là cột đầu tiên
+            if not email_id:
+                logger.error("Email ID rỗng")
+                return None
+                
+            return int(email_id)
+            
+        except (IndexError, TypeError, ValueError) as e:
+            logger.error(f"Lỗi khi lấy email ID: {str(e)}")
+            return None
+
+    def _confirm_delete(self) -> bool:
+        """Hiển thị dialog xác nhận xóa"""
+        return messagebox.askyesno(
+            "Xác nhận", 
+            "Bạn có chắc chắn muốn xóa email này không?"
+        )
 
     def set_controller(self, controller):
         self.controller = controller

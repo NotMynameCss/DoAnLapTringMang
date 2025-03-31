@@ -1,58 +1,137 @@
 # Hướng dẫn sử dụng Database trong thư mục `mailSv`
 
 ## Tổng quan
-Thư mục `mailSv` chứa các thành phần liên quan đến cơ sở dữ liệu của ứng dụng Mail Server. Các thành phần này chịu trách nhiệm kết nối, tạo bảng và thực hiện các thao tác CRUD (Create, Read, Update, Delete) trên cơ sở dữ liệu.
+Hệ thống sử dụng SQLAlchemy làm ORM chính để tương tác với MySQL database, kết hợp với Pydantic để validate dữ liệu và Connection Pooling để tối ưu hiệu suất.
 
 ## Công nghệ sử dụng
 - **Python 3.13.2**: Ngôn ngữ lập trình chính.
 - **Windows 10 64-bit**: Hệ điều hành phát triển và chạy ứng dụng.
 - **XAMPP (xampp-windows-x64-8.2.12-0)**: Quản lý cơ sở dữ liệu.
-- **SqlAlchemy 2.0.39**: ORM để tương tác với cơ sở dữ liệu.
-- **MySQL**: Hệ quản trị cơ sở dữ liệu.
+- **SqlAlchemy 2.0.39**: ORM framework.
+- **MySQL**: Database server.
+- **Pydantic 2.10.6**: Data validation.
+- **Connection Pooling**: Quản lý connection pool.
 
-## Các thành phần chính
+## Cấu trúc Database
 
-### 1. `dbconnector.py`
-- **Chức năng**: Kết nối đến cơ sở dữ liệu MySQL và tạo bảng nếu chưa tồn tại.
-- **Phương thức chính**:
-  - `create_connection()`: Tạo kết nối đến cơ sở dữ liệu MySQL.
-  - `create_email_table(connection)`: Tạo bảng `emails` nếu chưa tồn tại trong cơ sở dữ liệu.
+### 1. Models
+```python
+class Email(Base):
+    __tablename__ = 'emails'
+    id = Column(Integer, primary_key=True)
+    sender = Column(String(255))
+    recipients = Column(Text)
+    # ...existing fields...
 
-### 2. `mailController.py`
-- **Chức năng**: Thực hiện các thao tác liên quan đến email trên cơ sở dữ liệu.
-- **Phương thức chính**:
-  - `send_email(sender, recipients, cc, bcc, subject, body, attachments)`: Gửi email và lưu thông tin vào bảng `emails`.
-  - `fetch_emails(email_type)`: Truy xuất email dựa trên loại email (inbox, sent).
-  - `fetch_all_emails()`: Truy xuất tất cả email từ bảng `emails`.
-  - `fetch_all_users()`: Truy xuất tất cả người dùng từ bảng `users`.
-  - `fetch_emails_by_user(username)`: Truy xuất email dựa trên tên người dùng.
-  - `search_emails(query)`: Tìm kiếm email dựa trên từ khóa.
+class User(Base):
+    __tablename__ = 'users'
+    id = Column(Integer, primary_key=True)
+    username = Column(String(255))
+    # ...existing fields...
+```
 
-### 3. `authController.py`
-- **Chức năng**: Thực hiện các thao tác liên quan đến người dùng trên cơ sở dữ liệu.
-- **Phương thức chính**:
-  - `login(username, password)`: Kiểm tra thông tin đăng nhập của người dùng.
-  - `register(username, password)`: Đăng ký người dùng mới và lưu thông tin vào bảng `users`.
-  - `verify_table_exists()`: Kiểm tra và tạo bảng `users` nếu chưa tồn tại trong cơ sở dữ liệu.
+## Cấu hình Connection Pool
+```python
+engine = create_engine(
+    'mysql+mysqlconnector://root:@localhost/mail_server_db',
+    pool_size=10,  # Số lượng connection tối đa trong pool
+    max_overflow=20,  # Số lượng connection có thể tạo thêm
+    pool_timeout=30,  # Thời gian chờ connection
+    pool_pre_ping=True  # Kiểm tra connection trước khi sử dụng
+)
+```
 
-## Cách hoạt động
+## Sử dụng Context Manager
+```python
+with DBConnection() as session:
+    try:
+        # Thực hiện các thao tác database
+        session.commit()
+    except SQLAlchemyError as e:
+        session.rollback()
+        logger.error(f"Database error: {e}")
+```
 
-1. **Kết nối đến cơ sở dữ liệu**:
-   - `dbconnector.py` chứa hàm `create_connection()` để tạo kết nối đến cơ sở dữ liệu MySQL.
-   - Khi khởi tạo `MailController` hoặc `AuthController`, hàm `create_connection()` sẽ được gọi để thiết lập kết nối.
+## Validation với Pydantic
+```python
+class EmailModel(BaseModel):
+    sender: str
+    recipients: str
+    subject: str = ""
+    body: str = ""
+```
 
-2. **Tạo bảng trong cơ sở dữ liệu**:
-   - `dbconnector.py` chứa hàm `create_email_table(connection)` để tạo bảng `emails` nếu chưa tồn tại.
-   - `AuthController` chứa hàm `verify_table_exists()` để kiểm tra và tạo bảng `users` nếu chưa tồn tại.
+## Best Practices
 
-3. **Thao tác với bảng `emails`**:
-   - `MailController` chứa các phương thức `send_email()`, `fetch_emails()`, `fetch_all_emails()`, `fetch_emails_by_user()`, `search_emails()` để thực hiện các thao tác gửi email và truy xuất email từ bảng `emails`.
+### 1. Connection Management
+- Sử dụng context manager để đảm bảo đóng connection.
+- Kích hoạt connection pooling.
+- Thiết lập timeout hợp lý.
 
-4. **Thao tác với bảng `users`**:
-   - `AuthController` chứa các phương thức `login()`, `register()` để thực hiện các thao tác đăng nhập và đăng ký người dùng.
+### 2. Transaction Management
+- Sử dụng try-except block.
+- Rollback khi có lỗi.
+- Commit sau khi hoàn thành.
 
-## Lưu ý
-- Các thông báo và lỗi sẽ được hiển thị bằng tiếng Việt để dễ hiểu.
-- Mọi thao tác và sự kiện đều được xử lý thông qua các controller tương ứng.
+### 3. Performance Optimization
+- Sử dụng Lazy Loading cho relationships.
+- Tạo indexes cho các trường thường query.
+- Tối ưu các câu query.
 
-Hy vọng tài liệu này sẽ giúp bạn hiểu rõ hơn về cách hoạt động của cơ sở dữ liệu trong thư mục `mailSv`.
+## Xử lý lỗi Database
+
+### 1. Connection Errors
+```python
+try:
+    session = create_connection()
+except OperationalError as e:
+    logger.error(f"Cannot connect to database: {e}")
+    # Thử kết nối lại sau 5 giây
+    time.sleep(5)
+    session = create_connection()
+```
+
+### 2. Transaction Errors
+```python
+try:
+    with DBConnection() as session:
+        # Database operations
+        session.commit()
+except IntegrityError as e:
+    logger.error(f"Integrity error: {e}")
+except SQLAlchemyError as e:
+    logger.error(f"Database error: {e}")
+```
+
+## Monitoring và Debug
+
+### 1. Logging
+```python
+# Cấu hình logging
+logger.add("database.log", 
+    rotation="1 MB",
+    retention="10 days",
+    level="DEBUG")
+
+# Log database operations
+logger.debug("Executing query: {}", query)
+logger.info("Database connection established")
+logger.error("Database error: {}", error)
+```
+
+### 2. Performance Metrics
+- Theo dõi thời gian thực thi query.
+- Giám sát connection pool.
+- Kiểm tra memory usage.
+
+## Lưu ý quan trọng
+1. Luôn đóng session sau khi sử dụng.
+2. Sử dụng try-except để xử lý lỗi.
+3. Validate dữ liệu trước khi lưu.
+4. Tối ưu các câu query phức tạp.
+
+## Kế hoạch phát triển
+1. Thêm database migration tool.
+2. Tối ưu hóa query performance.
+3. Cải thiện logging và monitoring.
+4. Thêm cache layer.

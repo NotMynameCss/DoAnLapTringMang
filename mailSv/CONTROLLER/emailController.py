@@ -109,17 +109,17 @@ class EmailController:
         Returns:
             dict: Kết quả xóa email.
         """
-        if not self.session:
-            return {"success": False, "message": "Không có kết nối database"}
-
         try:
-            # Kiểm tra email tồn tại
+            logger.debug(f"Kiểm tra email ID={email_id} với user ID={user_id}")
+            
+            # Kiểm tra email tồn tại và thuộc về user
             email = self.session.query(Email).filter(
                 Email.id == email_id,
-                Email.sender == user_id
+                (Email.sender == user_id) | (Email.recipients.like(f"%{user_id}%"))
             ).first()
 
             if not email:
+                logger.warning(f"Email không tồn tại hoặc không có quyền xóa: ID={email_id}, User={user_id}")
                 return {"success": False, "message": "Email không tồn tại hoặc không có quyền xóa"}
 
             # Xóa email
@@ -132,7 +132,6 @@ class EmailController:
             self.session.rollback()
             logger.error(f"Lỗi database khi xóa email: {e}")
             return {"success": False, "message": "Lỗi database khi xóa email"}
-
         except Exception as e:
             logger.error(f"Lỗi không xác định khi xóa email: {e}")
             return {"success": False, "message": "Lỗi không xác định khi xóa email"}

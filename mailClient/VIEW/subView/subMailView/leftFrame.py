@@ -1,7 +1,7 @@
 import tkinter as tk
 
 class LeftFrame(tk.Frame):
-    def __init__(self, parent, inbox_callback, sent_callback, drafts_callback, trash_callback, labels_callback, settings_callback, chat_callback):
+    def __init__(self, parent, inbox_callback, sent_callback, drafts_callback, trash_callback, labels_callback, settings_callback, chat_callback, delete_callback):
         super().__init__(parent, bg="white")
         self.pack(side=tk.LEFT, fill=tk.Y, padx=10, pady=10)
 
@@ -32,3 +32,7 @@ class LeftFrame(tk.Frame):
         # Nút Chat/Meet
         self.chat_button = tk.Button(self, text="Chat/Meet", command=chat_callback)
         self.chat_button.pack(fill=tk.X, padx=10, pady=5)
+
+        # Thêm nút Xóa Mail
+        self.delete_mail_button = tk.Button(self, text="Xóa Mail", command=delete_callback)
+        self.delete_mail_button.pack(fill=tk.X, padx=10, pady=5)

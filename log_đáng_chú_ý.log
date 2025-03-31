@@ -1,0 +1,45 @@
+Thông báo thành công bên mailSv:
+2025-03-31 08:34:34.045 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 12 email loại inbox của người dùng 1
+2025-03-31 08:34:43.455 | DEBUG    | CONTROLLER.emailController:delete_email:113 - Kiểm tra email ID=21 với user ID=1
+2025-03-31 08:34:43,458 INFO sqlalchemy.engine.Engine SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recmails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emailsmestamp
+FROM emails
+WHERE emails.id = %(id_1)s AND (emails.sender = %(sender_1)s OR emails.recipients LIKE %(recipients_1)s)
+ LIMIT %(param_1)s
+INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS em
+emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_tim
+FROM emails
+WHERE emails.id = %(id_1)s AND (emails.sender = %(sender_1)s OR emails.recipients LIKE %(recipients_1)s)
+ LIMIT %(param_1)s
+2025-03-31 08:34:43,459 INFO sqlalchemy.engine.Engine [generated in 0.00151s] {'id_1': 21, 'sender_1': '1', 'recipients_1': '%1%', 'param_1': 1}
+INFO:sqlalchemy.engine.Engine:[generated in 0.00151s] {'id_1': 21, 'sender_1': '1', 'recipients_1': '%1%', 'param_1': 1}
+2025-03-31 08:34:43,462 INFO sqlalchemy.engine.Engine DELETE FROM emails WHERE emails.id = %(id)s
+INFO:sqlalchemy.engine.Engine:DELETE FROM emails WHERE emails.id = %(id)s
+2025-03-31 08:34:43,463 INFO sqlalchemy.engine.Engine [generated in 0.00144s] {'id': 21}
+INFO:sqlalchemy.engine.Engine:[generated in 0.00144s] {'id': 21}
+achments, emails.timestamp AS emails_timestamp
+FROM emails
+WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp
+FROM emails
+WHERE emails.recipients LIKE %(recipients_1)s OR emails.cc LIKE %(cc_1)s OR emails.bcc LIKE %(bcc_1)s
+2025-03-31 08:34:45,339 INFO sqlalchemy.engine.Engine [cached since 11.3s ago] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+INFO:sqlalchemy.engine.Engine:[cached since 11.3s ago] {'recipients_1': '%1%', 'cc_1': '%1%', 'bcc_1': '%1%'}
+2025-03-31 08:34:45.340 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 11 email loại inbox của người dùng 1 
+
+
+
+# Thông báo của mailSv về MAILCLIENT
+2025-03-31 08:57:34.699 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15032)
+2025-03-31 08:57:34,701 INFO sqlalchemy.engine.Engine SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp
+FROM emails
+INFO:sqlalchemy.engine.Engine:SELECT emails.id AS emails_id, emails.sender AS emails_sender, emails.recipients AS emails_recipients, emails.cc AS emails_cc, emails.bcc AS emails_bcc, emails.subject AS emails_subject, emails.`body` AS emails_body, emails.attachments AS emails_attachments, emails.timestamp AS emails_timestamp
+FROM emails
+2025-03-31 08:57:34,704 INFO sqlalchemy.engine.Engine [generated in 0.00276s] {}
+INFO:sqlalchemy.engine.Engine:[generated in 0.00276s] {}
+2025-03-31 08:57:34.707 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 7 email
+
+
+# MAILCLIENT:
+2025-03-31 08:57:34.696 | INFO     | CONTROLLER.mailController:fetch_all_emails:112 - Gửi yêu cầu truy xuất tất cả email: FETCH_ALL_EMAILS
+2025-03-31 08:57:34.708 | INFO     | CONTROLLER.mailController:fetch_all_emails:119 - Truy xuất tất cả email thành công: [{'id': 19, 'sender': '1', 
+'recipients': '1', 'cc': '', 'bcc': '', 'subject': 'dd', 'body': '33\r\n', 'attachments': '', 'timestamp': '2025-03-22T15:52:22'}, {'id': 20, 'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': 'ssss', 'body': '2222\n', 'attachments': '', 'timestamp': '2025-03-23T19:31:51'}, {'id': 26, 'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': '333', 'body': 'ssss\n', 'attachments': '', 'timestamp': '2025-03-23T23:53:27'}, {'id': 28, 'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': '+____++++', 'body': 'sâsas\n', 'attachments': '', 'timestamp': '2025-03-24T16:13:01'}, {'id': 29, 'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': '1', 'body': '111\n', 'attachments': '', 'timestamp': '2025-03-26T10:45:18'}, {'id': 31, 'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': '233333333333333', 'body': 'sádasdasd\n', 'attachments': '', 'timestamp': '2025-03-26T11:34:05'}, {'id': 32, 'sender': '1', 'recipients': '1', 'cc': '', 'bcc': '', 'subject': 'sss', 'body': '111\n', 'attachments': '', 'timestamp': '2025-03-31T08:05:27'}]
