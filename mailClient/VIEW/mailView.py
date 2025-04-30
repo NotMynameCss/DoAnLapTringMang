@@ -52,9 +52,9 @@ class MailView:
         self.show_emails()
 
     def compose_email(self):
-        # Open the MailSendView window
+        # Mở cửa sổ soạn mail và truyền callback làm mới
         new_window = tk.Toplevel(self.root)
-        MailSendView(new_window, self.username)
+        MailSendView(new_window, self.username, refresh_callback=self.refresh_emails)
 
     def search_email(self):
         messagebox.showinfo("Search Email", "Search Email clicked")

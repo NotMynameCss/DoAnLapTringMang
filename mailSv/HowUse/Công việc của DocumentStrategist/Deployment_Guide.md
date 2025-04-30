@@ -1,13 +1,13 @@
 # Hướng dẫn triển khai hệ thống mailServer
 
 ## Tổng quan
-Hướng dẫn này cung cấp các bước chi tiết để triển khai hệ thống mailServer. Hệ thống được xây dựng bằng Python và sử dụng các công nghệ như XAMPP, Tkinter, và giao thức TCP/IP.
+Hướng dẫn này cung cấp các bước chi tiết để triển khai hệ thống mailServer. Hệ thống được xây dựng bằng Python và sử dụng các công nghệ như XAMPP, Tkinter, và giao thức TCP/IP qua cổng `65432`.
 
 ## Công nghệ sử dụng
-- **Python 3.11.9**: Ngôn ngữ lập trình chính.
+- **Python 3.13.2**: Ngôn ngữ lập trình chính.
 - **Windows 10 64-bit**: Hệ điều hành phát triển và chạy ứng dụng.
 - **XAMPP (xampp-windows-x64-8.2.12-0)**: Quản lý cơ sở dữ liệu.
-- **Giao thức TCP/IP**: Kết nối client-server.
+- **Giao thức TCP/IP**: Kết nối client-server qua cổng `65432`.
 - **Tkinter**: Xây dựng giao diện người dùng.
 - **Loguru 0.7.3**: Ghi log.
 - **SqlAlchemy 2.0.39**: ORM để tương tác với cơ sở dữ liệu.
@@ -17,7 +17,7 @@ Hướng dẫn này cung cấp các bước chi tiết để triển khai hệ t
 ## Các bước triển khai
 
 ### 1. Chuẩn bị môi trường
-- **Cài đặt Python 3.11.9**:
+- **Cài đặt Python 3.13.2**:
   - Tải Python từ trang chủ [python.org](https://www.python.org/downloads/release/python-3119/).
   - Chạy file cài đặt và làm theo hướng dẫn để cài đặt Python.
 
@@ -78,16 +78,38 @@ Hướng dẫn này cung cấp các bước chi tiết để triển khai hệ t
     );
     ```
 
-### 3. Triển khai máy chủ (Server)
+### 3. Cấu hình Connection Pooling
+- Mở file `dbconnector.py` và thêm cấu hình sau:
+```python
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+# Kích hoạt Connection Pooling
+engine = create_engine(
+    "mysql+pymysql://username:password@localhost/mailserver",
+    pool_size=10,
+    max_overflow=20,
+    pool_timeout=30,
+)
+Session = sessionmaker(bind=engine)
+```
+
+### 4. Triển khai máy chủ (Server)
 - **Cấu hình máy chủ**:
   - Tạo một file Python mới `server.py` và cấu hình máy chủ để lắng nghe các kết nối từ máy khách.
-  - Sử dụng `twisted` để xử lý kết nối mạng không đồng bộ.
+  - Sử dụng `twisted` để xử lý kết nối mạng không đồng bộ và thêm cấu hình timeout:
+    ```python
+    from twisted.internet import reactor
+
+    # Cấu hình timeout
+    reactor.listenTCP(65432, factory, timeout=30)
+    ```
 
 - **Triển khai các thành phần chính của máy chủ**:
   - Tạo các file Python cho `Socket Server`, `Controller`, và `Model`.
   - Đảm bảo rằng các thành phần này tương tác đúng với cơ sở dữ liệu và xử lý các yêu cầu từ máy khách.
 
-### 4. Triển khai máy khách (Client)
+### 5. Triển khai máy khách (Client)
 - **Cấu hình máy khách**:
   - Tạo một file Python mới `client.py` và cấu hình máy khách để kết nối đến máy chủ.
   - Sử dụng `Tkinter` để xây dựng giao diện người dùng.
@@ -96,17 +118,24 @@ Hướng dẫn này cung cấp các bước chi tiết để triển khai hệ t
   - Tạo các file Python cho `Socket Client`, `View`, và `Controller`.
   - Đảm bảo rằng các thành phần này tương tác đúng với máy chủ và hiển thị dữ liệu cho người dùng.
 
-### 5. Kiểm thử hệ thống
+### 6. Kiểm tra cấu hình mạng
+- Đảm bảo rằng cổng `65432` được mở trên tường lửa.
+- Sử dụng lệnh sau để kiểm tra trạng thái cổng:
+```sh
+netstat -an | find "65432"
+```
+
+### 7. Kiểm thử hệ thống
 - **Kiểm thử chức năng**:
   - Thực hiện kiểm thử các chức năng chính như đăng nhập, đăng ký, gửi email, và truy xuất email để đảm bảo rằng hệ thống hoạt động đúng theo yêu cầu.
 
 - **Kiểm thử hiệu suất**:
   - Thực hiện kiểm thử hiệu suất để đảm bảo rằng hệ thống đáp ứng được các yêu cầu về hiệu suất.
 
-### 6. Triển khai hệ thống
+### 8. Triển khai hệ thống
 - **Triển khai lên môi trường sản xuất**:
   - Triển khai hệ thống mailServer lên môi trường sản xuất.
   - Đảm bảo rằng hệ thống hoạt động ổn định và đáp ứng được các yêu cầu của người dùng.
 
 ## Kết luận
-Hướng dẫn triển khai này giúp xác định các bước cần thiết để triển khai hệ thống mailServer một cách hiệu quả. Điều này giúp đảm bảo rằng hệ thống được triển khai đúng theo kế hoạch và đáp ứng được các yêu cầu của người dùng.
+Hướng dẫn triển khai này giúp xác định các bước cần thiết để triển khai hệ thống mailServer một cách hiệu quả. Với các cải tiến mới như Connection Pooling, quản lý timeout và xử lý lỗi TCP, hệ thống sẽ hoạt động ổn định và hiệu quả hơn. Điều này giúp đảm bảo rằng hệ thống được triển khai đúng theo kế hoạch và đáp ứng được các yêu cầu của người dùng.

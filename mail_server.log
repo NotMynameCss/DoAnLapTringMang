@@ -1,216 +1,185 @@
-2025-03-31 08:34:27.908 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
-2025-03-31 08:34:27.911 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
-2025-03-31 08:34:31.066 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
-2025-03-31 08:34:32.038 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:46 - Truy xuất 6 người dùng
-2025-03-31 08:34:34.045 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 12 email loại inbox của người dùng 1
-2025-03-31 08:34:43.467 | INFO     | CONTROLLER.emailController:delete_email:128 - Xóa email thành công: ID=21
-2025-03-31 08:34:45.340 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 11 email loại inbox của người dùng 1
-2025-03-31 08:36:40.853 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14577)
-2025-03-31 08:36:40.861 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
-2025-03-31 08:36:40.862 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 08:36:41.934 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14579)
-2025-03-31 08:36:41.944 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 11 email
-2025-03-31 08:36:50.868 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14591)
-2025-03-31 08:36:50.885 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=1, user=1
-2025-03-31 08:36:50.893 | WARNING  | CONTROLLER.emailController:delete_email:122 - Email không tồn tại hoặc không có quyền xóa: ID=1, User=1
-2025-03-31 08:36:50.894 | WARNING  | server:handle_delete_email:134 - Lỗi khi xóa email: Email không tồn tại hoặc không có quyền xóa
-2025-03-31 08:49:37.161 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
-2025-03-31 08:49:37.164 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
-2025-03-31 08:50:15.581 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14892)
-2025-03-31 08:50:15.595 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
-2025-03-31 08:50:15.596 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 08:50:17.704 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14893)
-2025-03-31 08:50:17.718 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 11 email
-2025-03-31 08:50:28.328 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14895)
-2025-03-31 08:50:28.352 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=1, user=1
-2025-03-31 08:50:28.362 | WARNING  | CONTROLLER.emailController:delete_email:122 - Email không tồn tại hoặc không có quyền xóa: ID=1, User=1
-2025-03-31 08:50:28.364 | WARNING  | server:handle_delete_email:134 - Lỗi khi xóa email: Email không tồn tại hoặc không có quyền xóa
-2025-03-31 08:54:50.035 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14946)
-2025-03-31 08:54:50.043 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
-2025-03-31 08:54:50.044 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 08:54:50.923 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14948)
-2025-03-31 08:54:50.933 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 11 email
-2025-03-31 08:54:59.271 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14951)
-2025-03-31 08:54:59.290 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=25, user=1
-2025-03-31 08:54:59.307 | INFO     | CONTROLLER.emailController:delete_email:128 - Xóa email thành công: ID=25
-2025-03-31 08:54:59.310 | INFO     | server:handle_delete_email:132 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
-2025-03-31 08:55:00.923 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14953)
-2025-03-31 08:55:00.930 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 11 email loại inbox của người dùng 1
-2025-03-31 08:55:04.507 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14954)
-2025-03-31 08:55:04.531 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=24, user=1
-2025-03-31 08:55:04.546 | INFO     | CONTROLLER.emailController:delete_email:128 - Xóa email thành công: ID=24
-2025-03-31 08:55:04.547 | INFO     | server:handle_delete_email:132 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
-2025-03-31 08:55:05.525 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14955)
-2025-03-31 08:55:05.534 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 11 email loại inbox của người dùng 1
-2025-03-31 08:55:06.928 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14956)
-2025-03-31 08:55:06.947 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 11 email
-2025-03-31 08:55:07.975 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14957)
-2025-03-31 08:55:07.995 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 11 email loại inbox của người dùng 1
-2025-03-31 08:55:11.393 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14958)
-2025-03-31 08:55:11.394 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=30, user=1
-2025-03-31 08:55:11.404 | INFO     | CONTROLLER.emailController:delete_email:128 - Xóa email thành công: ID=30
-2025-03-31 08:55:11.405 | INFO     | server:handle_delete_email:132 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
-2025-03-31 08:55:12.372 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14959)
-2025-03-31 08:55:12.380 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 11 email loại inbox của người dùng 1
-2025-03-31 08:55:53.369 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14978)
-2025-03-31 08:55:53.393 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=30, user=1
-2025-03-31 08:55:53.399 | WARNING  | CONTROLLER.emailController:delete_email:122 - Email không tồn tại hoặc không có quyền xóa: ID=30, User=1
-2025-03-31 08:55:53.400 | WARNING  | server:handle_delete_email:134 - Lỗi khi xóa email: Email không tồn tại hoặc không có quyền xóa
-2025-03-31 08:55:57.410 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14979)
-2025-03-31 08:55:57.412 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=33, user=1
-2025-03-31 08:55:57.423 | INFO     | CONTROLLER.emailController:delete_email:128 - Xóa email thành công: ID=33
-2025-03-31 08:55:57.424 | INFO     | server:handle_delete_email:132 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
-2025-03-31 08:55:58.435 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14980)
-2025-03-31 08:55:58.455 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 11 email loại inbox của người dùng 1
-2025-03-31 08:56:06.663 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14989)
-2025-03-31 08:56:06.667 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 11 email loại inbox của người dùng 1
-2025-03-31 08:56:07.607 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14990)
-2025-03-31 08:56:07.633 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 11 email loại inbox của người dùng 1
-2025-03-31 08:56:08.248 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14991)
-2025-03-31 08:56:08.263 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 11 email loại inbox của người dùng 1
-2025-03-31 08:56:08.471 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14992)
-2025-03-31 08:56:08.500 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 11 email loại inbox của người dùng 1
-2025-03-31 08:56:09.071 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14993)
-2025-03-31 08:56:09.098 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 11 email loại inbox của người dùng 1
-2025-03-31 08:57:11.767 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
-2025-03-31 08:57:11.771 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
-2025-03-31 08:57:14.702 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
-2025-03-31 08:57:15.627 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:46 - Truy xuất 6 người dùng
-2025-03-31 08:57:16.699 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 7 email loại inbox của người dùng 1
-2025-03-31 08:57:32.476 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15029)
-2025-03-31 08:57:32.484 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
-2025-03-31 08:57:32.485 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 08:57:34.699 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15032)
-2025-03-31 08:57:34.707 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 7 email
-2025-03-31 08:59:04.288 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15246)
-2025-03-31 08:59:04.303 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=20, user=1
-2025-03-31 08:59:04.303 | ERROR    | server:handle_delete_email:138 - Lỗi khi xử lý DELETE_EMAIL: cannot schedule new futures after interpreter shutdown
-2025-03-31 08:59:24.492 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15255)
-2025-03-31 08:59:24.510 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=31, user=1
-2025-03-31 08:59:24.511 | ERROR    | server:handle_delete_email:138 - Lỗi khi xử lý DELETE_EMAIL: cannot schedule new futures after interpreter shutdown
-2025-03-31 08:59:49.782 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
-2025-03-31 08:59:49.785 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
-2025-03-31 09:00:03.532 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15263)
-2025-03-31 09:00:03.546 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
-2025-03-31 09:00:03.547 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 09:00:04.481 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15264)
-2025-03-31 09:00:04.495 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 7 email
-2025-03-31 09:00:13.295 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15267)
-2025-03-31 09:00:13.296 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=26, user=1
-2025-03-31 09:00:13.312 | INFO     | CONTROLLER.emailController:delete_email:128 - Xóa email thành công: ID=26
-2025-03-31 09:00:13.313 | INFO     | server:handle_delete_email:132 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
-2025-03-31 09:00:15.365 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15269)
-2025-03-31 09:00:15.387 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 7 email loại inbox của người dùng 1
-2025-03-31 09:05:20.385 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
-2025-03-31 09:05:20.387 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
-2025-03-31 09:05:30.987 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15352)
-2025-03-31 09:05:31.001 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
-2025-03-31 09:05:31.002 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 09:05:31.985 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15353)
-2025-03-31 09:05:31.995 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 6 email
-2025-03-31 09:05:37.107 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15356)
-2025-03-31 09:05:37.129 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=29, user=1
-2025-03-31 09:05:37.145 | INFO     | CONTROLLER.emailController:delete_email:128 - Xóa email thành công: ID=29
-2025-03-31 09:05:37.146 | INFO     | server:handle_delete_email:132 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
-2025-03-31 09:05:38.650 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15358)
-2025-03-31 09:05:41.554 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15359)
-2025-03-31 09:05:41.570 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15360)
-2025-03-31 09:05:41.590 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 6 email loại inbox của người dùng 1
-2025-03-31 09:05:43.370 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15361)
-2025-03-31 09:05:43.383 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15362)
-2025-03-31 09:05:43.400 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 6 email loại inbox của người dùng 1
-2025-03-31 09:05:44.090 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15363)
-2025-03-31 09:05:44.116 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15364)
-2025-03-31 09:05:44.134 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 6 email loại inbox của người dùng 1
-2025-03-31 09:05:45.203 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15365)
-2025-03-31 09:05:45.224 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15366)
-2025-03-31 09:05:45.241 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 6 email loại inbox của người dùng 1
-2025-03-31 09:06:02.812 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15367)
-2025-03-31 09:06:02.837 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=32, user=1
-2025-03-31 09:06:02.851 | INFO     | CONTROLLER.emailController:delete_email:128 - Xóa email thành công: ID=32
-2025-03-31 09:06:02.852 | INFO     | server:handle_delete_email:132 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
-2025-03-31 09:06:04.355 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15368)
-2025-03-31 09:06:08.416 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15369)
-2025-03-31 09:06:08.432 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15370)
-2025-03-31 09:06:08.450 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 6 email loại inbox của người dùng 1
-2025-03-31 09:09:30.231 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
-2025-03-31 09:09:30.233 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
-2025-03-31 09:09:40.026 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15418)
-2025-03-31 09:09:40.041 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
-2025-03-31 09:09:40.042 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 09:09:40.848 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15419)
-2025-03-31 09:09:40.867 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 4 email
-2025-03-31 09:09:45.282 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15422)
-2025-03-31 09:09:45.283 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=19, user=1
-2025-03-31 09:09:45.298 | INFO     | CONTROLLER.emailController:delete_email:128 - Xóa email thành công: ID=19
-2025-03-31 09:09:45.300 | INFO     | server:handle_delete_email:132 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
-2025-03-31 09:09:45.302 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15424)
-2025-03-31 09:09:45.324 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 4 email loại inbox của người dùng 1
-2025-03-31 09:09:46.516 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15425)
-2025-03-31 09:09:46.525 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 4 email loại inbox của người dùng 1
-2025-03-31 09:10:01.798 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15428)
-2025-03-31 09:10:01.816 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 4 email
-2025-03-31 09:10:02.639 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15429)
-2025-03-31 09:10:02.665 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 4 email loại inbox của người dùng 1
-2025-03-31 09:14:45.981 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15483)
-2025-03-31 09:14:45.999 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 4 email loại inbox của người dùng 1
-2025-03-31 09:14:52.837 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15485)
-2025-03-31 09:14:52.845 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
-2025-03-31 09:14:55.414 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15487)
-2025-03-31 09:14:55.434 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 4 email loại inbox của người dùng 1
-2025-03-31 09:14:56.110 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 15488)
-2025-03-31 09:14:56.116 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 4 email loại inbox của người dùng 1
-2025-03-31 09:33:39.081 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
-2025-03-31 09:33:39.086 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
-2025-03-31 09:33:58.649 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 13751)
-2025-03-31 09:33:58.686 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
-2025-03-31 09:33:58.688 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 09:34:01.461 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 13752)
-2025-03-31 09:34:01.497 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 4 email
-2025-03-31 09:34:01.501 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 09:34:04.644 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 13754)
-2025-03-31 09:34:04.712 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 4 email loại inbox của người dùng 1
-2025-03-31 09:34:04.715 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 09:34:18.620 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 13755)
-2025-03-31 09:34:18.653 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
-2025-03-31 09:34:18.655 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 09:34:22.735 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 13756)
-2025-03-31 09:34:22.767 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 5 email loại inbox của người dùng 1
-2025-03-31 09:34:22.769 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 09:46:42.360 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
-2025-03-31 09:46:42.364 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
-2025-03-31 09:46:59.388 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14168)
-2025-03-31 09:46:59.402 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
-2025-03-31 09:46:59.403 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
-2025-03-31 09:47:00.563 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14169)
-2025-03-31 09:47:00.579 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 5 email
-2025-03-31 09:47:12.183 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14171)
-2025-03-31 09:47:12.206 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
-2025-03-31 09:47:17.836 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14172)
-2025-03-31 09:47:17.861 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=31, user=1
-2025-03-31 09:47:17.878 | INFO     | CONTROLLER.emailController:delete_email:128 - Xóa email thành công: ID=31
-2025-03-31 09:47:17.879 | INFO     | server:handle_delete_email:132 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
-2025-03-31 09:47:17.883 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14173)
-2025-03-31 09:47:17.913 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 5 email loại inbox của người dùng 1
-2025-03-31 09:47:19.644 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14174)
-2025-03-31 09:47:19.665 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 5 email loại inbox của người dùng 1
-2025-03-31 09:47:26.813 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14176)
-2025-03-31 09:47:26.825 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=28, user=1
-2025-03-31 09:47:26.839 | INFO     | CONTROLLER.emailController:delete_email:128 - Xóa email thành công: ID=28
-2025-03-31 09:47:26.840 | INFO     | server:handle_delete_email:132 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
-2025-03-31 09:47:26.845 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14178)
-2025-03-31 09:47:26.861 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 5 email loại inbox của người dùng 1
-2025-03-31 09:47:28.133 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14179)
-2025-03-31 09:47:28.141 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 5 email loại inbox của người dùng 1
-2025-03-31 09:47:33.220 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14180)
-2025-03-31 09:47:33.241 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=28, user=1
-2025-03-31 09:47:33.248 | WARNING  | CONTROLLER.emailController:delete_email:122 - Email không tồn tại hoặc không có quyền xóa: ID=28, User=1
-2025-03-31 09:47:33.249 | WARNING  | server:handle_delete_email:134 - Lỗi khi xóa email: Email không tồn tại hoặc không có quyền xóa
-2025-03-31 09:47:39.869 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14181)
-2025-03-31 09:47:39.870 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=28, user=1
-2025-03-31 09:47:39.878 | WARNING  | CONTROLLER.emailController:delete_email:122 - Email không tồn tại hoặc không có quyền xóa: ID=28, User=1
-2025-03-31 09:47:39.878 | WARNING  | server:handle_delete_email:134 - Lỗi khi xóa email: Email không tồn tại hoặc không có quyền xóa
-2025-03-31 09:47:43.991 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14183)
-2025-03-31 09:47:44.012 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 5 email loại inbox của người dùng 1
-2025-03-31 09:47:44.647 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 14184)
-2025-03-31 09:47:44.667 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 5 email loại inbox của người dùng 1
+2025-04-24 20:11:59.102 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
+2025-04-24 20:11:59.108 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-24 20:12:22.746 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 9867)
+2025-04-24 20:12:22.835 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-04-24 20:12:22.836 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
+2025-04-24 20:12:25.348 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('127.0.0.1', 9870)
+2025-04-24 20:12:25.367 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 3 email
+2025-04-24 20:19:07.361 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
+2025-04-24 20:19:07.366 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-24 20:28:19.517 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
+2025-04-24 20:28:19.520 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-24 20:30:50.113 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
+2025-04-24 20:30:50.116 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-24 20:34:49.039 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('192.168.1.25', 49235)
+2025-04-24 20:34:49.107 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-04-24 20:34:49.109 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
+2025-04-24 20:34:51.547 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('192.168.1.25', 49236)
+2025-04-24 20:34:51.576 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 3 email
+2025-04-24 20:35:24.703 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('192.168.1.25', 49237)
+2025-04-24 20:35:24.746 | INFO     | CONTROLLER.sendMailController:send_email:29 - Email đã được gửi thành công từ 1 đến 1
+2025-04-24 20:35:30.739 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('192.168.1.25', 49238)
+2025-04-24 20:35:30.768 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-24 20:39:35.507 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
+2025-04-24 20:39:35.511 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-24 20:39:50.063 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('192.168.1.25', 49256)
+2025-04-24 20:39:50.084 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-04-24 20:39:50.087 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
+2025-04-24 20:41:00.697 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('192.168.1.25', 49264)
+2025-04-24 20:41:00.714 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:35 - Truy xuất 4 email
+2025-04-24 20:41:05.812 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('192.168.1.25', 49265)
+2025-04-24 20:41:05.817 | INFO     | server:handle_delete_email:109 - Processing DELETE_EMAIL request: id=36, user=1
+2025-04-24 20:41:05.923 | INFO     | CONTROLLER.emailController:delete_email:128 - Xóa email thành công: ID=36
+2025-04-24 20:41:05.926 | INFO     | server:handle_delete_email:132 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
+2025-04-24 20:41:06.161 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('192.168.1.25', 49266)
+2025-04-24 20:41:06.168 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-24 20:41:08.190 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('192.168.1.25', 49267)
+2025-04-24 20:41:08.200 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-24 20:41:10.512 | INFO     | server:start_server:186 - Chấp nhận kết nối từ ('192.168.1.25', 49268)
+2025-04-24 20:41:10.533 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 10:53:19.065 | ERROR    | MODEL.dbconnector:_create_connection:85 - Lỗi kết nối đến database: (mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-04-30 10:53:19.066 | ERROR    | MODEL.dbconnector:get_session:93 - Session factory chưa được khởi tạo
+2025-04-30 10:53:19.067 | ERROR    | MODEL.dbconnector:get_session:93 - Session factory chưa được khởi tạo
+2025-04-30 10:53:19.068 | ERROR    | MODEL.dbconnector:get_session:93 - Session factory chưa được khởi tạo
+2025-04-30 10:53:19.069 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-30 10:54:05.765 | INFO     | MODEL.dbconnector:_create_connection:83 - Kết nối thành công đến database
+2025-04-30 10:54:05.768 | INFO     | server:start_server:181 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-30 10:54:49.958 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-04-30 10:54:51.286 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:46 - Truy xuất 8 người dùng
+2025-04-30 10:54:52.327 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:64 - Truy xuất 3 email loại inbox của người dùng 1
+2025-04-30 10:54:53.029 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:96 - Tìm thấy email với ID 38
+2025-04-30 14:50:46.392 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-04-30 14:55:04.466 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-04-30 14:55:06.494 | INFO     | server:start_server:188 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-30 14:55:23.159 | INFO     | server:start_server:193 - Chấp nhận kết nối từ ('127.0.0.1', 8772)
+2025-04-30 14:55:23.185 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-04-30 14:55:23.187 | WARNING  | server:send_response_with_ack:49 - Client không gửi ACK
+2025-04-30 14:55:24.543 | INFO     | server:start_server:193 - Chấp nhận kết nối từ ('127.0.0.1', 8773)
+2025-04-30 14:55:24.572 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:47 - Truy xuất 3 email
+2025-04-30 14:55:28.566 | INFO     | server:start_server:193 - Chấp nhận kết nối từ ('127.0.0.1', 8776)
+2025-04-30 14:55:28.595 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-04-30 14:55:36.229 | INFO     | server:start_server:193 - Chấp nhận kết nối từ ('127.0.0.1', 8779)
+2025-04-30 14:55:36.265 | INFO     | CONTROLLER.sendMailController:send_email:43 - Email đã được gửi thành công từ 1 đến 1
+2025-04-30 14:55:36.266 | ERROR    | server:send_response_with_ack:53 - Error in send_response_with_ack: 'dict' object has no attribute 'encode'
+2025-04-30 14:56:03.822 | INFO     | server:start_server:193 - Chấp nhận kết nối từ ('127.0.0.1', 8782)
+2025-04-30 14:56:03.830 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 14:59:58.612 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-04-30 15:00:00.656 | INFO     | server:start_server:193 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-30 15:00:13.288 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8838)
+2025-04-30 15:00:13.312 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-04-30 15:00:13.314 | WARNING  | server:send_response_with_ack:54 - Client không gửi ACK
+2025-04-30 15:00:14.359 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8840)
+2025-04-30 15:00:14.385 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:47 - Truy xuất 4 email
+2025-04-30 15:00:22.253 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8845)
+2025-04-30 15:00:22.272 | INFO     | server:handle_delete_email:114 - Processing DELETE_EMAIL request: id=39, user=1
+2025-04-30 15:00:22.302 | INFO     | CONTROLLER.emailController:delete_email:129 - Xóa email thành công: ID=39
+2025-04-30 15:00:22.304 | INFO     | server:handle_delete_email:137 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
+2025-04-30 15:00:22.311 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8847)
+2025-04-30 15:00:22.319 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:00:23.505 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8849)
+2025-04-30 15:00:23.519 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:00:24.576 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8850)
+2025-04-30 15:00:24.587 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:00:25.328 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8852)
+2025-04-30 15:00:25.336 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:00:25.903 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8853)
+2025-04-30 15:00:25.911 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:00:38.198 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8855)
+2025-04-30 15:00:38.227 | INFO     | CONTROLLER.sendMailController:send_email:43 - Email đã được gửi thành công từ 1 đến 1
+2025-04-30 15:01:39.247 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8864)
+2025-04-30 15:01:39.259 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:01:41.711 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8865)
+2025-04-30 15:01:41.718 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:05:30.409 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-04-30 15:05:32.443 | INFO     | server:start_server:193 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-30 15:05:43.481 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8983)
+2025-04-30 15:05:43.508 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-04-30 15:05:43.510 | WARNING  | server:send_response_with_ack:54 - Client không gửi ACK
+2025-04-30 15:05:44.623 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8984)
+2025-04-30 15:05:44.661 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:47 - Truy xuất 4 email
+2025-04-30 15:05:54.783 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8986)
+2025-04-30 15:05:54.808 | INFO     | CONTROLLER.sendMailController:send_email:43 - Email đã được gửi thành công từ 1 đến 1
+2025-04-30 15:05:57.495 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8988)
+2025-04-30 15:05:57.524 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-04-30 15:06:06.583 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8989)
+2025-04-30 15:06:06.585 | INFO     | server:handle_delete_email:114 - Processing DELETE_EMAIL request: id=38, user=1
+2025-04-30 15:06:06.608 | INFO     | CONTROLLER.emailController:delete_email:129 - Xóa email thành công: ID=38
+2025-04-30 15:06:06.610 | INFO     | server:handle_delete_email:137 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
+2025-04-30 15:06:06.615 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8991)
+2025-04-30 15:06:06.625 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-04-30 15:06:07.853 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8992)
+2025-04-30 15:06:07.873 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-04-30 15:06:10.296 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8993)
+2025-04-30 15:06:10.303 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-04-30 15:06:11.143 | INFO     | server:start_server:198 - Chấp nhận kết nối từ ('127.0.0.1', 8994)
+2025-04-30 15:06:11.149 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-04-30 15:06:25.984 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-04-30 15:06:27.021 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:62 - Truy xuất 8 người dùng
+2025-04-30 15:06:28.339 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-04-30 15:06:35.051 | INFO     | CONTROLLER.sendMailController:send_email:43 - Email đã được gửi thành công từ 1 đến 1
+2025-04-30 15:06:42.555 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-04-30 15:06:47.017 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-04-30 15:06:48.251 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-04-30 15:06:49.091 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng 2
+2025-04-30 15:06:49.760 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-04-30 15:06:57.259 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:111 - Tìm thấy email với ID 43
+2025-04-30 15:13:37.564 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-04-30 15:13:39.588 | INFO     | server:start_server:191 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-30 15:13:52.591 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-04-30 15:13:53.517 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:62 - Truy xuất 8 người dùng
+2025-04-30 15:13:54.719 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-04-30 15:13:55.375 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:111 - Tìm thấy email với ID 41
+2025-04-30 15:14:02.186 | INFO     | CONTROLLER.emailController:delete_email:129 - Xóa email thành công: ID=41
+2025-04-30 15:14:03.230 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:14:05.261 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:14:12.684 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:14:15.228 | INFO     | CONTROLLER.searchMailController:search_emails:28 - Tìm kiếm 3 email với từ khóa 1
+2025-04-30 15:14:19.373 | INFO     | CONTROLLER.searchMailController:search_emails:28 - Tìm kiếm 4 email với từ khóa 
+2025-04-30 15:14:24.473 | INFO     | CONTROLLER.searchMailController:search_emails:28 - Tìm kiếm 3 email với từ khóa 1
+2025-04-30 15:14:33.228 | INFO     | CONTROLLER.searchMailController:search_emails:28 - Tìm kiếm 3 email với từ khóa 2
+2025-04-30 15:14:33.964 | INFO     | CONTROLLER.searchMailController:search_emails:28 - Tìm kiếm 3 email với từ khóa 2
+2025-04-30 15:14:37.204 | INFO     | CONTROLLER.searchMailController:search_emails:28 - Tìm kiếm 4 email với từ khóa 
+2025-04-30 15:14:39.860 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:111 - Tìm thấy email với ID 42
+2025-04-30 15:14:42.165 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:111 - Tìm thấy email với ID 40
+2025-04-30 15:14:44.404 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:111 - Tìm thấy email với ID 40
+2025-04-30 15:14:47.020 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:111 - Tìm thấy email với ID 43
+2025-04-30 15:14:49.779 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:111 - Tìm thấy email với ID 34
+2025-04-30 15:14:52.124 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:111 - Tìm thấy email với ID 40
+2025-04-30 15:14:57.772 | INFO     | CONTROLLER.searchMailController:search_emails:28 - Tìm kiếm 3 email với từ khóa 1
+2025-04-30 15:15:03.572 | INFO     | CONTROLLER.searchMailController:search_emails:28 - Tìm kiếm 4 email với từ khóa 
+2025-04-30 15:15:09.510 | INFO     | CONTROLLER.fetchMailController:fetch_emails:31 - Truy xuất 0 email loại inbox
+2025-04-30 15:15:10.373 | INFO     | CONTROLLER.fetchMailController:fetch_emails:31 - Truy xuất 0 email loại sent
+2025-04-30 15:15:10.870 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:15:22.254 | INFO     | CONTROLLER.emailController:delete_email:129 - Xóa email thành công: ID=40
+2025-04-30 15:15:24.322 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-04-30 15:15:25.860 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-04-30 15:15:56.828 | INFO     | CONTROLLER.sendMailController:send_email:43 - Email đã được gửi thành công từ 1 đến 1
+2025-04-30 15:16:00.909 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:16:18.188 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:18:47.241 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-04-30 15:18:49.270 | INFO     | server:start_server:191 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-30 15:18:59.602 | INFO     | server:start_server:196 - Chấp nhận kết nối từ ('127.0.0.1', 5073)
+2025-04-30 15:18:59.613 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-04-30 15:18:59.614 | WARNING  | server:send_response_with_ack:52 - Client không gửi ACK
+2025-04-30 15:19:00.733 | INFO     | server:start_server:196 - Chấp nhận kết nối từ ('127.0.0.1', 5074)
+2025-04-30 15:19:00.747 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:47 - Truy xuất 4 email
+2025-04-30 15:21:44.298 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-04-30 15:22:31.228 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-04-30 15:22:33.263 | INFO     | server:start_server:191 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-30 15:22:36.549 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-04-30 15:22:37.366 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:62 - Truy xuất 8 người dùng
+2025-04-30 15:22:38.492 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:22:43.240 | INFO     | CONTROLLER.emailController:delete_email:129 - Xóa email thành công: ID=42
+2025-04-30 15:22:44.072 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-04-30 15:32:06.842 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-04-30 15:32:08.890 | INFO     | server:start_server:191 - Máy chủ đang lắng nghe trên cổng 65432
+2025-04-30 15:32:11.353 | INFO     | CONTROLLER.authController:login:26 - Đăng nhập thành công cho người dùng: 1
+2025-04-30 15:32:12.338 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:62 - Truy xuất 8 người dùng
+2025-04-30 15:32:13.244 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-04-30 15:32:21.697 | INFO     | CONTROLLER.sendMailController:send_email:43 - Email đã được gửi thành công từ 1 đến 1
+2025-04-30 15:32:30.161 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:32:33.682 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:32:34.682 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại inbox của người dùng 1
+2025-04-30 15:32:42.233 | INFO     | CONTROLLER.emailController:delete_email:129 - Xóa email thành công: ID=43
+2025-04-30 15:32:43.047 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1

@@ -3,15 +3,7 @@
 ## Tổng quan
 API Documentation cung cấp thông tin chi tiết về các API được sử dụng trong hệ thống mailServer. Các API này chịu trách nhiệm xử lý các yêu cầu từ client và tương tác với cơ sở dữ liệu.
 
-## Công nghệ sử dụng
-- **Python 3.11.9**: Ngôn ngữ lập trình chính.
-- **Windows 10 64-bit**: Hệ điều hành phát triển và chạy ứng dụng.
-- **XAMPP (xampp-windows-x64-8.2.12-0)**: Quản lý cơ sở dữ liệu.
-- **Giao thức TCP/IP**: Kết nối client-server.
-- **Loguru 0.7.3**: Ghi log.
-- **SqlAlchemy 2.0.39**: ORM để tương tác với cơ sở dữ liệu.
-- **pydantic 2.10.6**: Xác thực dữ liệu.
-- **twisted 24.11.0**: Xử lý kết nối mạng không đồng bộ.
+
 
 ## API Endpoints
 

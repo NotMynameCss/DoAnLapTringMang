@@ -6,6 +6,7 @@ from loguru import logger
 Base = declarative_base()
 
 class Email(Base):
+    """Model Email ánh xạ bảng emails."""
     __tablename__ = 'emails'
     id = Column(Integer, primary_key=True, autoincrement=True)
     sender = Column(String(255), nullable=False, index=True)
@@ -18,6 +19,7 @@ class Email(Base):
     timestamp = Column(TIMESTAMP, server_default='CURRENT_TIMESTAMP', index=True)
 
     def to_dict(self):
+        """Chuyển đối tượng Email thành dict."""
         return {
             'id': self.id,
             'sender': self.sender,

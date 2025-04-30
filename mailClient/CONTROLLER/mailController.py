@@ -3,9 +3,11 @@ import json
 from loguru import logger
 from pydantic import ValidationError
 from MODEL.models import EmailModel  # Import EmailModel từ models.py
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+from client_network_config import MAILSV_HOST, MAILSV_PORT
 
-
-PORT_SV = 65432  # Port mà server đang lắng nghe
 
 class MailController:
     """
@@ -31,17 +33,17 @@ class MailController:
         try:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 s.settimeout(10)  # Thêm timeout để tránh treo kết nối
-                s.connect(('localhost', PORT_SV))
+                s.connect((MAILSV_HOST, MAILSV_PORT))
                 s.sendall(request.encode())
 
-                response = s.recv(4096) # Nhận phản hồi từ server
-                
+                response = s.recv(4096)  # Nhận phản hồi từ server
+
                 # Gửi ACK để xác nhận giúp tránh trường hợp làm giảm tốc độc xử lý TCP/IP. 
                 # VD: server tăng retransmission nếu không nhận được ACK
                 s.sendall("ACK".encode())
 
-
-                return response.decode()
+                # Đảm bảo phản hồi là string
+                return response.decode('utf-8')
         except ConnectionRefusedError as e:
             logger.error(f"Lỗi kết nối đến server: {e}")
             return "Lỗi kết nối đến server."
@@ -75,7 +77,19 @@ class MailController:
         if not response:
             return "Không thể gửi email. Vui lòng thử lại sau."
 
-        return response
+        # Parse response JSON, trả về message rõ ràng
+        try:
+            result = json.loads(response)
+            if isinstance(result, dict) and result.get("success"):
+                return result.get("message", "Email đã được gửi thành công")
+            elif isinstance(result, dict):
+                return result.get("message", "Gửi email thất bại")
+            else:
+                logger.error(f"Phản hồi không hợp lệ: {response}")
+                return "Phản hồi không hợp lệ từ server."
+        except Exception as e:
+            logger.error(f"Lỗi khi parse phản hồi gửi email: {e} | response={response}")
+            return "Lỗi khi xử lý phản hồi từ server."
 
     def fetch_emails(self, folder):
         """

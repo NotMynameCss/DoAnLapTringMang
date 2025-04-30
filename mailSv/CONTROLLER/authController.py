@@ -5,6 +5,8 @@ from pydantic import ValidationError
 from MODEL.models import UserModel, LoginModel  # Import LoginModel from models.py
 
 class AuthController:
+    """Controller xác thực người dùng."""
+
     def __init__(self, view):
         self.view = view
         if self.view is not None:
@@ -12,6 +14,7 @@ class AuthController:
         self.session = create_connection()
 
     def login(self, username, password):
+        """Xử lý đăng nhập người dùng."""
         try:
             user_data = LoginModel(username=username, password=password)
         except ValidationError as e:
@@ -32,6 +35,7 @@ class AuthController:
             return f"Lỗi khi đăng nhập: {e}"
 
     def register(self, username, password):
+        """Xử lý đăng ký người dùng."""
         try:
             user_data = UserModel(username=username, password=password)
         except ValidationError as e:

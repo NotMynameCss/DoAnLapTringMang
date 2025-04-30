@@ -3,13 +3,6 @@
 ## Tổng quan
 `mailController` chịu trách nhiệm quản lý các hoạt động liên quan đến email như gửi email, truy xuất email, và xóa email.
 
-## Công nghệ sử dụng
-- **Python 3.13.2**: Ngôn ngữ lập trình chính.
-- **Windows 10 64-bit**: Hệ điều hành phát triển và chạy ứng dụng.
-- **Giao thức TCP/IP**: Kết nối client-server qua cổng `65432`.
-- **Loguru 0.7.3**: Ghi log chi tiết.
-- **SqlAlchemy 2.0.39**: ORM để tương tác với cơ sở dữ liệu.
-- **pydantic 2.10.6**: Xác thực dữ liệu trước khi lưu vào cơ sở dữ liệu.
 
 ## Các phương thức chính
 

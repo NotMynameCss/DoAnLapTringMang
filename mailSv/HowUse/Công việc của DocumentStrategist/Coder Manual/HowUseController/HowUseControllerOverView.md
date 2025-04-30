@@ -3,12 +3,6 @@
 ## Tổng quan
 Thư mục `mailSv` chứa các thành phần Controller, tuân thủ mô hình MVC và nguyên tắc SOLID. Controllers xử lý logic nghiệp vụ, tương tác với cơ sở dữ liệu và quản lý kết nối mạng.
 
-## Công nghệ sử dụng
-- **Python 3.13.2**: Ngôn ngữ lập trình chính
-- **TCP/IP**: Giao thức mạng qua cổng 65432
-- **SQLAlchemy 2.0.39**: ORM với connection pooling
-- **Pydantic 2.10.6**: Validate dữ liệu
-- **Loguru 0.7.3**: Logging chi tiết
 
 ## Cấu trúc Controller
 

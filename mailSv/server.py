@@ -5,12 +5,10 @@ import json
 from loguru import logger
 from pydantic import ValidationError
 from concurrent.futures import ThreadPoolExecutor
-from MODEL.models import EmailModel, RegisterModel, LoginModel  # Import models from models.py
+from MODEL.models import EmailModel, RegisterModel, LoginModel  # Import models từ models.py
 from CONTROLLER.mainController import MainController
 from CONTROLLER.mailController import MailController
-
-
-PORT_SV = 65432  # Port mà server đang lắng nghe
+from network_config import SERVER_HOST, SERVER_PORT
 
 # Configure loguru
 logger.add("mail_server.log", rotation="1 MB", retention="10 days", level="INFO")
@@ -42,7 +40,12 @@ def send_error_response(client_socket, error_message):
 
 def send_response_with_ack(client_socket, response):
     try:
-        # Gửi phản hồi dưới dạng JSON
+        # Nếu response là dict thì chuyển sang JSON string trước khi gửi
+        if isinstance(response, dict):
+            response = json.dumps(response, cls=DateTimeEncoder)
+        # Nếu response không phải string thì chuyển sang string
+        if not isinstance(response, str):
+            response = str(response)
         client_socket.send(response.encode('utf-8'))
         ack = client_socket.recv(1024).decode('utf-8')
         if ack != "ACK":
@@ -176,9 +179,16 @@ def handle_client(client_socket, main_controller, mail_controller):
 
 def start_server(main_controller, mail_controller):
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.bind(('localhost', PORT_SV))
+    # Cho phép reuse address để tránh lỗi WinError 10048 khi restart server nhanh
+    server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    try:
+        server.bind((SERVER_HOST, SERVER_PORT))
+    except OSError as e:
+        logger.error(f"Lỗi khi bind socket: {e}. Có thể port {SERVER_PORT} đã bị chiếm dụng.")
+        print(f"Không thể khởi động server trên port {SERVER_PORT}. Có thể port đã bị chiếm dụng.")
+        return
     server.listen(5)
-    logger.info("Máy chủ đang lắng nghe trên cổng 65432")
+    logger.info(f"Máy chủ đang lắng nghe trên cổng {SERVER_PORT}")
 
     try:
         while True:

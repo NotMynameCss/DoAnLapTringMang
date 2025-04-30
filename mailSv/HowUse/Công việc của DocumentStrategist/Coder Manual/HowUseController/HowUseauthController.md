@@ -3,15 +3,6 @@
 ## Tổng quan
 `authController` chịu trách nhiệm quản lý xác thực người dùng, bao gồm đăng nhập và đăng ký.
 
-## Công nghệ sử dụng
-- **Python 3.13.2**: Ngôn ngữ lập trình chính.
-- **Windows 10 64-bit**: Hệ điều hành phát triển và chạy ứng dụng.
-- **XAMPP (xampp-windows-x64-8.2.12-0)**: Quản lý cơ sở dữ liệu.
-- **Giao thức TCP/IP**: Kết nối client-server qua cổng `65432`.
-- **Loguru 0.7.3**: Ghi log chi tiết.
-- **SqlAlchemy 2.0.39**: ORM để tương tác với cơ sở dữ liệu.
-- **pydantic 2.10.6**: Xác thực dữ liệu trước khi lưu vào cơ sở dữ liệu.
-- **twisted 24.11.0**: Xử lý kết nối mạng không đồng bộ.
 
 ## Các phương thức chính
 

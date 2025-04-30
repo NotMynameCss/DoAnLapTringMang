@@ -8,11 +8,15 @@ from MODEL.dbconnector import create_connection, Email
 from loguru import logger
 
 class SearchMailController:
+    """Controller tìm kiếm email."""
+
     def __init__(self):
         self.session = create_connection()
 
     def search_emails(self, query):
+        """Tìm kiếm email theo subject hoặc body."""
         if self.session is None:
+            logger.error("Lỗi kết nối đến database")
             return []
         try:
             emails = self.session.query(Email).filter(

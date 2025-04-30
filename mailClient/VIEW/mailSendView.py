@@ -3,9 +3,10 @@ from tkinter import ttk, messagebox, filedialog
 from CONTROLLER.mailController import MailController
 
 class MailSendView:
-    def __init__(self, root, username):
+    def __init__(self, root, username, refresh_callback=None):
         self.root = root
         self.username = username
+        self.refresh_callback = refresh_callback  # Callback để làm mới danh sách mail
         self.root.title("Soạn Email")
         self.root.geometry("800x600")
         self.root.configure(background="white")
@@ -77,8 +78,13 @@ class MailSendView:
             "attachments": ""  # Thực hiện xử lý tệp đính kèm
         }
         response = self.mail_controller.send_email(email_data)
-        if response == "Email đã được gửi thành công":
+        # Hiển thị message trả về từ controller, không so sánh string cứng
+        if "thành công" in response.lower():
             messagebox.showinfo("Gửi Email", response)
+            # Gọi callback làm mới danh sách mail nếu có
+            if self.refresh_callback:
+                self.refresh_callback()
+            self.root.destroy()  # Đóng cửa sổ soạn mail sau khi gửi thành công
         else:
             messagebox.showerror("Gửi Email", response)
 

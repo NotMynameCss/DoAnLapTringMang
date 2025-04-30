@@ -3,14 +3,7 @@
 ## Tổng quan
 Hệ thống sử dụng SQLAlchemy làm ORM chính để tương tác với MySQL database, kết hợp với Pydantic để validate dữ liệu và Connection Pooling để tối ưu hiệu suất.
 
-## Công nghệ sử dụng
-- **Python 3.13.2**: Ngôn ngữ lập trình chính.
-- **Windows 10 64-bit**: Hệ điều hành phát triển và chạy ứng dụng.
-- **XAMPP (xampp-windows-x64-8.2.12-0)**: Quản lý cơ sở dữ liệu.
-- **SqlAlchemy 2.0.39**: ORM framework.
-- **MySQL**: Database server.
-- **Pydantic 2.10.6**: Data validation.
-- **Connection Pooling**: Quản lý connection pool.
+
 
 ## Cấu trúc Database
 

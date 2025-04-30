@@ -3,7 +3,6 @@
 ## Tổng quan
 Thư mục `mailSv` chứa các thành phần Controller của ứng dụng Mail Server. Các Controller chịu trách nhiệm xử lý logic nghiệp vụ và tương tác với cơ sở dữ liệu.
 
-
 ## Các thành phần chính
 
 ### 1. `mainController.py`
@@ -34,8 +33,5 @@ Thư mục `mailSv` chứa các thành phần Controller của ứng dụng Mail
 - **Connection Pooling**: Kích hoạt Connection Pooling trong SQLAlchemy để cải thiện hiệu suất.
 - **Xử lý lỗi TCP**: Thêm cơ chế timeout và acknowledgment (ACK) để đảm bảo tính ổn định.
 
-## Lưu ý
-- Các thông báo và lỗi sẽ được hiển thị bằng tiếng Việt để dễ hiểu.
-- Mọi thao tác và sự kiện đều được xử lý thông qua các controller tương ứng.
 
-Hy vọng tài liệu này sẽ giúp bạn hiểu rõ hơn về cách hoạt động của các Controller trong thư mục `mailSv`.
+

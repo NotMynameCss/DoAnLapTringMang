@@ -5,6 +5,7 @@ from loguru import logger
 from pydantic import BaseModel, ValidationError
 
 class EmailCreateModel(BaseModel):
+    """Model xác thực dữ liệu tạo email."""
     sender: str
     recipients: str
     cc: str = ""
@@ -14,23 +15,21 @@ class EmailCreateModel(BaseModel):
     attachments: str = ""
 
 class EmailController:
-    """
-    Controller quản lý các thao tác liên quan đến email.
-    """
+    """Controller quản lý các thao tác liên quan đến email."""
 
     def __init__(self):
         self.session = create_connection()
 
     def fetch_emails(self, user_id):
         """
-        Truy xuất danh sách email của người dùng.
+Truy xuất danh sách email của người dùng.
 
         Args:
             user_id (str): ID của người dùng.
 
         Returns:
             list: Danh sách email dưới dạng dictionary.
-        """
+"""
         if self.session is None:
             logger.error("Không thể kết nối đến cơ sở dữ liệu")
             return []
@@ -45,14 +44,14 @@ class EmailController:
 
     def fetch_email_details(self, email_id):
         """
-        Truy xuất chi tiết email.
+Truy xuất chi tiết email.
 
         Args:
             email_id (int): ID của email.
 
         Returns:
             dict: Chi tiết email dưới dạng dictionary.
-        """
+"""
         if self.session is None:
             logger.error("Không thể kết nối đến cơ sở dữ liệu")
             return {}
@@ -71,14 +70,14 @@ class EmailController:
 
     def create_email(self, email_data):
         """
-        Tạo email mới trong cơ sở dữ liệu.
+Tạo email mới trong cơ sở dữ liệu.
 
         Args:
             email_data (dict): Dữ liệu email cần tạo.
 
         Returns:
             dict: Email đã được tạo dưới dạng dictionary.
-        """
+"""
         if self.session is None:
             logger.error("Không thể kết nối đến cơ sở dữ liệu")
             return {}
@@ -100,7 +99,7 @@ class EmailController:
 
     def delete_email(self, email_id: int, user_id: str) -> dict:
         """
-        Xóa email của user được chỉ định.
+Xóa email của user được chỉ định.
 
         Args:
             email_id (int): ID của email cần xóa.
@@ -108,7 +107,7 @@ class EmailController:
 
         Returns:
             dict: Kết quả xóa email.
-        """
+"""
         try:
             logger.debug(f"Kiểm tra email ID={email_id} với user ID={user_id}")
             

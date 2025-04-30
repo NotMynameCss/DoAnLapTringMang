@@ -46,16 +46,6 @@ Quá trình thu thập và phân tích yêu cầu là bước đầu tiên trong
 5. **Khả năng sử dụng**:
    - Giao diện người dùng phải thân thiện và dễ sử dụng.
 
-## Công nghệ sử dụng
-- **Python 3.11.9**: Ngôn ngữ lập trình chính.
-- **Windows 10 64-bit**: Hệ điều hành phát triển và chạy ứng dụng.
-- **XAMPP (xampp-windows-x64-8.2.12-0)**: Quản lý cơ sở dữ liệu.
-- **Giao thức TCP/IP**: Kết nối client-server.
-- **Tkinter**: Xây dựng giao diện người dùng.
-- **Loguru 0.7.3**: Ghi log.
-- **SqlAlchemy 2.0.39**: ORM để tương tác với cơ sở dữ liệu.
-- **pydantic 2.10.6**: Xác thực dữ liệu.
-- **twisted 24.11.0**: Xử lý kết nối mạng không đồng bộ.
 
 ## Kết luận
 Việc thu thập và phân tích yêu cầu là bước quan trọng để đảm bảo rằng hệ thống mailServer đáp ứng được các yêu cầu của người dùng và hoạt động hiệu quả. Các yêu cầu chức năng và phi chức năng đã được xác định rõ ràng sẽ là cơ sở để thiết kế và triển khai hệ thống.
