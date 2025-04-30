@@ -1,7 +1,7 @@
 import tkinter as tk
 
 class ToolbarFrame(tk.Frame):
-    def __init__(self, parent, compose_callback, search_callback, refresh_callback, show_all_callback):
+    def __init__(self, parent, compose_callback, search_callback, refresh_callback, show_all_callback, logout_callback=None):
         super().__init__(parent, bg="white")
         self.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
 
@@ -24,3 +24,8 @@ class ToolbarFrame(tk.Frame):
         # Nút Tất cả Email
         self.all_emails_button = tk.Button(self, text="Tất cả Email", command=show_all_callback)
         self.all_emails_button.pack(side=tk.LEFT, padx=10, pady=10)
+
+        # Nút Đăng xuất
+        if logout_callback:
+            self.logout_button = tk.Button(self, text="Đăng xuất", command=logout_callback)
+            self.logout_button.pack(side=tk.RIGHT, padx=10, pady=10)

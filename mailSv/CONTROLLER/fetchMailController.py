@@ -5,13 +5,14 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from sqlalchemy.exc import SQLAlchemyError
 from typing import Optional, Dict, Any
-from MODEL.dbconnector import create_connection, Email, User, DBConnection
+from MODEL.dbconnector import create_connection, Email, User
 from loguru import logger
 
 class FetchMailController:
     """Controller truy xuất email và người dùng."""
 
     def __init__(self):
+        """Khởi tạo session database."""
         self.session = create_connection()
 
     def fetch_emails(self, email_type):
@@ -31,7 +32,6 @@ class FetchMailController:
         except SQLAlchemyError as e:
             logger.error(f"Lỗi khi truy xuất email: {e}")
             return []
-        # Không cần finally vì session dùng chung, đóng ở nơi khác
 
     def fetch_all_emails(self):
         """Lấy tất cả email."""

@@ -29,7 +29,8 @@ class MailView:
             self.compose_email,
             self.search_email,
             self.refresh_emails,
-            self.show_all_emails
+            self.show_all_emails,
+            self.logout  # Thêm callback logout
         )
 
         # Khung bên trái
@@ -209,6 +210,27 @@ class MailView:
             "Xác nhận", 
             "Bạn có chắc chắn muốn xóa email này không?"
         )
+
+    def logout(self):
+        """Đăng xuất user hiện tại và quay lại màn hình đăng nhập"""
+        try:
+            # Gửi thông báo đăng xuất về server
+            try:
+                self.mail_controller.send_request(f"LOGOUT {self.username}")
+            except Exception as e:
+                logger.warning(f"Không thể gửi thông báo LOGOUT về server: {e}")
+            from VIEW.authView import AuthView
+            # Ghi log sự kiện đăng xuất local
+            logger.info(f"User '{self.username}' đã đăng xuất khỏi mailClient.")
+            # Xóa toàn bộ widget trong root
+            for widget in self.root.winfo_children():
+                widget.destroy()
+            # Hiển thị lại giao diện đăng nhập
+            AuthView(self.root).show_auth()
+        except Exception as e:
+            from tkinter import messagebox
+            logger.error(f"Lỗi khi đăng xuất user '{self.username}': {e}")
+            messagebox.showerror("Lỗi", f"Không thể đăng xuất: {e}")
 
     def set_controller(self, controller):
         self.controller = controller

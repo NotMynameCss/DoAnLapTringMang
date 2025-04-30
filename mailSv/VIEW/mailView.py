@@ -153,3 +153,19 @@ class MailView:
             "Xác nhận", 
             "Bạn có chắc chắn muốn xóa email này không?"
         )
+
+    def logout(self):
+        """Đăng xuất user hiện tại và quay lại màn hình đăng nhập"""
+        try:
+            from VIEW.authView import AuthView
+            # Ghi log sự kiện đăng xuất
+            logger.info(f"User '{self.username}' đã đăng xuất khỏi mailSv.")
+            # Xóa toàn bộ widget trong root
+            for widget in self.root.winfo_children():
+                widget.destroy()
+            # Hiển thị lại giao diện đăng nhập
+            AuthView(self.root).show_auth()
+        except Exception as e:
+            from tkinter import messagebox
+            logger.error(f"Lỗi khi đăng xuất user '{self.username}': {e}")
+            messagebox.showerror("Lỗi", f"Không thể đăng xuất: {e}")

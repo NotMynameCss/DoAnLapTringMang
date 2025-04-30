@@ -1,23 +1,22 @@
 """Module MailController: Quản lý các thao tác email, user, networking cho mail server."""
 
-import sys
 import os
+import sys
 import json
 import time
 from functools import wraps
 from loguru import logger
 from sqlalchemy.exc import SQLAlchemyError
-from pydantic import ValidationError
+from contextlib import closing
+from network_config import SERVER_HOST, SERVER_PORT  # Sử dụng cấu hình chung
 
 from CONTROLLER.emailController import EmailController
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from MODEL.dbconnector import create_connection, Email, User
-from MODEL.models import EmailModel
 from CONTROLLER.fetchMailController import FetchMailController
 from CONTROLLER.sendMailController import SendMailController
 from CONTROLLER.searchMailController import SearchMailController
 
-# Thêm decorator để giới hạn retry và log
 def retry_with_limit(max_retries=3, delay=1):
     """Decorator để retry với giới hạn số lần và log lỗi."""
     def decorator(func):
@@ -43,10 +42,11 @@ class MailController:
     """MailController: Quản lý các thao tác email, user, networking."""
 
     def __init__(self):
+        """Khởi tạo các controller con."""
         self.fetch_mail_controller = FetchMailController()
         self.send_mail_controller = SendMailController()
         self.search_mail_controller = SearchMailController()
-        self._error_count = {}  # Đếm số lần lỗi
+        self._error_count = {}
 
     def send_email(self, sender, recipients, cc, bcc, subject, body, attachments):
         """Gửi email mới."""
@@ -111,15 +111,12 @@ class MailController:
     def send_request(self, request: str) -> str:
         """Gửi request TCP tới server (dùng connection pooling)."""
         import socket
-        from contextlib import closing
-
-        HOST = 'localhost'  # Đổi từ '0.0.0.0' sang 'localhost' cho client
-        PORT = 65432
+        
 
         try:
             with closing(socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as s:
                 s.settimeout(5)
-                s.connect((HOST, PORT))
+                s.connect((SERVER_HOST, SERVER_PORT))
                 s.sendall(request.encode())
                 s.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
                 response = s.recv(4096)

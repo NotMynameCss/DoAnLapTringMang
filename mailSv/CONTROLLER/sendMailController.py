@@ -7,12 +7,13 @@ from sqlalchemy.exc import SQLAlchemyError
 from MODEL.dbconnector import create_connection, Email
 from loguru import logger
 from pydantic import ValidationError
-from MODEL.models import EmailModel  # Import EmailModel from models.py
+from MODEL.models import EmailModel
 
 class SendMailController:
     """Controller gửi email."""
 
     def __init__(self):
+        """Khởi tạo session database."""
         self.session = create_connection()
 
     def send_email(self, sender, recipients, cc, bcc, subject, body, attachments):

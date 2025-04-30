@@ -11,6 +11,7 @@ class SearchMailController:
     """Controller tìm kiếm email."""
 
     def __init__(self):
+        """Khởi tạo session database."""
         self.session = create_connection()
 
     def search_emails(self, query):

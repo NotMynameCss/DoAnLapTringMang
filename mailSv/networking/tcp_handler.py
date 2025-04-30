@@ -3,13 +3,15 @@ import threading
 from loguru import logger
 from typing import Callable, Any
 from contextlib import contextmanager
+from network_config import SERVER_HOST, SERVER_PORT  # Thêm import cấu hình chung
 
 class TCPHandler:
     """Xử lý kết nối TCP cho mail server"""
     
-    def __init__(self, host: str = 'localhost', port: int = 65432, timeout: int = 60):
-        self.host = host
-        self.port = port
+    def __init__(self, host: str = None, port: int = None, timeout: int = 60):
+        # Nếu không truyền host/port thì lấy từ network_config
+        self.host = host if host is not None else SERVER_HOST
+        self.port = port if port is not None else SERVER_PORT
         self.timeout = timeout
         self.server_socket = None
         self.is_running = False

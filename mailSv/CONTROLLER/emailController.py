@@ -1,5 +1,5 @@
 import datetime
-from sqlalchemy.exc import SQLAlchemyError, OperationalError, IntegrityError
+from sqlalchemy.exc import SQLAlchemyError
 from MODEL.dbconnector import create_connection, Email
 from loguru import logger
 from pydantic import BaseModel, ValidationError
@@ -18,18 +18,17 @@ class EmailController:
     """Controller quản lý các thao tác liên quan đến email."""
 
     def __init__(self):
+        """Khởi tạo session database."""
         self.session = create_connection()
 
     def fetch_emails(self, user_id):
         """
-Truy xuất danh sách email của người dùng.
-
+        Truy xuất danh sách email của người dùng.
         Args:
             user_id (str): ID của người dùng.
-
         Returns:
             list: Danh sách email dưới dạng dictionary.
-"""
+        """
         if self.session is None:
             logger.error("Không thể kết nối đến cơ sở dữ liệu")
             return []
@@ -44,14 +43,12 @@ Truy xuất danh sách email của người dùng.
 
     def fetch_email_details(self, email_id):
         """
-Truy xuất chi tiết email.
-
+        Truy xuất chi tiết email.
         Args:
             email_id (int): ID của email.
-
         Returns:
             dict: Chi tiết email dưới dạng dictionary.
-"""
+        """
         if self.session is None:
             logger.error("Không thể kết nối đến cơ sở dữ liệu")
             return {}
@@ -70,14 +67,12 @@ Truy xuất chi tiết email.
 
     def create_email(self, email_data):
         """
-Tạo email mới trong cơ sở dữ liệu.
-
+        Tạo email mới trong cơ sở dữ liệu.
         Args:
             email_data (dict): Dữ liệu email cần tạo.
-
         Returns:
             dict: Email đã được tạo dưới dạng dictionary.
-"""
+        """
         if self.session is None:
             logger.error("Không thể kết nối đến cơ sở dữ liệu")
             return {}
@@ -99,34 +94,27 @@ Tạo email mới trong cơ sở dữ liệu.
 
     def delete_email(self, email_id: int, user_id: str) -> dict:
         """
-Xóa email của user được chỉ định.
-
+        Xóa email của user được chỉ định.
         Args:
             email_id (int): ID của email cần xóa.
             user_id (str): ID của người dùng.
-
         Returns:
             dict: Kết quả xóa email.
-"""
+        """
         try:
             logger.debug(f"Kiểm tra email ID={email_id} với user ID={user_id}")
-            
             # Kiểm tra email tồn tại và thuộc về user
             email = self.session.query(Email).filter(
                 Email.id == email_id,
                 (Email.sender == user_id) | (Email.recipients.like(f"%{user_id}%"))
             ).first()
-
             if not email:
                 logger.warning(f"Email không tồn tại hoặc không có quyền xóa: ID={email_id}, User={user_id}")
                 return {"success": False, "message": "Email không tồn tại hoặc không có quyền xóa"}
-
-            # Xóa email
             self.session.delete(email)
             self.session.commit()
             logger.info(f"Xóa email thành công: ID={email_id}")
             return {"success": True, "message": "Xóa email thành công"}
-
         except SQLAlchemyError as e:
             self.session.rollback()
             logger.error(f"Lỗi database khi xóa email: {e}")
