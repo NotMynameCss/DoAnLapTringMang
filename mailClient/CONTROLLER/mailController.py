@@ -124,11 +124,9 @@ class MailController:
     def fetch_all_emails(self):
         """
         Truy xuất tất cả email từ server.
-
-        Returns:
-            list: Danh sách tất cả email.
         """
-        request = "FETCH_ALL_EMAILS"
+        # Truyền kèm username để server log đúng user
+        request = f"FETCH_ALL_EMAILS|{self.user_id}"
         logger.info(f"Gửi yêu cầu truy xuất tất cả email: {request}")
         response = self.send_request(request)
         if not response:
@@ -136,7 +134,7 @@ class MailController:
             return []
         try:
             emails = json.loads(response) if response else []
-            logger.info(f"Truy xuất tất cả email thành công: {emails}")
+            logger.info(f"Truy xuất tất cả email thành công: {len(emails)} email.")
             return emails
         except json.JSONDecodeError as e:
             logger.error(f"Lỗi khi phân tích cú pháp email: {e}")

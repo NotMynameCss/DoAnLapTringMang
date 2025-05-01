@@ -281,3 +281,72 @@
 2025-04-30 16:27:31.401 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 4 email loại inbox của người dùng 1
 2025-04-30 16:27:34.400 | INFO     | server:start_server:221 - Chấp nhận kết nối từ ('127.0.0.1', 6950)
 2025-04-30 16:27:34.419 | INFO     | server:process_message:121 - [LOGOUT] user=1 ip=127.0.0.1 port=6950
+2025-05-01 10:53:10.730 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-05-01 10:53:12.791 | INFO     | server:start_server:216 - Máy chủ đang lắng nghe trên cổng 65432
+2025-05-01 10:53:31.301 | INFO     | server:start_server:221 - Chấp nhận kết nối từ ('127.0.0.1', 14919)
+2025-05-01 10:53:31.302 | INFO     | server:process_message:74 - [LOGIN] user=mod@gmail.com ip=127.0.0.1
+2025-05-01 10:53:31.328 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: mod@gmail.com
+2025-05-01 10:53:31.329 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-01 10:53:32.472 | INFO     | server:start_server:221 - Chấp nhận kết nối từ ('127.0.0.1', 14920)
+2025-05-01 10:53:32.475 | INFO     | server:process_message:93 - [FETCH_ALL_EMAILS] user=unknown ip=127.0.0.1
+2025-05-01 10:53:32.493 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-01 10:53:55.811 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: 1
+2025-05-01 10:53:56.759 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:56 - Truy xuất 9 người dùng
+2025-05-01 10:53:58.045 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 4 email loại inbox của người dùng 1
+2025-05-01 10:53:59.380 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 0 email loại inbox của người dùng mod@gmail.com
+2025-05-01 10:54:00.499 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 0 email loại inbox của người dùng 2
+2025-05-01 10:54:00.940 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 4 email loại inbox của người dùng 1
+2025-05-01 10:55:33.594 | INFO     | server:start_server:221 - Chấp nhận kết nối từ ('127.0.0.1', 14938)
+2025-05-01 10:55:33.595 | INFO     | server:process_message:93 - [FETCH_ALL_EMAILS] user=unknown ip=127.0.0.1
+2025-05-01 10:55:33.599 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-01 10:55:49.290 | INFO     | server:start_server:221 - Chấp nhận kết nối từ ('127.0.0.1', 14941)
+2025-05-01 10:55:49.292 | INFO     | server:process_message:93 - [FETCH_ALL_EMAILS] user=unknown ip=127.0.0.1
+2025-05-01 10:55:49.297 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-01 11:01:58.159 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-05-01 11:02:00.256 | INFO     | server:start_server:223 - Máy chủ đang lắng nghe trên cổng 65432
+2025-05-01 11:02:17.965 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15030)
+2025-05-01 11:02:17.966 | INFO     | server:process_message:74 - [LOGIN] user=1 ip=127.0.0.1
+2025-05-01 11:02:17.987 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: 1
+2025-05-01 11:02:17.990 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-01 11:02:20.575 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15032)
+2025-05-01 11:02:20.576 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=1 ip=127.0.0.1
+2025-05-01 11:02:20.603 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-01 11:02:33.633 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15035)
+2025-05-01 11:02:33.635 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=1 ip=127.0.0.1
+2025-05-01 11:02:33.639 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-01 11:02:35.065 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15036)
+2025-05-01 11:02:35.086 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-01 11:02:35.095 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 4 email loại inbox của người dùng 1
+2025-05-01 11:02:35.681 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15037)
+2025-05-01 11:02:35.703 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-01 11:02:35.710 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 4 email loại inbox của người dùng 1
+2025-05-01 11:02:36.354 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15039)
+2025-05-01 11:02:36.357 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-01 11:02:36.365 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 4 email loại inbox của người dùng 1
+2025-05-01 11:02:37.970 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15040)
+2025-05-01 11:02:37.982 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-01 11:02:37.988 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 4 email loại inbox của người dùng 1
+2025-05-01 11:02:38.650 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15041)
+2025-05-01 11:02:38.668 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-01 11:02:38.677 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 4 email loại inbox của người dùng 1
+2025-05-01 11:02:40.506 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15042)
+2025-05-01 11:02:40.507 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-01 11:02:40.512 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 4 email loại inbox của người dùng 1
+2025-05-01 11:02:49.002 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15044)
+2025-05-01 11:02:49.013 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-01 11:02:49.019 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 4 email loại inbox của người dùng 1
+2025-05-01 11:02:51.056 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15045)
+2025-05-01 11:02:51.068 | INFO     | server:process_message:128 - [LOGOUT] user=1 ip=127.0.0.1
+2025-05-01 11:03:01.289 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15048)
+2025-05-01 11:03:01.290 | INFO     | server:process_message:74 - [LOGIN] user=mod@gmail.com ip=127.0.0.1
+2025-05-01 11:03:01.300 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: mod@gmail.com
+2025-05-01 11:03:01.301 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-01 11:03:02.350 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15050)
+2025-05-01 11:03:02.352 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=mod@gmail.com ip=127.0.0.1
+2025-05-01 11:03:02.364 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-01 11:03:05.289 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15051)
+2025-05-01 11:03:05.291 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=mod@gmail.com ip=127.0.0.1
+2025-05-01 11:03:05.297 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 0 email loại inbox của người dùng mod@gmail.com
+2025-05-01 11:03:13.145 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15052)
+2025-05-01 11:03:13.166 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=mod@gmail.com ip=127.0.0.1
+2025-05-01 11:03:13.171 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
