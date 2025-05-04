@@ -123,11 +123,11 @@ class MailController:
 
     def fetch_all_emails(self):
         """
-        Truy xuất tất cả email từ server.
+        Truy xuất tất cả email liên quan đến user hiện tại (không lấy toàn bộ email hệ thống).
         """
-        # Truyền kèm username để server log đúng user
-        request = f"FETCH_ALL_EMAILS|{self.user_id}"
-        logger.info(f"Gửi yêu cầu truy xuất tất cả email: {request}")
+        # Sử dụng FETCH_EMAILS với loại "all" để server lọc đúng quyền
+        request = f"FETCH_EMAILS|{self.user_id}|all"
+        logger.info(f"Gửi yêu cầu truy xuất tất cả email liên quan user: {request}")
         response = self.send_request(request)
         if not response:
             logger.error("Không nhận được phản hồi từ server")

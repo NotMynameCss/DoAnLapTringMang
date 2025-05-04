@@ -60,7 +60,7 @@ class FetchMailController:
             return []
 
     def fetch_emails_by_user(self, username, email_type="inbox"):
-        """Lấy email theo user và loại (inbox/sent)."""
+        """Lấy email theo user và loại (inbox/sent/all)."""
         if self.session is None:
             logger.error("Lỗi kết nối đến database")
             return []
@@ -73,6 +73,14 @@ class FetchMailController:
                 ).all()
             elif email_type == "sent":
                 emails = self.session.query(Email).filter_by(sender=username).all()
+            elif email_type == "all":
+                # Lấy mọi email liên quan user (sender, recipients, cc, bcc)
+                emails = self.session.query(Email).filter(
+                    (Email.sender == username) |
+                    (Email.recipients.like(f"%{username}%")) |
+                    (Email.cc.like(f"%{username}%")) |
+                    (Email.bcc.like(f"%{username}%"))
+                ).all()
             else:
                 emails = []
             logger.info(f"Truy xuất {len(emails)} email loại {email_type} của người dùng {username}")

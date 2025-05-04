@@ -86,20 +86,17 @@ def process_message(message, main_controller, mail_controller, client_addr):
             user = username
             action = f"FETCH_EMAILS ({email_type})"
             logger.info(f"[{action}] user={user} ip={ip}")
-            emails = mail_controller.fetch_emails_by_user(username, email_type)
+            # Nếu email_type là "all", lấy mọi email liên quan user (sender, recipients, cc, bcc)
+            if email_type == "all":
+                emails = mail_controller.fetch_emails_by_user(username, email_type="all")
+            else:
+                emails = mail_controller.fetch_emails_by_user(username, email_type)
             response = json.dumps([email.to_dict() for email in emails], cls=DateTimeEncoder) if emails else "[]"
         elif message.startswith("FETCH_ALL_EMAILS"):
-            # Sửa: parse username nếu có
-            parts = message.split('|')
-            if len(parts) == 2:
-                _, username = parts
-                user = username
-            else:
-                user = "unknown"
+            # Không cho phép client lấy toàn bộ email hệ thống
             action = "FETCH_ALL_EMAILS"
-            logger.info(f"[{action}] user={user} ip={ip}")
-            emails = mail_controller.fetch_all_emails()
-            response = json.dumps([email.to_dict() for email in emails], cls=DateTimeEncoder) if emails else "[]"
+            logger.warning(f"[{action}] user={user} ip={ip} - BỊ TỪ CHỐI: Không cho phép lấy toàn bộ email hệ thống")
+            response = json.dumps({"success": False, "message": "Không được phép lấy toàn bộ email hệ thống"})
         elif message.startswith("FETCH_ALL_USERS"):
             action = "FETCH_ALL_USERS"
             logger.info(f"[{action}] user={user} ip={ip}")

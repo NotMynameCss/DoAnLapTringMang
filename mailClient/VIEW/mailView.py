@@ -94,7 +94,7 @@ class MailView:
             messagebox.showerror("Lỗi", "Không thể làm mới danh sách email. Vui lòng thử lại sau.")
 
     def show_all_emails(self):
-        # Đảm bảo fetch_all_emails truyền đúng username
+        # Lấy tất cả email liên quan user hiện tại (không lấy toàn bộ hệ thống)
         threading.Thread(target=self.fetch_and_display_all_emails).start()
 
     def fetch_and_display_emails(self, email_type):

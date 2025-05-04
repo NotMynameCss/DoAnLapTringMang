@@ -350,3 +350,174 @@
 2025-05-01 11:03:13.145 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 15052)
 2025-05-01 11:03:13.166 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=mod@gmail.com ip=127.0.0.1
 2025-05-01 11:03:13.171 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-04 14:12:18.879 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-05-04 14:12:20.917 | INFO     | server:start_server:223 - Máy chủ đang lắng nghe trên cổng 65432
+2025-05-04 14:12:48.787 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6324)
+2025-05-04 14:12:48.790 | INFO     | server:process_message:74 - [LOGIN] user=1 ip=127.0.0.1
+2025-05-04 14:12:48.854 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: 1
+2025-05-04 14:12:48.856 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-04 14:12:50.089 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6325)
+2025-05-04 14:12:50.091 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=1 ip=127.0.0.1
+2025-05-04 14:12:50.122 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-04 14:12:53.919 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6327)
+2025-05-04 14:12:53.931 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-04 14:12:53.944 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 4 email loại inbox của người dùng 1
+2025-05-04 14:12:59.006 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6328)
+2025-05-04 14:12:59.026 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=1 ip=127.0.0.1
+2025-05-04 14:12:59.032 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-04 14:12:59.919 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6329)
+2025-05-04 14:12:59.932 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-04 14:12:59.938 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 4 email loại inbox của người dùng 1
+2025-05-04 14:19:34.443 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-05-04 14:19:36.494 | INFO     | server:start_server:223 - Máy chủ đang lắng nghe trên cổng 65432
+2025-05-04 14:28:52.566 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('192.168.1.25', 49789)
+2025-05-04 14:28:52.618 | INFO     | server:process_message:74 - [LOGIN] user=1 ip=192.168.1.25
+2025-05-04 14:28:52.944 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: 1
+2025-05-04 14:28:52.946 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-04 14:28:54.875 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('192.168.1.25', 49790)
+2025-05-04 14:28:54.878 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=1 ip=192.168.1.25
+2025-05-04 14:28:54.920 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-04 14:29:46.727 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-05-04 14:29:48.742 | INFO     | server:start_server:223 - Máy chủ đang lắng nghe trên cổng 65432
+2025-05-04 14:35:23.268 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('192.168.1.25', 49868)
+2025-05-04 14:35:23.294 | INFO     | server:process_message:74 - [LOGIN] user=1 ip=192.168.1.25
+2025-05-04 14:35:23.550 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: 1
+2025-05-04 14:35:23.552 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-04 14:35:26.674 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('192.168.1.25', 49869)
+2025-05-04 14:35:26.677 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=1 ip=192.168.1.25
+2025-05-04 14:35:26.731 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-04 14:36:16.253 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('192.168.1.25', 49872)
+2025-05-04 14:36:16.255 | INFO     | server:process_message:81 - [SEND_EMAIL] user=1 ip=192.168.1.25
+2025-05-04 14:36:16.363 | INFO     | CONTROLLER.sendMailController:send_email:42 - Email đã được gửi thành công từ 1 đến 1
+2025-05-04 14:36:17.866 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('192.168.1.25', 49873)
+2025-05-04 14:36:17.868 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=192.168.1.25
+2025-05-04 14:36:17.904 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 5 email loại inbox của người dùng 1
+2025-05-04 14:37:14.444 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('192.168.1.25', 49875)
+2025-05-04 14:37:14.452 | INFO     | server:process_message:118 - [DELETE_EMAIL (id=49)] user=1 ip=192.168.1.25
+2025-05-04 14:37:14.455 | INFO     | server:handle_delete_email:144 - Processing DELETE_EMAIL request: id=49, user=1
+2025-05-04 14:37:14.552 | INFO     | CONTROLLER.emailController:delete_email:116 - Xóa email thành công: ID=49
+2025-05-04 14:37:14.556 | INFO     | server:handle_delete_email:167 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
+2025-05-04 14:37:14.681 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('192.168.1.25', 49876)
+2025-05-04 14:37:14.700 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=192.168.1.25
+2025-05-04 14:37:14.709 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 5 email loại inbox của người dùng 1
+2025-05-04 14:37:16.522 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('192.168.1.25', 49877)
+2025-05-04 14:37:16.524 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=192.168.1.25
+2025-05-04 14:37:16.533 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 5 email loại inbox của người dùng 1
+2025-05-04 14:37:18.234 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('192.168.1.25', 49878)
+2025-05-04 14:37:18.235 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=192.168.1.25
+2025-05-04 14:37:18.240 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 5 email loại inbox của người dùng 1
+2025-05-04 14:37:19.137 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('192.168.1.25', 49879)
+2025-05-04 14:37:19.139 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=1 ip=192.168.1.25
+2025-05-04 14:37:19.147 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 5 email
+2025-05-04 14:38:10.137 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('192.168.1.25', 49881)
+2025-05-04 14:38:10.149 | INFO     | server:process_message:128 - [LOGOUT] user=1 ip=192.168.1.25
+2025-05-04 14:38:37.952 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: mod@gmail.com
+2025-05-04 14:38:42.051 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:56 - Truy xuất 9 người dùng
+2025-05-04 14:39:17.089 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 0 email loại inbox của người dùng mod@gmail.com
+2025-05-04 14:39:19.522 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 0 email loại inbox của người dùng mod@gmail.com
+2025-05-04 14:39:20.613 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 5 email loại inbox của người dùng 1
+2025-05-04 14:39:31.087 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:101 - Tìm thấy email với ID 47
+2025-05-04 14:40:00.668 | INFO     | CONTROLLER.sendMailController:send_email:42 - Email đã được gửi thành công từ mod@gmail.com đến mod@gmail.com
+2025-05-04 14:40:17.771 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 1 email loại inbox của người dùng mod@gmail.com
+2025-05-04 14:40:30.496 | INFO     | CONTROLLER.emailController:delete_email:116 - Xóa email thành công: ID=51
+2025-05-04 14:40:31.520 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 0 email loại inbox của người dùng mod@gmail.com
+2025-05-04 14:40:53.825 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 0 email loại inbox của người dùng mod@gmail.com
+2025-05-04 14:40:55.797 | INFO     | VIEW.mailView:logout:162 - User 'mod@gmail.com' đã đăng xuất khỏi mailSv.
+2025-05-04 14:50:21.317 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-05-04 14:50:23.349 | INFO     | server:start_server:223 - Máy chủ đang lắng nghe trên cổng 65432
+2025-05-04 14:50:46.789 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6556)
+2025-05-04 14:50:46.790 | INFO     | server:process_message:74 - [LOGIN] user=mod@gmail.com ip=127.0.0.1
+2025-05-04 14:50:46.818 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: mod@gmail.com
+2025-05-04 14:50:46.819 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-04 14:50:47.980 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6557)
+2025-05-04 14:50:47.982 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=mod@gmail.com ip=127.0.0.1
+2025-05-04 14:50:48.001 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-04 14:51:02.522 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6560)
+2025-05-04 14:51:02.524 | INFO     | server:process_message:74 - [LOGIN] user=1 ip=127.0.0.1
+2025-05-04 14:51:02.533 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: 1
+2025-05-04 14:51:02.535 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-04 14:51:03.663 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6562)
+2025-05-04 14:51:03.665 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=1 ip=127.0.0.1
+2025-05-04 14:51:03.673 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-04 14:51:30.350 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6563)
+2025-05-04 14:51:30.351 | INFO     | server:process_message:128 - [LOGOUT] user=mod@gmail.com ip=127.0.0.1
+2025-05-04 14:52:08.097 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6589)
+2025-05-04 14:52:08.100 | INFO     | server:process_message:74 - [LOGIN] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:52:08.117 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-04 14:52:13.849 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6591)
+2025-05-04 14:52:13.851 | INFO     | server:process_message:67 - [REGISTER] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:52:13.887 | INFO     | CONTROLLER.authController:register:54 - Đăng ký thành công cho người dùng: jack@gmail.com
+2025-05-04 14:52:13.889 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-04 14:52:18.770 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6593)
+2025-05-04 14:52:18.772 | INFO     | server:process_message:74 - [LOGIN] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:52:18.779 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: jack@gmail.com
+2025-05-04 14:52:18.782 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-04 14:52:19.978 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6594)
+2025-05-04 14:52:19.981 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:52:19.993 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-04 14:52:31.219 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6595)
+2025-05-04 14:52:31.230 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:52:31.239 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 0 email loại inbox của người dùng jack@gmail.com
+2025-05-04 14:52:31.900 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6596)
+2025-05-04 14:52:31.903 | INFO     | server:process_message:100 - [FETCH_ALL_EMAILS] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:52:31.912 | INFO     | CONTROLLER.fetchMailController:fetch_all_emails:43 - Truy xuất 4 email
+2025-05-04 14:52:32.505 | INFO     | server:start_server:228 - Chấp nhận kết nối từ ('127.0.0.1', 6597)
+2025-05-04 14:52:32.507 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:52:32.513 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:78 - Truy xuất 0 email loại inbox của người dùng jack@gmail.com
+2025-05-04 14:58:55.749 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-05-04 14:58:57.793 | INFO     | server:start_server:220 - Máy chủ đang lắng nghe trên cổng 65432
+2025-05-04 14:59:16.597 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6663)
+2025-05-04 14:59:16.598 | INFO     | server:process_message:74 - [LOGIN] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:59:16.610 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: jack@gmail.com
+2025-05-04 14:59:16.611 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-04 14:59:17.588 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6664)
+2025-05-04 14:59:17.590 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:59:17.604 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại all của người dùng jack@gmail.com
+2025-05-04 14:59:18.647 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6666)
+2025-05-04 14:59:18.659 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:59:18.663 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng jack@gmail.com
+2025-05-04 14:59:19.127 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6667)
+2025-05-04 14:59:19.128 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:59:19.131 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại all của người dùng jack@gmail.com
+2025-05-04 14:59:27.295 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6668)
+2025-05-04 14:59:27.307 | INFO     | server:process_message:81 - [SEND_EMAIL] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:59:27.315 | INFO     | CONTROLLER.sendMailController:send_email:42 - Email đã được gửi thành công từ jack@gmail.com đến 1
+2025-05-04 14:59:28.097 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6669)
+2025-05-04 14:59:28.098 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:59:28.102 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng jack@gmail.com
+2025-05-04 14:59:29.175 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6670)
+2025-05-04 14:59:29.193 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:59:29.197 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng jack@gmail.com
+2025-05-04 14:59:30.847 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6671)
+2025-05-04 14:59:30.871 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:59:30.874 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại all của người dùng jack@gmail.com
+2025-05-04 14:59:33.167 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6672)
+2025-05-04 14:59:33.183 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 14:59:33.187 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại all của người dùng jack@gmail.com
+2025-05-04 14:59:45.053 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6677)
+2025-05-04 14:59:45.054 | INFO     | server:process_message:74 - [LOGIN] user=1 ip=127.0.0.1
+2025-05-04 14:59:45.060 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: 1
+2025-05-04 14:59:45.061 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-04 14:59:46.185 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6679)
+2025-05-04 14:59:46.185 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-04 14:59:46.190 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại all của người dùng 1
+2025-05-04 15:00:05.255 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6684)
+2025-05-04 15:00:05.265 | INFO     | server:process_message:81 - [SEND_EMAIL] user=1 ip=127.0.0.1
+2025-05-04 15:00:05.273 | INFO     | CONTROLLER.sendMailController:send_email:42 - Email đã được gửi thành công từ 1 đến jack@gmail.com
+2025-05-04 15:00:06.119 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6685)
+2025-05-04 15:00:06.120 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-04 15:00:06.124 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-05-04 15:00:08.343 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6686)
+2025-05-04 15:00:08.357 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-04 15:00:08.361 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-05-04 15:00:09.199 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6687)
+2025-05-04 15:00:09.200 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-04 15:00:09.204 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 6 email loại all của người dùng 1
+2025-05-04 15:00:14.456 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 6689)
+2025-05-04 15:00:14.478 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=jack@gmail.com ip=127.0.0.1
+2025-05-04 15:00:14.481 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại all của người dùng jack@gmail.com
+2025-05-04 15:00:22.031 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: 1
+2025-05-04 15:00:23.065 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:56 - Truy xuất 10 người dùng
+2025-05-04 15:00:25.048 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng jack@gmail.com
+2025-05-04 15:00:30.024 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-05-04 15:00:30.177 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
