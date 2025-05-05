@@ -23,26 +23,19 @@ class MailController:
     def send_request(self, request):
         """
         Gửi yêu cầu đến server qua giao thức TCP/IP.
-
-        Args:
-            request (str): Yêu cầu cần gửi.
-
-        Returns:
-            str: Phản hồi từ server.
+        Đảm bảo gửi ACK sau khi nhận response để tránh lỗi "Client không gửi được ACK".
         """
         try:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 s.settimeout(10)  # Thêm timeout để tránh treo kết nối
                 s.connect((MAILSV_HOST, MAILSV_PORT))
                 s.sendall(request.encode())
-
                 response = s.recv(4096)  # Nhận phản hồi từ server
-
-                # Gửi ACK để xác nhận giúp tránh trường hợp làm giảm tốc độc xử lý TCP/IP. 
-                # VD: server tăng retransmission nếu không nhận được ACK
-                s.sendall("ACK".encode())
-
-                # Đảm bảo phản hồi là string
+                # Gửi ACK để xác nhận đã nhận response, tránh lỗi server báo "Client không gửi được ACK"
+                try:
+                    s.sendall(b"ACK")
+                except Exception as ack_err:
+                    logger.warning(f"Lỗi khi gửi ACK tới server: {ack_err}")
                 return response.decode('utf-8')
         except ConnectionRefusedError as e:
             logger.error(f"Lỗi kết nối đến server: {e}")

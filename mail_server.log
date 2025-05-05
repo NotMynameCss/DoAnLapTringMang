@@ -521,3 +521,257 @@
 2025-05-04 15:00:25.048 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng jack@gmail.com
 2025-05-04 15:00:30.024 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
 2025-05-04 15:00:30.177 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 5 email loại inbox của người dùng 1
+2025-05-05 10:22:17.136 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-05-05 10:22:19.168 | INFO     | server:start_server:220 - Máy chủ đang lắng nghe trên cổng 65432
+2025-05-05 10:22:21.471 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: 1
+2025-05-05 10:22:22.258 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:56 - Truy xuất 10 người dùng
+2025-05-05 10:22:23.114 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng 1
+2025-05-05 10:22:24.369 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:109 - Tìm thấy email với ID 57
+2025-05-05 10:22:26.592 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng 1
+2025-05-05 10:22:28.063 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng 1
+2025-05-05 10:22:30.424 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng 1
+2025-05-05 10:22:31.360 | INFO     | CONTROLLER.searchMailController:search_emails:27 - Tìm kiếm 2 email với từ khóa 1
+2025-05-05 10:22:39.440 | INFO     | CONTROLLER.searchMailController:search_emails:27 - Tìm kiếm 3 email với từ khóa 
+2025-05-05 10:22:40.921 | INFO     | CONTROLLER.searchMailController:search_emails:27 - Tìm kiếm 3 email với từ khóa 
+2025-05-05 10:22:44.137 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng 1
+2025-05-05 10:22:54.600 | INFO     | CONTROLLER.sendMailController:send_email:42 - Email đã được gửi thành công từ 1 đến mod@gmail.com
+2025-05-05 10:22:57.882 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng mod@gmail.com
+2025-05-05 10:23:06.109 | INFO     | VIEW.mailView:logout:162 - User '1' đã đăng xuất khỏi mailSv.
+2025-05-05 10:23:30.330 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17192)
+2025-05-05 10:23:30.332 | INFO     | server:process_message:74 - [LOGIN] user=1 ip=127.0.0.1
+2025-05-05 10:23:30.342 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: 1
+2025-05-05 10:23:30.344 | WARNING  | server:send_response_with_ack:51 - Client không gửi ACK
+2025-05-05 10:23:31.681 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17196)
+2025-05-05 10:23:31.684 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:23:31.706 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại all của người dùng 1
+2025-05-05 10:23:41.128 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17219)
+2025-05-05 10:23:41.130 | INFO     | server:process_message:115 - [DELETE_EMAIL (id=54)] user=1 ip=127.0.0.1
+2025-05-05 10:23:41.131 | INFO     | server:handle_delete_email:141 - Processing DELETE_EMAIL request: id=54, user=1
+2025-05-05 10:23:41.157 | INFO     | CONTROLLER.emailController:delete_email:116 - Xóa email thành công: ID=54
+2025-05-05 10:23:41.159 | INFO     | server:handle_delete_email:164 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
+2025-05-05 10:23:41.164 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17221)
+2025-05-05 10:23:41.166 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:23:41.172 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng 1
+2025-05-05 10:23:42.710 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17226)
+2025-05-05 10:23:42.712 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:23:42.720 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng 1
+2025-05-05 10:23:44.328 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17233)
+2025-05-05 10:23:44.330 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:23:44.336 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng 1
+2025-05-05 10:23:45.241 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17236)
+2025-05-05 10:23:45.265 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:23:45.271 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại all của người dùng 1
+2025-05-05 10:23:46.423 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17241)
+2025-05-05 10:23:46.438 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:23:46.445 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại all của người dùng 1
+2025-05-05 10:23:47.016 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17244)
+2025-05-05 10:23:47.017 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:23:47.022 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng 1
+2025-05-05 10:23:47.648 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17245)
+2025-05-05 10:23:47.649 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:23:47.655 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại all của người dùng 1
+2025-05-05 10:23:48.312 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17248)
+2025-05-05 10:23:48.313 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:23:48.318 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng 1
+2025-05-05 10:23:48.977 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17249)
+2025-05-05 10:23:48.988 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:23:48.994 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại all của người dùng 1
+2025-05-05 10:23:49.697 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17250)
+2025-05-05 10:23:49.698 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:23:49.704 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng 1
+2025-05-05 10:23:50.319 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17253)
+2025-05-05 10:23:50.330 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:23:50.337 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại all của người dùng 1
+2025-05-05 10:24:01.256 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17309)
+2025-05-05 10:24:01.276 | INFO     | server:process_message:81 - [SEND_EMAIL] user=1 ip=127.0.0.1
+2025-05-05 10:24:01.285 | INFO     | CONTROLLER.sendMailController:send_email:42 - Email đã được gửi thành công từ 1 đến 1
+2025-05-05 10:24:02.218 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 17314)
+2025-05-05 10:24:02.219 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:24:02.226 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:24:03.880 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 3169)
+2025-05-05 10:24:03.894 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:24:03.900 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:24:04.761 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 3174)
+2025-05-05 10:24:04.784 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:24:04.792 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại all của người dùng 1
+2025-05-05 10:24:05.496 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 3181)
+2025-05-05 10:24:05.513 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:24:05.521 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại all của người dùng 1
+2025-05-05 10:24:08.852 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 3198)
+2025-05-05 10:24:08.862 | INFO     | server:process_message:115 - [DELETE_EMAIL (id=53)] user=1 ip=127.0.0.1
+2025-05-05 10:24:08.863 | INFO     | server:handle_delete_email:141 - Processing DELETE_EMAIL request: id=53, user=1
+2025-05-05 10:24:08.880 | INFO     | CONTROLLER.emailController:delete_email:116 - Xóa email thành công: ID=53
+2025-05-05 10:24:08.882 | INFO     | server:handle_delete_email:164 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
+2025-05-05 10:24:08.887 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 3199)
+2025-05-05 10:24:08.910 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:24:08.918 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:24:09.689 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 3204)
+2025-05-05 10:24:09.697 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:24:09.706 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:24:26.975 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 5966)
+2025-05-05 10:24:26.989 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:24:26.997 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại all của người dùng 1
+2025-05-05 10:24:28.638 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 5977)
+2025-05-05 10:24:28.648 | INFO     | server:process_message:125 - [LOGOUT] user=1 ip=127.0.0.1
+2025-05-05 10:24:48.081 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-05-05 10:24:50.109 | INFO     | server:start_server:220 - Máy chủ đang lắng nghe trên cổng 65432
+2025-05-05 10:30:07.990 | INFO     | MODEL.dbconnector:_create_connection:85 - Kết nối thành công đến database
+2025-05-05 10:30:10.018 | INFO     | server:start_server:220 - Máy chủ đang lắng nghe trên cổng 65432
+2025-05-05 10:30:11.839 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: 1
+2025-05-05 10:30:12.614 | INFO     | CONTROLLER.fetchMailController:fetch_all_users:56 - Truy xuất 10 người dùng
+2025-05-05 10:30:13.489 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:30:14.456 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:109 - Tìm thấy email với ID 57
+2025-05-05 10:30:16.480 | INFO     | CONTROLLER.fetchMailController:fetch_email_details:109 - Tìm thấy email với ID 59
+2025-05-05 10:30:22.875 | INFO     | CONTROLLER.sendMailController:send_email:42 - Email đã được gửi thành công từ 1 đến 1
+2025-05-05 10:30:27.198 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-05-05 10:30:32.045 | INFO     | CONTROLLER.emailController:delete_email:116 - Xóa email thành công: ID=59
+2025-05-05 10:30:32.991 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:10.483 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13521)
+2025-05-05 10:31:10.484 | INFO     | server:process_message:74 - [LOGIN] user=1 ip=127.0.0.1
+2025-05-05 10:31:10.489 | INFO     | CONTROLLER.authController:login:29 - Đăng nhập thành công cho người dùng: 1
+2025-05-05 10:31:11.407 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13523)
+2025-05-05 10:31:11.408 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:31:11.413 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại all của người dùng 1
+2025-05-05 10:31:20.783 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:21.271 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:21.455 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:21.639 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:25.667 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng mod@gmail.com
+2025-05-05 10:31:27.231 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:28.590 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13526)
+2025-05-05 10:31:28.603 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:31:28.606 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:29.494 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13527)
+2025-05-05 10:31:29.513 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:31:29.517 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại all của người dùng 1
+2025-05-05 10:31:30.118 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13528)
+2025-05-05 10:31:30.128 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:31:30.131 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:41.582 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13535)
+2025-05-05 10:31:41.605 | INFO     | server:process_message:115 - [DELETE_EMAIL (id=57)] user=1 ip=127.0.0.1
+2025-05-05 10:31:41.606 | INFO     | server:handle_delete_email:141 - Processing DELETE_EMAIL request: id=57, user=1
+2025-05-05 10:31:41.619 | INFO     | CONTROLLER.emailController:delete_email:116 - Xóa email thành công: ID=57
+2025-05-05 10:31:41.620 | INFO     | server:handle_delete_email:164 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
+2025-05-05 10:31:41.624 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13537)
+2025-05-05 10:31:41.637 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:31:41.641 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:42.421 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13538)
+2025-05-05 10:31:42.423 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:31:42.427 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:43.566 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13539)
+2025-05-05 10:31:43.586 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:31:43.590 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:44.166 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13540)
+2025-05-05 10:31:44.191 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:31:44.195 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại all của người dùng 1
+2025-05-05 10:31:45.102 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13541)
+2025-05-05 10:31:45.113 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:31:45.117 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại all của người dùng 1
+2025-05-05 10:31:45.270 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13542)
+2025-05-05 10:31:45.286 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:31:45.290 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại all của người dùng 1
+2025-05-05 10:31:45.670 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13543)
+2025-05-05 10:31:45.695 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:31:45.698 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:45.830 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13544)
+2025-05-05 10:31:45.852 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:31:45.855 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:46.230 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13545)
+2025-05-05 10:31:46.244 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:31:46.248 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại all của người dùng 1
+2025-05-05 10:31:46.398 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13546)
+2025-05-05 10:31:46.415 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:31:46.419 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại all của người dùng 1
+2025-05-05 10:31:46.559 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13547)
+2025-05-05 10:31:46.574 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:31:46.577 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại all của người dùng 1
+2025-05-05 10:31:47.023 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13548)
+2025-05-05 10:31:47.040 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:31:47.044 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:47.182 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13549)
+2025-05-05 10:31:47.196 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:31:47.200 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:47.326 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13550)
+2025-05-05 10:31:47.339 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:31:47.343 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:54.671 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:55.263 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:55.719 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:55.894 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:56.527 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:31:57.279 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng 2
+2025-05-05 10:31:57.854 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng 1222
+2025-05-05 10:31:58.247 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng hello@gmail.com
+2025-05-05 10:31:58.695 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng mod@gmail.com
+2025-05-05 10:32:00.167 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng mod@gmail.com
+2025-05-05 10:32:00.680 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng mod@gmail.com
+2025-05-05 10:32:01.448 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng jack@gmail.com
+2025-05-05 10:32:02.326 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng jack@gmail.com
+2025-05-05 10:32:07.097 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:32:08.134 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:32:16.278 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13554)
+2025-05-05 10:32:16.279 | INFO     | server:process_message:81 - [SEND_EMAIL] user=1 ip=127.0.0.1
+2025-05-05 10:32:16.283 | INFO     | CONTROLLER.sendMailController:send_email:42 - Email đã được gửi thành công từ 1 đến 1
+2025-05-05 10:32:17.191 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13555)
+2025-05-05 10:32:17.192 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:32:17.197 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:32:18.998 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13556)
+2025-05-05 10:32:19.010 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:32:19.014 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:32:31.566 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13558)
+2025-05-05 10:32:31.584 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:32:31.587 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại all của người dùng 1
+2025-05-05 10:32:33.262 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13560)
+2025-05-05 10:32:33.284 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:32:33.288 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:32:34.377 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng jack@gmail.com
+2025-05-05 10:32:35.190 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:32:36.950 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 2 email loại inbox của người dùng 1
+2025-05-05 10:32:46.397 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13561)
+2025-05-05 10:32:46.414 | INFO     | server:process_message:81 - [SEND_EMAIL] user=1 ip=127.0.0.1
+2025-05-05 10:32:46.420 | INFO     | CONTROLLER.sendMailController:send_email:42 - Email đã được gửi thành công từ 1 đến 1
+2025-05-05 10:32:47.342 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13562)
+2025-05-05 10:32:47.343 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:32:47.347 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-05-05 10:32:48.736 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng jack@gmail.com
+2025-05-05 10:32:49.502 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-05-05 10:32:51.902 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13563)
+2025-05-05 10:32:51.917 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:32:51.921 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-05-05 10:32:55.993 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13564)
+2025-05-05 10:32:56.003 | INFO     | server:process_message:115 - [DELETE_EMAIL (id=60)] user=1 ip=127.0.0.1
+2025-05-05 10:32:56.004 | INFO     | server:handle_delete_email:141 - Processing DELETE_EMAIL request: id=60, user=1
+2025-05-05 10:32:56.013 | INFO     | CONTROLLER.emailController:delete_email:116 - Xóa email thành công: ID=60
+2025-05-05 10:32:56.014 | INFO     | server:handle_delete_email:164 - Xóa email thành công: {'success': True, 'message': 'Xóa email thành công'}
+2025-05-05 10:32:56.019 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13565)
+2025-05-05 10:32:56.021 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:32:56.027 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-05-05 10:32:56.871 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13566)
+2025-05-05 10:32:56.872 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:32:56.875 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-05-05 10:33:04.693 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13567)
+2025-05-05 10:33:04.705 | INFO     | server:process_message:81 - [SEND_EMAIL] user=1 ip=127.0.0.1
+2025-05-05 10:33:04.710 | INFO     | CONTROLLER.sendMailController:send_email:42 - Email đã được gửi thành công từ 1 đến 1
+2025-05-05 10:33:05.535 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13568)
+2025-05-05 10:33:05.536 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:33:05.541 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-05-05 10:33:12.136 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-05-05 10:33:17.040 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng mod@gmail.com
+2025-05-05 10:33:17.727 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng jack@gmail.com
+2025-05-05 10:33:18.375 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 1 email loại inbox của người dùng mod@gmail.com
+2025-05-05 10:33:19.135 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng modpack@gmail.com
+2025-05-05 10:33:20.510 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 0 email loại inbox của người dùng jack@gmail.com
+2025-05-05 10:33:25.078 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13570)
+2025-05-05 10:33:25.097 | INFO     | server:process_message:88 - [FETCH_EMAILS (all)] user=1 ip=127.0.0.1
+2025-05-05 10:33:25.101 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 4 email loại all của người dùng 1
+2025-05-05 10:33:31.718 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13571)
+2025-05-05 10:33:31.729 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:33:31.733 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-05-05 10:33:32.303 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13572)
+2025-05-05 10:33:32.320 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:33:32.324 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-05-05 10:33:32.470 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13573)
+2025-05-05 10:33:32.492 | INFO     | server:process_message:88 - [FETCH_EMAILS (inbox)] user=1 ip=127.0.0.1
+2025-05-05 10:33:32.495 | INFO     | CONTROLLER.fetchMailController:fetch_emails_by_user:86 - Truy xuất 3 email loại inbox của người dùng 1
+2025-05-05 10:33:42.293 | INFO     | server:start_server:225 - Chấp nhận kết nối từ ('127.0.0.1', 13574)
+2025-05-05 10:33:42.306 | INFO     | server:process_message:125 - [LOGOUT] user=1 ip=127.0.0.1
